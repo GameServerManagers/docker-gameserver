@@ -1,0 +1,11 @@
+---
+extends: default
+
+rules:
+  line-length: disable
+  comments: disable
+
+ignore: |
+  .tox/
+  .cache/
+  .github/workflows

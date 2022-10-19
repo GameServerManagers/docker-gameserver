@@ -1,7 +1,7 @@
 #
-# LinuxGSM Base Dockerfile
+# LinuxGSM Counter Strike: Global Offensive Dockerfile
 #
-# https://github.com/GameServerManagers/LinuxGSM-Docker
+# https://github.com/GameServerManagers/docker-csgoserver
 #
 
 FROM gameservermanagers/linuxgsm:ubuntu-22.04
