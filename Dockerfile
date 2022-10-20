@@ -15,8 +15,8 @@ ENV LGSM_GITHUBREPO LinuxGSM
 ENV LGSM_GITHUBBRANCH master
 
 ARG USERNAME=linuxgsm
-ARG USER_UID=1000
-ARG USER_GID=$USER_UID
+ARG UID=1000
+ARG GID=$UID
 
 ENTRYPOINT [ "/usr/bin/tini", "--" ]
 CMD [ "bash","./entrypoint.sh" ]
