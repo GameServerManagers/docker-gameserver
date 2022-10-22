@@ -33,5 +33,5 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            gameservermanagers/gameserver:${{ github.GITHUB_BASE_REF }}
-            ghcr.io/gameservermanagers/gameserver:${{ github.GITHUB_BASE_REF }}
+            gameservermanagers/gameserver:${{ github.GITHUB_HEAD_REF }}
+            ghcr.io/gameservermanagers/gameserver:${{ github.GITHUB_HEAD_REF }}
