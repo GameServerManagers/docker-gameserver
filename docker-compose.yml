@@ -1,8 +1,8 @@
 version: "3.8"
 services:
   LinuxGSM:
-    build: gameservermanagers/gameserver:mc
-    container_name: mcserver
+    build: gameservermanagers/gameserver:csgo
+    container_name: csgoserver
     restart: unless-stopped
     user: 1000:1000
     volumes:

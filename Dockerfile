@@ -1,14 +1,14 @@
 #
-# LinuxGSM Minecraft: Java Edition Dockerfile
+# LinuxGSM Counter Strike: Global Offensive Dockerfile
 #
-# https://github.com/GameServerManagers/docker-mcserver
+# https://github.com/GameServerManagers/docker-csgoserver
 #
 
 FROM gameservermanagers/linuxgsm:ubuntu-22.04
 
 LABEL maintainer="LinuxGSM <me@danielgibbs.co.uk>"
 
-ENV GAMESERVER mcserver
+ENV GAMESERVER csgoserver
 
 ENTRYPOINT [ "/usr/bin/tini", "--" ]
 CMD [ "bash","./entrypoint.sh" ]
