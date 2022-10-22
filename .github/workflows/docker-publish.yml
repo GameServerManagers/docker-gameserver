@@ -35,5 +35,5 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            gameservermanagers/csgoserver:latest
-            ghcr.io/gameservermanagers/csgoserver:latest
+            gameservermanagers/gameserver:${{ GITHUB_BASE_REF }}
+            ghcr.io/gameservermanagers/gameserver:${{ GITHUB_BASE_REF }}
