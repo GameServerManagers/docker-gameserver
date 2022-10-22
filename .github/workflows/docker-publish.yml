@@ -1,9 +1,7 @@
-name: ci
+name: Docker Publish
 
 on:
   push:
-    branches:
-      - "main"
   schedule:
     - cron: "0 0 * * *"
 
@@ -35,5 +33,5 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            gameservermanagers/gameserver:${{ GITHUB_BASE_REF }}
-            ghcr.io/gameservermanagers/gameserver:${{ GITHUB_BASE_REF }}
+            gameservermanagers/gameserver:${{ github.head_ref || github.ref_name }}
+            ghcr.io/gameservermanagers/gameserver:${{ github.head_ref || github.ref_name }}
