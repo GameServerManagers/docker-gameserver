@@ -6,9 +6,9 @@ services:
     restart: unless-stopped
     user: 1000:1000
     volumes:
-      - /home/docker/linuxgsm/csgoserver/serverfiles:/linuxgsm/serverfiles
-      - /home/docker/linuxgsm/csgoserver/log:/linuxgsm/log
-      - /home/docker/linuxgsm/csgoserver/config-lgsm:/linuxgsm/lgsm/config-lgsm
+      - /host/path/to/serverfiles:/linuxgsm/serverfiles
+      - /host/path/to/log:/linuxgsm/log
+      - /host/path/to/config-lgsm:/linuxgsm/lgsm/config-lgsm
     ports:
       - "27015:27015/tcp"
       - "27015:27015/udp"
