@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  LinuxGSM:
+    build: gameservermanagers/gameserver:csgo
+    container_name: csgoserver
+    restart: unless-stopped
+    user: 1000:1000
+    volumes:
+      - /host/path/to/serverfiles:/home/linuxgsm/serverfiles
+      - /host/path/to/log:/home/linuxgsm/log
+      - /host/path/to/config-lgsm:/home/linuxgsm/lgsm/config-lgsm
+    ports:
+      - "27015:27015/tcp"
+      - "27015:27015/udp"
+      - "27020:27020/udp"
+      - "27005:27005/udp"
