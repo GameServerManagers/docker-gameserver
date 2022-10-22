@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   linuxgsm:
-    build: gameservermanagers/gameserver:csgo
+    image: gameservermanagers/gameserver:csgo
     container_name: csgoserver
     restart: unless-stopped
     volumes:
