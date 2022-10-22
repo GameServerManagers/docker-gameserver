@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  LinuxGSM:
+  linuxgsm:
     build: gameservermanagers/gameserver:csgo
     container_name: csgoserver
     restart: unless-stopped
