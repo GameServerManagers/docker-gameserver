@@ -30,6 +30,9 @@ jobs:
           path: "mcb"
           ref: "mcb"
 
+      - name: pwd
+        run: pwd
+
       - name: list files
         run: ls -la
 
