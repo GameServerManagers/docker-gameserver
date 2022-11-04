@@ -16,7 +16,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          branch: "mcb"
+          branch: "arma3"
 
       - name: Checkout template branch
         uses: actions/checkout@v2
@@ -27,8 +27,8 @@ jobs:
       - name: Checkout template branch
         uses: actions/checkout@v2
         with:
-          path: "mcb"
-          ref: "mcb"
+          path: "arma3"
+          ref: "arma3"
 
       - name: pwd
         run: pwd
@@ -43,11 +43,11 @@ jobs:
         uses: cuchi/jinja2-action@v1.2.0
         with:
           template: template/Dockerfile.j2
-          output_file: mcb/Dockerfile
+          output_file: arma3/Dockerfile
           strict: true
           variables: |
-            gamename="Minecraft Bedrock"
-            shortname="mcb"
+            gamename="ARMA 3"
+            shortname="arma3"
             distro="ubuntu-2204"
 
       - name: Push commit
@@ -55,4 +55,4 @@ jobs:
         with:
           message: "Generate Dockerfile"
           add: "Dockerfile"
-          cwd: "./mcb/"
+          cwd: "./arma3/"
