@@ -21,7 +21,7 @@ jobs:
           output_file: dockerfiles/Dockerfile.csgo
           strict: true
           variables: |
-            gamename="Counter Strike: GLbal Offensive"
+            gamename="Counter Strike: Global Offensive"
             shortname="csgo"
             distro="ubuntu-2204"
 
