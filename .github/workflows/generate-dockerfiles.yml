@@ -26,6 +26,9 @@ jobs:
       - name: list files
         run: ls -la
 
+      - name: list files tmp
+        run: ls -la /tmp
+
       - name: Generate Dockerfile
         uses: cuchi/jinja2-action@v1.2.0
         with:
