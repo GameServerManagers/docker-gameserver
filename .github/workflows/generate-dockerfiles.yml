@@ -23,6 +23,9 @@ jobs:
         with:
           ref: "template"
 
+      - name: list files
+        run: ls -la
+
       - name: Generate Dockerfile
         uses: cuchi/jinja2-action@v1.2.0
         with:
