@@ -1,0 +1,43 @@
+---
+name: Generate Dockerfile
+
+on:
+  workflow_dispatch:
+  push:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Branch from template branch
+        uses: peterjgrainger/action-create-branch@v2.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          branch: "mcb"
+
+      - name: Checkout template branch
+        uses: actions/checkout@v2
+        with:
+          ref: "template"
+
+      - name: Generate Dockerfile
+        uses: cuchi/jinja2-action@v1.2.0
+        with:
+          template: Dockerfile.j2
+          output_file: Dockerfile
+          strict: true
+          variables: |
+            gamename="Minecraft Bedrock"
+            shortname="mcb"
+            distro="ubuntu-2204"
+
+      - name: Push to mcb branch
+        uses: Automattic/action-commit-to-branch@master
+        with:
+          branch: "mcb"
+          commit_message: "Generate Dockerfile: ${{ steps.date.outputs.date }}"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
