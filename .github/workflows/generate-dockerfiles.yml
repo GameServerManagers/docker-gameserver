@@ -27,7 +27,7 @@ jobs:
         uses: cuchi/jinja2-action@v1.2.0
         with:
           template: Dockerfile.j2
-          output_file: /Dockerfile
+          output_file: /tmp/Dockerfile
           strict: true
           variables: |
             gamename="Minecraft Bedrock"
@@ -40,7 +40,7 @@ jobs:
           ref: "mcb"
 
       - name: copy Dockerfile
-        run: cp /Dockerfile Dockerfile
+        run: cp /tmp/Dockerfile Dockerfile
 
       - name: Push to mcb branch
         uses: Automattic/action-commit-to-branch@master
