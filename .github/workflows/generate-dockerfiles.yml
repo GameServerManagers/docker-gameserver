@@ -50,10 +50,9 @@ jobs:
             shortname="mcb"
             distro="ubuntu-2204"
 
-      - name: Push to mcb branch
-        env:
-          GITHUB_WORKSPACE: "${{ env.GITHUB_WORKSPACE }}/mcb"
-        uses: Automattic/action-commit-to-branch@master
+      - name: Push commit
+        uses: EndBug/add-and-commit@v9
         with:
-          branch: "mcb"
-          commit_message: "Generate Dockerfile: ${{ steps.date.outputs.date }}"
+          message: "Generate Dockerfile"
+          add: "Dockerfile"
+          cwd: "./mcb/"
