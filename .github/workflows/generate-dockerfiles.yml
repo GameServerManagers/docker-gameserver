@@ -21,7 +21,14 @@ jobs:
       - name: Checkout template branch
         uses: actions/checkout@v2
         with:
+          path: "template"
           ref: "template"
+
+      - name: Checkout template branch
+        uses: actions/checkout@v2
+        with:
+          path: "mcb"
+          ref: "mcb"
 
       - name: list files
         run: ls -la
@@ -29,24 +36,19 @@ jobs:
       - name: list files tmp
         run: ls -la /tmp
 
-      - name: Generate Dockerfile
+      - name: Generate Dockerfile file
         uses: cuchi/jinja2-action@v1.2.0
         with:
-          template: Dockerfile.j2
-          output_file: /tmp/Dockerfile
+          template: template/Dockerfile.j2
+          output_file: mcb/Dockerfile
           strict: true
           variables: |
             gamename="Minecraft Bedrock"
             shortname="mcb"
             distro="ubuntu-2204"
 
-      - name: Checkout template branch
-        uses: actions/checkout@v2
-        with:
-          ref: "mcb"
-
-      - name: copy Dockerfile
-        run: cp /tmp/Dockerfile Dockerfile
+      - name: Change to mcb directory
+        run: cd mcb
 
       - name: Push to mcb branch
         uses: Automattic/action-commit-to-branch@master
