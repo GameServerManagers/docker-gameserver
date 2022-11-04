@@ -52,7 +52,7 @@ jobs:
 
       - name: Push to mcb branch
         env:
-          GITHUB_WORKSPACE: "${{ GITHUB_WORKSPACE }}/mcb"
+          GITHUB_WORKSPACE: "${{ env.GITHUB_WORKSPACE }}/mcb"
         uses: Automattic/action-commit-to-branch@master
         with:
           branch: "mcb"
