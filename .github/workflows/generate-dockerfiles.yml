@@ -17,6 +17,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           branch: "arma3"
+          sha: "empty"
 
       - name: Checkout template branch
         uses: actions/checkout@v2
@@ -29,15 +30,6 @@ jobs:
         with:
           path: "arma3"
           ref: "arma3"
-
-      - name: pwd
-        run: pwd
-
-      - name: list files
-        run: ls -la
-
-      - name: list files tmp
-        run: ls -la /tmp
 
       - name: Generate Dockerfile file
         uses: cuchi/jinja2-action@v1.2.0
