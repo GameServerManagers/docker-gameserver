@@ -21,9 +21,9 @@ jobs:
           output_file: dockerfiles/Dockerfile.csgo
           strict: true
           variables: |
-            gamename="Counter Strike: Global Offensive"
-            shortname="csgo"
-            distro="ubuntu-2204"
+            gamename=Counter Strike: Global Offensive
+            shortname=csgo
+            distro=ubuntu-2204
 
       - name: Push commit
         uses: EndBug/add-and-commit@v9
