@@ -50,13 +50,10 @@ jobs:
             shortname="mcb"
             distro="ubuntu-2204"
 
-      - name: Change to mcb directory
-        run: cd mcb
-
       - name: Push to mcb branch
+        env:
+          GITHUB_WORKSPACE: "${{ GITHUB_WORKSPACE }}/mcb"
         uses: Automattic/action-commit-to-branch@master
         with:
           branch: "mcb"
           commit_message: "Generate Dockerfile: ${{ steps.date.outputs.date }}"
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
