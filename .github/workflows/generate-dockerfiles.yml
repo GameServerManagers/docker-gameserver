@@ -23,7 +23,7 @@ jobs:
           variables: |
             gamename=Counter Strike: Global Offensive
             shortname=csgo
-            distro=ubuntu-2204
+            distro=ubuntu-22.04
 
       - name: Push commit
         uses: EndBug/add-and-commit@v9
