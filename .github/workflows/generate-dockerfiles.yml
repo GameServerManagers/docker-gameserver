@@ -14,16 +14,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Generate Dockerfile file
-        uses: cuchi/jinja2-action@v1.2.0
-        with:
-          template: Dockerfile.j2
-          output_file: dockerfiles/Dockerfile.csgo
-          strict: true
-          variables: |
-            gamename=Counter Strike: Global Offensive
-            shortname=csgo
-            distro=ubuntu-22.04
+      - name: install csvjson
+        run: pip install csvjson j2cli
+
+      - name: Generate Dockerfile with generate-dockerfiles.sh
+        run: |
+          ./generate-dockerfiles.sh
 
       - name: Push commit
         uses: EndBug/add-and-commit@v9
