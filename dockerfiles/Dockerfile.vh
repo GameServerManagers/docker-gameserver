@@ -6,6 +6,7 @@
 
 FROM gameservermanagers/linuxgsm:ubuntu-22.04
 LABEL maintainer="LinuxGSM <me@danielgibbs.co.uk>"
+ENV GAMESERVER=vhserver
 
 USER root
 ## Auto install game server requirements
