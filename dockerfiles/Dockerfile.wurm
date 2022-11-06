@@ -1,5 +1,5 @@
 #
-# LinuxGSM Valheim Dockerfile
+# LinuxGSM Wurm Unlimited Dockerfile
 #
 # https://github.com/GameServerManagers/docker-gameserver
 #
@@ -9,7 +9,7 @@ LABEL maintainer="LinuxGSM <me@danielgibbs.co.uk>"
 
 USER root
 ## Auto install game server requirements
-RUN depshortname=$(curl --connect-timeout 10 -s https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/ubuntu-22.04.csv |awk -v shortname="vh" -F, '$1==shortname {$1=""; print $0}') \
+RUN depshortname=$(curl --connect-timeout 10 -s https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/ubuntu-22.04.csv |awk -v shortname="wurm" -F, '$1==shortname {$1=""; print $0}') \
   && if [ -n "${depshortname}" ]; then \
   echo "**** Install ${depshortname} ****" \
   && apt-get update \
