@@ -21,8 +21,7 @@ jobs:
       - run: pip3 install -r requirements.txt
 
       - name: Generate Dockerfile with generate-dockerfiles.sh
-        run: |
-          ./generate-dockerfiles.sh
+        run: ./generate-dockerfiles.sh
 
       - name: Push commit
         uses: EndBug/add-and-commit@v9
