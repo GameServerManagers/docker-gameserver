@@ -1,7 +1,7 @@
 #!/bin/bash
 
 wget "https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/serverlist.csv"
-csvjson serverlist.csv >serverlist.json
+csv-to-json serverlist.csv >serverlist.json
 
 while read line; do
   export shortname=$(echo "$line" | awk -F, '{ print $1 }')
