@@ -8,6 +8,6 @@ while read line; do
   export gamename=$(echo "$line" | awk -F, '{ print $3 }')
   export distro="ubuntu-22.04"
   touch "dockerfiles/Dockerfile.${shortname}"
-  echo "Generating ${gamename}: Dockerfile.${shortname}"
+  echo "Generating Dockerfile.${shortname} (${gamename})"
   j2 -f env Dockerfile.j2 >"dockerfiles/Dockerfile.${shortname}"
 done <serverlist.csv
