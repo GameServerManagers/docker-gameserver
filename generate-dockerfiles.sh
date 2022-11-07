@@ -12,7 +12,7 @@ while read line; do
   touch "dockerfiles/Dockerfile.${shortname}"
   echo "Generating Dockerfile.${shortname} (${gamename})"
   j2 -f env Dockerfile.j2 >"dockerfiles/Dockerfile.${shortname}"
-  echo -n "${shortname}, " >>"shortnamearray.txt"
+  echo -n "${shortname}," >>"shortnamearray.txt"
 done <serverlist.csv
 cat "shortnamearray.txt" | sed 's/.$//' | sed 's/.$//' >"shortname.txt"
 echo -n "]" >>"shortname.txt"
