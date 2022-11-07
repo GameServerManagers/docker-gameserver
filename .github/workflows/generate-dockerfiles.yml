@@ -28,10 +28,6 @@ jobs:
         with:
           message: "Generate Dockerfile"
           add: "dockerfiles/Dockerfile*"
-
-  build-matrix:
-    runs-on: ubuntu-latest
-    steps:
       - id: set-matrix
         run: echo "::set-output name=shortname_matrix::$(cat shortname.txt)"
     outputs:
