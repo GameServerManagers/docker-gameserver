@@ -33,7 +33,7 @@ jobs:
 
       - id: set-matrix
         run: |
-          echo "matrix={"include": [{\"shortname_matrix\": \"zps\"}]}" >> $GITHUB_ENV
+          echo "matrix=blue" >> $GITHUB_ENV
 
   docker-publish:
     runs-on: ubuntu-latest
