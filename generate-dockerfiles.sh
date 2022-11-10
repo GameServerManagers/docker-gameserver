@@ -2,7 +2,7 @@
 
 wget "https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/serverlist.csv"
 
-echo -n "[" >"shortnamearray.txt"
+echo "[" >"shortnamearray.json"
 
 while read line; do
   export shortname=$(echo "$line" | awk -F, '{ print $1 }')
@@ -12,7 +12,10 @@ while read line; do
   touch "dockerfiles/Dockerfile.${shortname}"
   echo "Generating Dockerfile.${shortname} (${gamename})"
   j2 -f env Dockerfile.j2 >"dockerfiles/Dockerfile.${shortname}"
-  echo -n "${shortname}," >>"shortnamearray.txt"
+  echo "{" >>"shortnamearray.json"
+  echo -n "\"shortname_matrix\":" >>"shortnamearray.json"
+  echo "\"${shortname}\"" >>"shortnamearray.json"
+  echo "}," >>"shortnamearray.json"
 done <serverlist.csv
-cat "shortnamearray.txt" | sed 's/.$//' | sed 's/.$//' >"shortname.txt"
 echo -n "]" >>"shortname.txt"
+sed -i '$ s/.$//' shortnamearray.json
