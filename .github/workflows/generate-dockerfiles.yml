@@ -30,7 +30,7 @@ jobs:
           add: "dockerfiles/Dockerfile*"
 
       - id: set-matrix
-        run: echo "matrix=$(cat shortname.json)" >> $GITHUB_OUTPUT
+        run: echo 'matrix=$(cat shortname.json)' >> $GITHUB_OUTPUT
   docker-publish:
     needs: generate-dockerfiles
     runs-on: ubuntu-latest
