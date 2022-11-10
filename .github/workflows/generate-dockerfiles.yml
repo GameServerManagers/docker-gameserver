@@ -38,7 +38,7 @@ jobs:
   docker-publish:
     runs-on: ubuntu-latest
     strategy:
-      matrix: ${{fromJson(needs.generate-dockerfiles.outputs.matrix)}}
+      matrix: ${{ fromJSON(needs.generate-dockerfiles.outputs.matrix) }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
