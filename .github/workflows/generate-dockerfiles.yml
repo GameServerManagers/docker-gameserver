@@ -32,7 +32,7 @@ jobs:
           add: "dockerfiles/Dockerfile*"
 
       - id: set-matrix
-        run: echo "::set-output name=matrix::$(cat shortnamearray.json)\""
+        run: echo "::set-output name=matrix::$(cat shortnamearray.json)"
 
   docker-publish:
     runs-on: ubuntu-latest
