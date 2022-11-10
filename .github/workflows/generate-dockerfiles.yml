@@ -30,7 +30,7 @@ jobs:
           add: "dockerfiles/Dockerfile*"
 
       - id: set-matrix
-        run: echo "matrix={\"include\":[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]}" >> $GITHUB_OUTPUT
+        run: echo "matrix={\"include\":[{\"shortname\":\"ac\"},{\"shortname\":\"csgo\"}]}" >> $GITHUB_OUTPUT
   docker-publish:
     needs: generate-dockerfiles
     runs-on: ubuntu-latest
