@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        shortname: "${{ env.matrix }}"
+        shortname: ${{ env.matrix }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
