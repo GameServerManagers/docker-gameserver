@@ -10,6 +10,8 @@ on:
 jobs:
   generate-dockerfiles:
     runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -28,16 +30,15 @@ jobs:
         with:
           message: "Generate Dockerfile"
           add: "dockerfiles/Dockerfile*"
+
       - id: set-matrix
-        run: echo "shortname_matrix=\"$(cat shortnamearray.json)\""
-    outputs:
-      shortname_matrix: ${{ steps.set-matrix.outputs.shortname_matrix }}
+        run: echo "::set-output name=matrix::$(cat shortnamearray.json)\""
 
   docker-publish:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        shortname: ${{ needs.generate-dockerfiles.outputs.shortname_matrix }}
+        shortname: ${{ needs.generate-dockerfiles.outputs.matrix }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
