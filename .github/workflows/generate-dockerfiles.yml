@@ -58,6 +58,7 @@ jobs:
         uses: docker/build-push-action@v3.2.0
         with:
           context: .
+          file: dockerfiles/Dockerfile.${{ matrix.shortname }}
           platforms: linux/amd64
           push: true
           tags: |
