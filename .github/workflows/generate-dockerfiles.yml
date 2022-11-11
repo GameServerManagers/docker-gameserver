@@ -35,6 +35,7 @@ jobs:
     needs: generate-dockerfiles
     runs-on: ubuntu-latest
     strategy:
+      continue-on-error: true
       matrix: ${{ fromJSON(needs.generate-dockerfiles.outputs.matrix) }}
     steps:
       - name: Checkout
