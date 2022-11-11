@@ -32,6 +32,7 @@ jobs:
       - id: set-matrix
         run: |
           shortnamearray=$(cat shortnamearray.json)
+          echo "${shortnamearray}"
           echo -n "matrix=${shortnamearray}" >> $GITHUB_OUTPUT
   docker-publish:
     needs: generate-dockerfiles
