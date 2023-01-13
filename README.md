@@ -15,7 +15,4 @@ LinuxGSM is a command-line tool for quick, simple deployment and management of L
 
 ## Tags
 
-- `csgo` - Counter-Strike: Global Offensive
-- `vh` - Valheim
-- `mc` - Minecraft: Java Edition
-- `fctr` - Factorio
+[Tags List](https://hub.docker.com/r/gameservermanagers/gameserver/tags)
