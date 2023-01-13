@@ -2,6 +2,10 @@ name: Generate Dockerfile
 on:
   workflow_dispatch:
   push:
+    paths:
+      - "generate-dockerfiles.yml"
+      - "generate-dockerfiles.sh"
+      - "requirements.txt"
   schedule:
     - cron: "0 0 * * *"
 

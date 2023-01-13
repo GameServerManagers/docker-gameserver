@@ -11,7 +11,7 @@
 
 ## About
 
-LinuxGSM is a command-line tool for quick, simple deployment and management of Linux dedicated game servers. This container image builds daily and is available on [Docker Hub](https://hub.docker.com/r/gameservermanagers/linuxgsm) as well as [GitHub Container Registry](https://github.com/GameServerManagers/docker-gameserver/pkgs/container/gameserver).
+LinuxGSM is a command-line tool for quick, simple deployment and management of Linux dedicated game servers. This container image builds every game server daily and is available on [Docker Hub](https://hub.docker.com/r/gameservermanagers/gameserver) as well as [GitHub Container Registry](https://github.com/GameServerManagers/docker-gameserver/pkgs/container/gameserver).
 
 ## Tags
 
