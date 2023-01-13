@@ -30,7 +30,7 @@ jobs:
       - name: Push commit
         uses: EndBug/add-and-commit@v9
         with:
-          message: "Generate Dockerfile"
+          message: "Generate Dockerfiles"
           add: "dockerfiles/Dockerfile*"
 
       - id: set-matrix
