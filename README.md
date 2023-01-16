@@ -21,7 +21,7 @@ LinuxGSM is a command-line tool for quick, simple deployment and management of L
 
 ### docker-compose
 Below is an example docker-compose for csgoserver. Ports will vary depending upon game server.
-
+```
 version: '3.4'
 services:
 linuxgsm:
@@ -42,7 +42,7 @@ linuxgsm:
     - "27020:27020/udp"
     - "27005:27005/udp"
   restart: unless-stopped
-
+```
 ### First Run
 Edit the docker-compose.yml file changing GAMESERVER= to the game server of choice. On first run linuxgsm will install your selected server and will start running. Once completed the game server details will be output.
 
