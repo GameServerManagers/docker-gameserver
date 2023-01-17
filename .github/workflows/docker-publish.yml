@@ -7,6 +7,7 @@ on:
       - "generate-dockerfiles.yml"
       - "generate-dockerfiles.sh"
       - "requirements.txt"
+      - "Dockerfile.j2"
   schedule:
     - cron: "0 0 * * *"
 
