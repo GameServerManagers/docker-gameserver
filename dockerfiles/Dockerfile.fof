@@ -23,5 +23,4 @@ HEALTHCHECK --interval=1m --timeout=1m --start-period=2m --retries=1 CMD /linuxg
 
 RUN date > /build-time.txt
 
-ENTRYPOINT ["/init"]
-CMD [ "./entrypoint.sh" ]
+ENTRYPOINT ["/bin/bash", "./entrypoint.sh"]
