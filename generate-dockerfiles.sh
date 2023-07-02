@@ -17,7 +17,7 @@ while read line; do
   echo -n "\"shortname\":" >>"shortnamearray.json"
   echo -n "\"${shortname}\"" >>"shortnamearray.json"
   echo -n "}," >>"shortnamearray.json"
-done < <(tail -n +2 serverlist.csv)
+done < <(tail -n +1 serverlist.csv)
 sed -i '$ s/.$//' "shortnamearray.json"
 echo -n "]" >>"shortnamearray.json"
 echo -n "}" >>"shortnamearray.json"
