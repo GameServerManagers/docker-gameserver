@@ -9,7 +9,7 @@ on:
       - "requirements.txt"
       - "Dockerfile.j2"
   schedule:
-    - cron: "32 3 * * 6"
+    - cron: "0 3 * * 6"
 
 jobs:
   generate-dockerfiles:
