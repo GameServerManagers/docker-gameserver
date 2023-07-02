@@ -7,7 +7,7 @@
 FROM gameservermanagers/linuxgsm:{{ distro }}
 LABEL maintainer="LinuxGSM <me@danielgibbs.co.uk>"
 ARG SHORTNAME={{ shortname }}
-ENV GAMENAME={{ shortname }}server
+ENV GAMESERVER={{ shortname }}server
 
 ## Auto install game server requirements
 RUN depshortname=$(curl --connect-timeout 10 -s https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/{{ distro }}.csv |awk -v shortname="{{ shortname }}" -F, '$1==shortname {$1=""; print $0}') \
