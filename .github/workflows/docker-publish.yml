@@ -9,7 +9,7 @@ on:
       - "requirements.txt"
       - "Dockerfile.j2"
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "32 3 * * 6"
 
 jobs:
   generate-dockerfiles:
@@ -71,6 +71,8 @@ jobs:
           file: dockerfiles/Dockerfile.${{ matrix.shortname }}
           platforms: linux/amd64
           push: true
+          build-args: |
+            SHORTNAME=${{ matrix.shortname }}
           tags: |
             gameservermanagers/gameserver:${{ matrix.shortname }}
             ghcr.io/gameservermanagers/gameserver:${{ matrix.shortname }}

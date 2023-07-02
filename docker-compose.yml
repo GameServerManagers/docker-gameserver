@@ -1,13 +1,11 @@
 version: "3.8"
 services:
   linuxgsm:
-    image: gameservermanagers/gameserver:csgo
+    build:
+      context: .
+      dockerfile: dockerfiles/Dockerfile.csgo
     container_name: csgoserver
     restart: unless-stopped
-    volumes:
-      - /host/path/to/serverfiles:/linuxgsm/serverfiles
-      - /host/path/to/log:/linuxgsm/log
-      - /host/path/to/config-lgsm:/linuxgsm/lgsm/config-lgsm
     ports:
       - "27015:27015/tcp"
       - "27015:27015/udp"
