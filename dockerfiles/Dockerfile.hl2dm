@@ -7,7 +7,7 @@
 FROM gameservermanagers/linuxgsm:ubuntu-22.04
 LABEL maintainer="LinuxGSM <me@danielgibbs.co.uk>"
 ARG SHORTNAME=hl2dm
-ENV GAMENAME=hl2dmserver
+ENV GAMESERVER=hl2dmserver
 
 ## Auto install game server requirements
 RUN depshortname=$(curl --connect-timeout 10 -s https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/ubuntu-22.04.csv |awk -v shortname="hl2dm" -F, '$1==shortname {$1=""; print $0}') \
