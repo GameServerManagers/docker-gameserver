@@ -7,7 +7,7 @@
 FROM gameservermanagers/linuxgsm:ubuntu-22.04
 LABEL maintainer="LinuxGSM <me@danielgibbs.co.uk>"
 ARG SHORTNAME
-ENV GAMENAME=${Shortname}server
+ENV GAMENAME=solserver
 
 ## Auto install game server requirements
 RUN depshortname=$(curl --connect-timeout 10 -s https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/ubuntu-22.04.csv |awk -v shortname="sol" -F, '$1==shortname {$1=""; print $0}') \
