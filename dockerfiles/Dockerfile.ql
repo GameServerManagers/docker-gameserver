@@ -6,7 +6,7 @@
 
 FROM gameservermanagers/linuxgsm:ubuntu-22.04
 LABEL maintainer="LinuxGSM <me@danielgibbs.co.uk>"
-ARG SHORTNAME
+ARG SHORTNAME=ql
 ENV GAMENAME=qlserver
 
 ## Auto install game server requirements

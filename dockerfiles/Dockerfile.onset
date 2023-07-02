@@ -6,7 +6,7 @@
 
 FROM gameservermanagers/linuxgsm:ubuntu-20.04
 LABEL maintainer="LinuxGSM <me@danielgibbs.co.uk>"
-ARG SHORTNAME
+ARG SHORTNAME=onset
 ENV GAMENAME=onsetserver
 
 ## Auto install game server requirements

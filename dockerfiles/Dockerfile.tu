@@ -6,7 +6,7 @@
 
 FROM gameservermanagers/linuxgsm:ubuntu-22.04
 LABEL maintainer="LinuxGSM <me@danielgibbs.co.uk>"
-ARG SHORTNAME
+ARG SHORTNAME=tu
 ENV GAMENAME=tuserver
 
 ## Auto install game server requirements

@@ -6,7 +6,7 @@
 
 FROM gameservermanagers/linuxgsm:ubuntu-22.04
 LABEL maintainer="LinuxGSM <me@danielgibbs.co.uk>"
-ARG SHORTNAME
+ARG SHORTNAME=mta
 ENV GAMENAME=mtaserver
 
 ## Auto install game server requirements
