@@ -25,7 +25,8 @@ Below is an example docker-compose for csgoserver. Ports will vary depending upo
 version: '3.4'
 services:
   linuxgsm-csgo:
-    image: ghcr.io/gameservermanagers/gameserver:csgo
+    image: gameservermanagers/gameserver:csgo
+    # image: ghcr.io/gameservermanagers/gameserver:csgo
     container_name: csgoserver
     volumes:
       - /path/to/csgoserver:/data
@@ -46,7 +47,7 @@ docker run -d \
   -p 27020:27020/udp \
   -p 27005:27005/udp \
   --restart unless-stopped \
-  ghcr.io/gameservermanagers/gameserver:csgo
+  gameservermanagers/gameserver:csgo
 ```
 ### First Run
 Edit the docker-compose.yml file changing the image tag and container_name to your game server of choice. On the first run, LinuxGSM will install your selected server and will start running. Once completed the game server details will be output.
