@@ -1,5 +1,4 @@
 name: Docker Publish
-
 on:
   workflow_dispatch:
   push:
@@ -14,6 +13,7 @@ on:
 
 jobs:
   generate-dockerfiles:
+    name: Generate Dockerfiles
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
@@ -42,6 +42,7 @@ jobs:
           echo -n "matrix=${shortnamearray}" >> $GITHUB_OUTPUT
 
   generate-docker-compose:
+    name: Generate docker-compose.yml files
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -62,6 +63,7 @@ jobs:
           add: "docker-compose/docker-compose*"
 
   docker-publish:
+    name: Publish Docker Images
     needs: generate-dockerfiles
     runs-on: ubuntu-latest
     continue-on-error: true
