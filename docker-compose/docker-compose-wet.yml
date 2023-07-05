@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-wet:
+  # bind mount example
+  linuxgsm-wet-bind:
     image: ghcr.io/gameservermanagers/gameserver:wet
     container_name: wetserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-wet-volume:
+    image: ghcr.io/gameservermanagers/gameserver:wet
+    container_name: wetserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-wet:/data
+    ports:
+
+volumes:
+  linuxgsm-wet:

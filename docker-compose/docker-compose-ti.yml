@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-ti:
+  # bind mount example
+  linuxgsm-ti-bind:
     image: ghcr.io/gameservermanagers/gameserver:ti
     container_name: tiserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-ti-volume:
+    image: ghcr.io/gameservermanagers/gameserver:ti
+    container_name: tiserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-ti:/data
+    ports:
+
+volumes:
+  linuxgsm-ti:

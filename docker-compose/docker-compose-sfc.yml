@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-sfc:
+  # bind mount example
+  linuxgsm-sfc-bind:
     image: ghcr.io/gameservermanagers/gameserver:sfc
     container_name: sfcserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-sfc-volume:
+    image: ghcr.io/gameservermanagers/gameserver:sfc
+    container_name: sfcserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-sfc:/data
+    ports:
+
+volumes:
+  linuxgsm-sfc:

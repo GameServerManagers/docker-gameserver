@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-ck:
+  # bind mount example
+  linuxgsm-ck-bind:
     image: ghcr.io/gameservermanagers/gameserver:ck
     container_name: ckserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-ck-volume:
+    image: ghcr.io/gameservermanagers/gameserver:ck
+    container_name: ckserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-ck:/data
+    ports:
+
+volumes:
+  linuxgsm-ck:

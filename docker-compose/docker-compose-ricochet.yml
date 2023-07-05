@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-ricochet:
+  # bind mount example
+  linuxgsm-ricochet-bind:
     image: ghcr.io/gameservermanagers/gameserver:ricochet
     container_name: ricochetserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-ricochet-volume:
+    image: ghcr.io/gameservermanagers/gameserver:ricochet
+    container_name: ricochetserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-ricochet:/data
+    ports:
+
+volumes:
+  linuxgsm-ricochet:

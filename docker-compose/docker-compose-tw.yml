@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-tw:
+  # bind mount example
+  linuxgsm-tw-bind:
     image: ghcr.io/gameservermanagers/gameserver:tw
     container_name: twserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-tw-volume:
+    image: ghcr.io/gameservermanagers/gameserver:tw
+    container_name: twserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-tw:/data
+    ports:
+
+volumes:
+  linuxgsm-tw:

@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-mohaa:
+  # bind mount example
+  linuxgsm-mohaa-bind:
     image: ghcr.io/gameservermanagers/gameserver:mohaa
     container_name: mohaaserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-mohaa-volume:
+    image: ghcr.io/gameservermanagers/gameserver:mohaa
+    container_name: mohaaserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-mohaa:/data
+    ports:
+
+volumes:
+  linuxgsm-mohaa:

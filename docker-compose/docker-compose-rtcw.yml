@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-rtcw:
+  # bind mount example
+  linuxgsm-rtcw-bind:
     image: ghcr.io/gameservermanagers/gameserver:rtcw
     container_name: rtcwserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-rtcw-volume:
+    image: ghcr.io/gameservermanagers/gameserver:rtcw
+    container_name: rtcwserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-rtcw:/data
+    ports:
+
+volumes:
+  linuxgsm-rtcw:

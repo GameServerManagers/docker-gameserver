@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-wf:
+  # bind mount example
+  linuxgsm-wf-bind:
     image: ghcr.io/gameservermanagers/gameserver:wf
     container_name: wfserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-wf-volume:
+    image: ghcr.io/gameservermanagers/gameserver:wf
+    container_name: wfserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-wf:/data
+    ports:
+
+volumes:
+  linuxgsm-wf:

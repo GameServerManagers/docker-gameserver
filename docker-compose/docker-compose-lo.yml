@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-lo:
+  # bind mount example
+  linuxgsm-lo-bind:
     image: ghcr.io/gameservermanagers/gameserver:lo
     container_name: loserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-lo-volume:
+    image: ghcr.io/gameservermanagers/gameserver:lo
+    container_name: loserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-lo:/data
+    ports:
+
+volumes:
+  linuxgsm-lo:

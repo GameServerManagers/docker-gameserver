@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-q3:
+  # bind mount example
+  linuxgsm-q3-bind:
     image: ghcr.io/gameservermanagers/gameserver:q3
     container_name: q3server
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-q3-volume:
+    image: ghcr.io/gameservermanagers/gameserver:q3
+    container_name: q3server
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-q3:/data
+    ports:
+
+volumes:
+  linuxgsm-q3:

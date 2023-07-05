@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-tfc:
+  # bind mount example
+  linuxgsm-tfc-bind:
     image: ghcr.io/gameservermanagers/gameserver:tfc
     container_name: tfcserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-tfc-volume:
+    image: ghcr.io/gameservermanagers/gameserver:tfc
+    container_name: tfcserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-tfc:/data
+    ports:
+
+volumes:
+  linuxgsm-tfc:

@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-armar:
+  # bind mount example
+  linuxgsm-armar-bind:
     image: ghcr.io/gameservermanagers/gameserver:armar
     container_name: armarserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-armar-volume:
+    image: ghcr.io/gameservermanagers/gameserver:armar
+    container_name: armarserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-armar:/data
+    ports:
+
+volumes:
+  linuxgsm-armar:

@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-sven:
+  # bind mount example
+  linuxgsm-sven-bind:
     image: ghcr.io/gameservermanagers/gameserver:sven
     container_name: svenserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-sven-volume:
+    image: ghcr.io/gameservermanagers/gameserver:sven
+    container_name: svenserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-sven:/data
+    ports:
+
+volumes:
+  linuxgsm-sven:

@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-cmw:
+  # bind mount example
+  linuxgsm-cmw-bind:
     image: ghcr.io/gameservermanagers/gameserver:cmw
     container_name: cmwserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-cmw-volume:
+    image: ghcr.io/gameservermanagers/gameserver:cmw
+    container_name: cmwserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-cmw:/data
+    ports:
+
+volumes:
+  linuxgsm-cmw:

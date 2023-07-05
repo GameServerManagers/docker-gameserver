@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-ahl:
+  # bind mount example
+  linuxgsm-ahl-bind:
     image: ghcr.io/gameservermanagers/gameserver:ahl
     container_name: ahlserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-ahl-volume:
+    image: ghcr.io/gameservermanagers/gameserver:ahl
+    container_name: ahlserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-ahl:/data
+    ports:
+
+volumes:
+  linuxgsm-ahl:

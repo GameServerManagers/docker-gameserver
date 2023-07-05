@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-ns2c:
+  # bind mount example
+  linuxgsm-ns2c-bind:
     image: ghcr.io/gameservermanagers/gameserver:ns2c
     container_name: ns2cserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-ns2c-volume:
+    image: ghcr.io/gameservermanagers/gameserver:ns2c
+    container_name: ns2cserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-ns2c:/data
+    ports:
+
+volumes:
+  linuxgsm-ns2c:

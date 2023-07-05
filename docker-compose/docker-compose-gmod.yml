@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-gmod:
+  # bind mount example
+  linuxgsm-gmod-bind:
     image: ghcr.io/gameservermanagers/gameserver:gmod
     container_name: gmodserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-gmod-volume:
+    image: ghcr.io/gameservermanagers/gameserver:gmod
+    container_name: gmodserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-gmod:/data
+    ports:
+
+volumes:
+  linuxgsm-gmod:

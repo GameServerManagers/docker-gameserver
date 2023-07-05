@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-mta:
+  # bind mount example
+  linuxgsm-mta-bind:
     image: ghcr.io/gameservermanagers/gameserver:mta
     container_name: mtaserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-mta-volume:
+    image: ghcr.io/gameservermanagers/gameserver:mta
+    container_name: mtaserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-mta:/data
+    ports:
+
+volumes:
+  linuxgsm-mta:

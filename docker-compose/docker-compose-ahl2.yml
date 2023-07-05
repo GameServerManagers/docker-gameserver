@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-ahl2:
+  # bind mount example
+  linuxgsm-ahl2-bind:
     image: ghcr.io/gameservermanagers/gameserver:ahl2
     container_name: ahl2server
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-ahl2-volume:
+    image: ghcr.io/gameservermanagers/gameserver:ahl2
+    container_name: ahl2server
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-ahl2:/data
+    ports:
+
+volumes:
+  linuxgsm-ahl2:

@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-pc:
+  # bind mount example
+  linuxgsm-pc-bind:
     image: ghcr.io/gameservermanagers/gameserver:pc
     container_name: pcserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-pc-volume:
+    image: ghcr.io/gameservermanagers/gameserver:pc
+    container_name: pcserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-pc:/data
+    ports:
+
+volumes:
+  linuxgsm-pc:

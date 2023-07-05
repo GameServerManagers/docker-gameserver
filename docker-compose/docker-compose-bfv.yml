@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-bfv:
+  # bind mount example
+  linuxgsm-bfv-bind:
     image: ghcr.io/gameservermanagers/gameserver:bfv
     container_name: bfvserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-bfv-volume:
+    image: ghcr.io/gameservermanagers/gameserver:bfv
+    container_name: bfvserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-bfv:/data
+    ports:
+
+volumes:
+  linuxgsm-bfv:

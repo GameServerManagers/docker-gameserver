@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-codwaw:
+  # bind mount example
+  linuxgsm-codwaw-bind:
     image: ghcr.io/gameservermanagers/gameserver:codwaw
     container_name: codwawserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-codwaw-volume:
+    image: ghcr.io/gameservermanagers/gameserver:codwaw
+    container_name: codwawserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-codwaw:/data
+    ports:
+
+volumes:
+  linuxgsm-codwaw:

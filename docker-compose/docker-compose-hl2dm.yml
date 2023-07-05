@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-hl2dm:
+  # bind mount example
+  linuxgsm-hl2dm-bind:
     image: ghcr.io/gameservermanagers/gameserver:hl2dm
     container_name: hl2dmserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-hl2dm-volume:
+    image: ghcr.io/gameservermanagers/gameserver:hl2dm
+    container_name: hl2dmserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-hl2dm:/data
+    ports:
+
+volumes:
+  linuxgsm-hl2dm:

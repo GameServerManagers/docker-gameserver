@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-ac:
+  # bind mount example
+  linuxgsm-ac-bind:
     image: ghcr.io/gameservermanagers/gameserver:ac
     container_name: acserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-ac-volume:
+    image: ghcr.io/gameservermanagers/gameserver:ac
+    container_name: acserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-ac:/data
+    ports:
+
+volumes:
+  linuxgsm-ac:

@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-vints:
+  # bind mount example
+  linuxgsm-vints-bind:
     image: ghcr.io/gameservermanagers/gameserver:vints
     container_name: vintsserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-vints-volume:
+    image: ghcr.io/gameservermanagers/gameserver:vints
+    container_name: vintsserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-vints:/data
+    ports:
+
+volumes:
+  linuxgsm-vints:

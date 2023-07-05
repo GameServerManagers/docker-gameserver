@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-sbots:
+  # bind mount example
+  linuxgsm-sbots-bind:
     image: ghcr.io/gameservermanagers/gameserver:sbots
     container_name: sbotsserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-sbots-volume:
+    image: ghcr.io/gameservermanagers/gameserver:sbots
+    container_name: sbotsserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-sbots:/data
+    ports:
+
+volumes:
+  linuxgsm-sbots:

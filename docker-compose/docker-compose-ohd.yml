@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-ohd:
+  # bind mount example
+  linuxgsm-ohd-bind:
     image: ghcr.io/gameservermanagers/gameserver:ohd
     container_name: ohdserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-ohd-volume:
+    image: ghcr.io/gameservermanagers/gameserver:ohd
+    container_name: ohdserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-ohd:/data
+    ports:
+
+volumes:
+  linuxgsm-ohd:

@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-terraria:
+  # bind mount example
+  linuxgsm-terraria-bind:
     image: ghcr.io/gameservermanagers/gameserver:terraria
     container_name: terrariaserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-terraria-volume:
+    image: ghcr.io/gameservermanagers/gameserver:terraria
+    container_name: terrariaserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-terraria:/data
+    ports:
+
+volumes:
+  linuxgsm-terraria:

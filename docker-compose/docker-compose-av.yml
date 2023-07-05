@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-av:
+  # bind mount example
+  linuxgsm-av-bind:
     image: ghcr.io/gameservermanagers/gameserver:av
     container_name: avserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-av-volume:
+    image: ghcr.io/gameservermanagers/gameserver:av
+    container_name: avserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-av:/data
+    ports:
+
+volumes:
+  linuxgsm-av:

@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-bf1942:
+  # bind mount example
+  linuxgsm-bf1942-bind:
     image: ghcr.io/gameservermanagers/gameserver:bf1942
     container_name: bf1942server
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-bf1942-volume:
+    image: ghcr.io/gameservermanagers/gameserver:bf1942
+    container_name: bf1942server
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-bf1942:/data
+    ports:
+
+volumes:
+  linuxgsm-bf1942:

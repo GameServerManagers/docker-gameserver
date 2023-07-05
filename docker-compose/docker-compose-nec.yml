@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-nec:
+  # bind mount example
+  linuxgsm-nec-bind:
     image: ghcr.io/gameservermanagers/gameserver:nec
     container_name: necserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-nec-volume:
+    image: ghcr.io/gameservermanagers/gameserver:nec
+    container_name: necserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-nec:/data
+    ports:
+
+volumes:
+  linuxgsm-nec:

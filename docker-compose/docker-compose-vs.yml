@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-vs:
+  # bind mount example
+  linuxgsm-vs-bind:
     image: ghcr.io/gameservermanagers/gameserver:vs
     container_name: vsserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-vs-volume:
+    image: ghcr.io/gameservermanagers/gameserver:vs
+    container_name: vsserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-vs:/data
+    ports:
+
+volumes:
+  linuxgsm-vs:

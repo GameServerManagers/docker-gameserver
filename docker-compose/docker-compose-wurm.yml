@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-wurm:
+  # bind mount example
+  linuxgsm-wurm-bind:
     image: ghcr.io/gameservermanagers/gameserver:wurm
     container_name: wurmserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-wurm-volume:
+    image: ghcr.io/gameservermanagers/gameserver:wurm
+    container_name: wurmserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-wurm:/data
+    ports:
+
+volumes:
+  linuxgsm-wurm:

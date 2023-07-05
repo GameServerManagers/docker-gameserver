@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-arma3:
+  # bind mount example
+  linuxgsm-arma3-bind:
     image: ghcr.io/gameservermanagers/gameserver:arma3
     container_name: arma3server
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-arma3-volume:
+    image: ghcr.io/gameservermanagers/gameserver:arma3
+    container_name: arma3server
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-arma3:/data
+    ports:
+
+volumes:
+  linuxgsm-arma3:

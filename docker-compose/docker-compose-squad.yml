@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-squad:
+  # bind mount example
+  linuxgsm-squad-bind:
     image: ghcr.io/gameservermanagers/gameserver:squad
     container_name: squadserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-squad-volume:
+    image: ghcr.io/gameservermanagers/gameserver:squad
+    container_name: squadserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-squad:/data
+    ports:
+
+volumes:
+  linuxgsm-squad:

@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-rust:
+  # bind mount example
+  linuxgsm-rust-bind:
     image: ghcr.io/gameservermanagers/gameserver:rust
     container_name: rustserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-rust-volume:
+    image: ghcr.io/gameservermanagers/gameserver:rust
+    container_name: rustserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-rust:/data
+    ports:
+
+volumes:
+  linuxgsm-rust:

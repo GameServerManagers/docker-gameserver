@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-coduo:
+  # bind mount example
+  linuxgsm-coduo-bind:
     image: ghcr.io/gameservermanagers/gameserver:coduo
     container_name: coduoserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-coduo-volume:
+    image: ghcr.io/gameservermanagers/gameserver:coduo
+    container_name: coduoserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-coduo:/data
+    ports:
+
+volumes:
+  linuxgsm-coduo:

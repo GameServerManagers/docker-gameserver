@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-doi:
+  # bind mount example
+  linuxgsm-doi-bind:
     image: ghcr.io/gameservermanagers/gameserver:doi
     container_name: doiserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-doi-volume:
+    image: ghcr.io/gameservermanagers/gameserver:doi
+    container_name: doiserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-doi:/data
+    ports:
+
+volumes:
+  linuxgsm-doi:

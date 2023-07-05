@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-ets2:
+  # bind mount example
+  linuxgsm-ets2-bind:
     image: ghcr.io/gameservermanagers/gameserver:ets2
     container_name: ets2server
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-ets2-volume:
+    image: ghcr.io/gameservermanagers/gameserver:ets2
+    container_name: ets2server
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-ets2:/data
+    ports:
+
+volumes:
+  linuxgsm-ets2:

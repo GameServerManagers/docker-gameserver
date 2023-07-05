@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-col:
+  # bind mount example
+  linuxgsm-col-bind:
     image: ghcr.io/gameservermanagers/gameserver:col
     container_name: colserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-col-volume:
+    image: ghcr.io/gameservermanagers/gameserver:col
+    container_name: colserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-col:/data
+    ports:
+
+volumes:
+  linuxgsm-col:

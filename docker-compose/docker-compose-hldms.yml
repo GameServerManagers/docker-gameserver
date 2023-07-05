@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-hldms:
+  # bind mount example
+  linuxgsm-hldms-bind:
     image: ghcr.io/gameservermanagers/gameserver:hldms
     container_name: hldmsserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-hldms-volume:
+    image: ghcr.io/gameservermanagers/gameserver:hldms
+    container_name: hldmsserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-hldms:/data
+    ports:
+
+volumes:
+  linuxgsm-hldms:

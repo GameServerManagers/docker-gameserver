@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-vpmc:
+  # bind mount example
+  linuxgsm-vpmc-bind:
     image: ghcr.io/gameservermanagers/gameserver:vpmc
     container_name: vpmcserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-vpmc-volume:
+    image: ghcr.io/gameservermanagers/gameserver:vpmc
+    container_name: vpmcserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-vpmc:/data
+    ports:
+
+volumes:
+  linuxgsm-vpmc:

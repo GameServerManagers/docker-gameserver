@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-qw:
+  # bind mount example
+  linuxgsm-qw-bind:
     image: ghcr.io/gameservermanagers/gameserver:qw
     container_name: qwserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-qw-volume:
+    image: ghcr.io/gameservermanagers/gameserver:qw
+    container_name: qwserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-qw:/data
+    ports:
+
+volumes:
+  linuxgsm-qw:

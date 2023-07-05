@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-nd:
+  # bind mount example
+  linuxgsm-nd-bind:
     image: ghcr.io/gameservermanagers/gameserver:nd
     container_name: ndserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-nd-volume:
+    image: ghcr.io/gameservermanagers/gameserver:nd
+    container_name: ndserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-nd:/data
+    ports:
+
+volumes:
+  linuxgsm-nd:

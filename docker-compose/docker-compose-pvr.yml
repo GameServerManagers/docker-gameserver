@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-pvr:
+  # bind mount example
+  linuxgsm-pvr-bind:
     image: ghcr.io/gameservermanagers/gameserver:pvr
     container_name: pvrserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-pvr-volume:
+    image: ghcr.io/gameservermanagers/gameserver:pvr
+    container_name: pvrserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-pvr:/data
+    ports:
+
+volumes:
+  linuxgsm-pvr:

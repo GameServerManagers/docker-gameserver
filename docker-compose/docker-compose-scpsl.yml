@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-scpsl:
+  # bind mount example
+  linuxgsm-scpsl-bind:
     image: ghcr.io/gameservermanagers/gameserver:scpsl
     container_name: scpslserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-scpsl-volume:
+    image: ghcr.io/gameservermanagers/gameserver:scpsl
+    container_name: scpslserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-scpsl:/data
+    ports:
+
+volumes:
+  linuxgsm-scpsl:

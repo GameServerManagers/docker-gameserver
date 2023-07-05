@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-pvkii:
+  # bind mount example
+  linuxgsm-pvkii-bind:
     image: ghcr.io/gameservermanagers/gameserver:pvkii
     container_name: pvkiiserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-pvkii-volume:
+    image: ghcr.io/gameservermanagers/gameserver:pvkii
+    container_name: pvkiiserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-pvkii:/data
+    ports:
+
+volumes:
+  linuxgsm-pvkii:

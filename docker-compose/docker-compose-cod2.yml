@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-cod2:
+  # bind mount example
+  linuxgsm-cod2-bind:
     image: ghcr.io/gameservermanagers/gameserver:cod2
     container_name: cod2server
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-cod2-volume:
+    image: ghcr.io/gameservermanagers/gameserver:cod2
+    container_name: cod2server
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-cod2:/data
+    ports:
+
+volumes:
+  linuxgsm-cod2:

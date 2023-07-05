@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-eco:
+  # bind mount example
+  linuxgsm-eco-bind:
     image: ghcr.io/gameservermanagers/gameserver:eco
     container_name: ecoserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-eco-volume:
+    image: ghcr.io/gameservermanagers/gameserver:eco
+    container_name: ecoserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-eco:/data
+    ports:
+
+volumes:
+  linuxgsm-eco:

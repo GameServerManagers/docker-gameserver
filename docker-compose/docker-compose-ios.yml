@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-ios:
+  # bind mount example
+  linuxgsm-ios-bind:
     image: ghcr.io/gameservermanagers/gameserver:ios
     container_name: iosserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-ios-volume:
+    image: ghcr.io/gameservermanagers/gameserver:ios
+    container_name: iosserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-ios:/data
+    ports:
+
+volumes:
+  linuxgsm-ios:

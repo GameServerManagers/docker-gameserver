@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-l4d:
+  # bind mount example
+  linuxgsm-l4d-bind:
     image: ghcr.io/gameservermanagers/gameserver:l4d
     container_name: l4dserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-l4d-volume:
+    image: ghcr.io/gameservermanagers/gameserver:l4d
+    container_name: l4dserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-l4d:/data
+    ports:
+
+volumes:
+  linuxgsm-l4d:

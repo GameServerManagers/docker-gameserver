@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-dys:
+  # bind mount example
+  linuxgsm-dys-bind:
     image: ghcr.io/gameservermanagers/gameserver:dys
     container_name: dysserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-dys-volume:
+    image: ghcr.io/gameservermanagers/gameserver:dys
+    container_name: dysserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-dys:/data
+    ports:
+
+volumes:
+  linuxgsm-dys:

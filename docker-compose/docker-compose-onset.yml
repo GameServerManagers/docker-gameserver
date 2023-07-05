@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-onset:
+  # bind mount example
+  linuxgsm-onset-bind:
     image: ghcr.io/gameservermanagers/gameserver:onset
     container_name: onsetserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-onset-volume:
+    image: ghcr.io/gameservermanagers/gameserver:onset
+    container_name: onsetserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-onset:/data
+    ports:
+
+volumes:
+  linuxgsm-onset:

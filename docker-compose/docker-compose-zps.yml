@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-zps:
+  # bind mount example
+  linuxgsm-zps-bind:
     image: ghcr.io/gameservermanagers/gameserver:zps
     container_name: zpsserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-zps-volume:
+    image: ghcr.io/gameservermanagers/gameserver:zps
+    container_name: zpsserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-zps:/data
+    ports:
+
+volumes:
+  linuxgsm-zps:

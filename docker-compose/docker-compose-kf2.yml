@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-kf2:
+  # bind mount example
+  linuxgsm-kf2-bind:
     image: ghcr.io/gameservermanagers/gameserver:kf2
     container_name: kf2server
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-kf2-volume:
+    image: ghcr.io/gameservermanagers/gameserver:kf2
+    container_name: kf2server
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-kf2:/data
+    ports:
+
+volumes:
+  linuxgsm-kf2:

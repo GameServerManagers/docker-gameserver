@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-mcb:
+  # bind mount example
+  linuxgsm-mcb-bind:
     image: ghcr.io/gameservermanagers/gameserver:mcb
     container_name: mcbserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-mcb-volume:
+    image: ghcr.io/gameservermanagers/gameserver:mcb
+    container_name: mcbserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-mcb:/data
+    ports:
+
+volumes:
+  linuxgsm-mcb:

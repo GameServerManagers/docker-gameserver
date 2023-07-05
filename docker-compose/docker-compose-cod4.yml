@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-cod4:
+  # bind mount example
+  linuxgsm-cod4-bind:
     image: ghcr.io/gameservermanagers/gameserver:cod4
     container_name: cod4server
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-cod4-volume:
+    image: ghcr.io/gameservermanagers/gameserver:cod4
+    container_name: cod4server
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-cod4:/data
+    ports:
+
+volumes:
+  linuxgsm-cod4:

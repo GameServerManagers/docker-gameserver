@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-fctr:
+  # bind mount example
+  linuxgsm-fctr-bind:
     image: ghcr.io/gameservermanagers/gameserver:fctr
     container_name: fctrserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-fctr-volume:
+    image: ghcr.io/gameservermanagers/gameserver:fctr
+    container_name: fctrserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-fctr:/data
+    ports:
+
+volumes:
+  linuxgsm-fctr:

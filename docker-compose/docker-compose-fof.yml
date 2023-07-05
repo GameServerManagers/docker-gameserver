@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-fof:
+  # bind mount example
+  linuxgsm-fof-bind:
     image: ghcr.io/gameservermanagers/gameserver:fof
     container_name: fofserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-fof-volume:
+    image: ghcr.io/gameservermanagers/gameserver:fof
+    container_name: fofserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-fof:/data
+    ports:
+
+volumes:
+  linuxgsm-fof:

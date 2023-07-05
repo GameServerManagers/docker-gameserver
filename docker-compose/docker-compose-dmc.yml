@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-dmc:
+  # bind mount example
+  linuxgsm-dmc-bind:
     image: ghcr.io/gameservermanagers/gameserver:dmc
     container_name: dmcserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-dmc-volume:
+    image: ghcr.io/gameservermanagers/gameserver:dmc
+    container_name: dmcserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-dmc:/data
+    ports:
+
+volumes:
+  linuxgsm-dmc:

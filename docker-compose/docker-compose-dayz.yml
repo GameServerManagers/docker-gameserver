@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-dayz:
+  # bind mount example
+  linuxgsm-dayz-bind:
     image: ghcr.io/gameservermanagers/gameserver:dayz
     container_name: dayzserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-dayz-volume:
+    image: ghcr.io/gameservermanagers/gameserver:dayz
+    container_name: dayzserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-dayz:/data
+    ports:
+
+volumes:
+  linuxgsm-dayz:

@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-dods:
+  # bind mount example
+  linuxgsm-dods-bind:
     image: ghcr.io/gameservermanagers/gameserver:dods
     container_name: dodsserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-dods-volume:
+    image: ghcr.io/gameservermanagers/gameserver:dods
+    container_name: dodsserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-dods:/data
+    ports:
+
+volumes:
+  linuxgsm-dods:

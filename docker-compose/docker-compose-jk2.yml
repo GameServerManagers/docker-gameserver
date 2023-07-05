@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-jk2:
+  # bind mount example
+  linuxgsm-jk2-bind:
     image: ghcr.io/gameservermanagers/gameserver:jk2
     container_name: jk2server
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-jk2-volume:
+    image: ghcr.io/gameservermanagers/gameserver:jk2
+    container_name: jk2server
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-jk2:/data
+    ports:
+
+volumes:
+  linuxgsm-jk2:

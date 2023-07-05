@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-ut:
+  # bind mount example
+  linuxgsm-ut-bind:
     image: ghcr.io/gameservermanagers/gameserver:ut
     container_name: utserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-ut-volume:
+    image: ghcr.io/gameservermanagers/gameserver:ut
+    container_name: utserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-ut:/data
+    ports:
+
+volumes:
+  linuxgsm-ut:

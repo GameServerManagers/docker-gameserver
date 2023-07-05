@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-inss:
+  # bind mount example
+  linuxgsm-inss-bind:
     image: ghcr.io/gameservermanagers/gameserver:inss
     container_name: inssserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-inss-volume:
+    image: ghcr.io/gameservermanagers/gameserver:inss
+    container_name: inssserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-inss:/data
+    ports:
+
+volumes:
+  linuxgsm-inss:

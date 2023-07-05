@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-opfor:
+  # bind mount example
+  linuxgsm-opfor-bind:
     image: ghcr.io/gameservermanagers/gameserver:opfor
     container_name: opforserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-opfor-volume:
+    image: ghcr.io/gameservermanagers/gameserver:opfor
+    container_name: opforserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-opfor:/data
+    ports:
+
+volumes:
+  linuxgsm-opfor:

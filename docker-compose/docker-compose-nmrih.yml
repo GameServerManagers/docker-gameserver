@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-nmrih:
+  # bind mount example
+  linuxgsm-nmrih-bind:
     image: ghcr.io/gameservermanagers/gameserver:nmrih
     container_name: nmrihserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-nmrih-volume:
+    image: ghcr.io/gameservermanagers/gameserver:nmrih
+    container_name: nmrihserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-nmrih:/data
+    ports:
+
+volumes:
+  linuxgsm-nmrih:

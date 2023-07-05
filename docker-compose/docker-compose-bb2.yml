@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-bb2:
+  # bind mount example
+  linuxgsm-bb2-bind:
     image: ghcr.io/gameservermanagers/gameserver:bb2
     container_name: bb2server
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-bb2-volume:
+    image: ghcr.io/gameservermanagers/gameserver:bb2
+    container_name: bb2server
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-bb2:/data
+    ports:
+
+volumes:
+  linuxgsm-bb2:

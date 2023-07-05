@@ -1,9 +1,22 @@
 version: "3.8"
 services:
-  linuxgsm-bt:
+  # bind mount example
+  linuxgsm-bt-bind:
     image: ghcr.io/gameservermanagers/gameserver:bt
     container_name: btserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
     ports:
+
+  # volume example
+  linuxgsm-bt-volume:
+    image: ghcr.io/gameservermanagers/gameserver:bt
+    container_name: btserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-bt:/data
+    ports:
+
+volumes:
+  linuxgsm-bt:
