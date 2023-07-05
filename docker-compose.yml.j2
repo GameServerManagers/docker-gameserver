@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  linuxgsm-{{ shortname }}:
+    image: ghcr.io/gameservermanagers/gameserver:{{ shortname }}
+    container_name: {{ shortname }}server
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/etlserver:/data
+    ports:

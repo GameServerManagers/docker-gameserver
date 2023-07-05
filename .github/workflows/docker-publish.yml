@@ -40,6 +40,26 @@ jobs:
           echo "${shortnamearray}"
           echo -n "matrix=${shortnamearray}" >> $GITHUB_OUTPUT
 
+  generate-docker-compose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Generate python
+        uses: actions/setup-python@v4
+        with:
+          cache: "pip"
+      - run: pip3 install -r requirements.txt
+
+      - name: Generate docker-compose.yml files with generate-docker-compose.sh
+        run: ./generate-docker-compose.sh
+
+      - name: Push commit
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: "Generate docker-compose.yml files"
+          add: "docker-compose/docker-compose*"
+
   docker-publish:
     needs: generate-dockerfiles
     runs-on: ubuntu-latest
