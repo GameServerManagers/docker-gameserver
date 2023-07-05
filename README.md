@@ -15,12 +15,13 @@ LinuxGSM is a command-line tool for quick, simple deployment and management of L
 
 ## Tags
 
-[Tags List](https://hub.docker.com/r/gameservermanagers/gameserver/tags)
+For a list of available game servers visit [linuxgsm.com](https://linuxgsm.com) or the [serverlist.csv](https://github.com/GameServerManagers/LinuxGSM/blob/master/lgsm/data/serverlist.csv). For all tags see the [tags list](https://hub.docker.com/r/gameservermanagers/gameserver/tags) on Docker Hub.
 
 ## Usage
 
 ### docker-compose
-Below is an example docker-compose for csgoserver. Ports will vary depending upon game server.
+Below is an example docker-compose for csgoserver. Ports will vary depending upon game server. More docker-compose examples are available [here](https://github.com/GameServerManagers/docker-gameserver/tree/main/docker-compose).
+
 ```
 version: '3.4'
 services:
