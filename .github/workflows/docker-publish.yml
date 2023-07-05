@@ -89,3 +89,29 @@ jobs:
           package-type: container
           min-versions-to-keep: 1
           delete-only-untagged-versions: true
+
+  package-cleanup-2:
+    name: Cleanup Old GitHub Packages
+    needs: package-cleanup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete Package Versions
+        uses: actions/delete-package-versions@v4
+        with:
+          package-name: gameserver
+          package-type: container
+          min-versions-to-keep: 1
+          delete-only-untagged-versions: true
+
+  package-cleanup-3:
+    name: Cleanup Old GitHub Packages
+    needs: package-cleanup-2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete Package Versions
+        uses: actions/delete-package-versions@v4
+        with:
+          package-name: gameserver
+          package-type: container
+          min-versions-to-keep: 1
+          delete-only-untagged-versions: true
