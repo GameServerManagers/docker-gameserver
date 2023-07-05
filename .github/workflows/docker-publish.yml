@@ -70,6 +70,10 @@ jobs:
     strategy:
       matrix: ${{ fromJSON(needs.generate-dockerfiles.outputs.matrix) }}
     steps:
+      - name: Random Wait
+        uses: m3y/random-wait-action@v1
+        with:
+          max-wait-time: 15
       - name: Checkout
         uses: actions/checkout@v3
       - name: Set up QEMU
