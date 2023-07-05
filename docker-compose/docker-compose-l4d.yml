@@ -1,8 +1,8 @@
 version: "3.8"
 services:
-  linuxgsm-ac:
-    image: ghcr.io/gameservermanagers/gameserver:ac
-    container_name: acserver
+  linuxgsm-l4d:
+    image: ghcr.io/gameservermanagers/gameserver:l4d
+    container_name: l4dserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data

@@ -1,8 +1,8 @@
 version: "3.8"
 services:
-  linuxgsm-ac:
-    image: ghcr.io/gameservermanagers/gameserver:ac
-    container_name: acserver
+  linuxgsm-cd:
+    image: ghcr.io/gameservermanagers/gameserver:cd
+    container_name: cdserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data

@@ -1,8 +1,8 @@
 version: "3.8"
 services:
-  linuxgsm-ac:
-    image: ghcr.io/gameservermanagers/gameserver:ac
-    container_name: acserver
+  linuxgsm-gmod:
+    image: ghcr.io/gameservermanagers/gameserver:gmod
+    container_name: gmodserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data

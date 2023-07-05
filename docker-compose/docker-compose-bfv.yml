@@ -1,8 +1,8 @@
 version: "3.8"
 services:
-  linuxgsm-ac:
-    image: ghcr.io/gameservermanagers/gameserver:ac
-    container_name: acserver
+  linuxgsm-bfv:
+    image: ghcr.io/gameservermanagers/gameserver:bfv
+    container_name: bfvserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data

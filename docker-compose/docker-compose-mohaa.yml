@@ -1,8 +1,8 @@
 version: "3.8"
 services:
-  linuxgsm-ac:
-    image: ghcr.io/gameservermanagers/gameserver:ac
-    container_name: acserver
+  linuxgsm-mohaa:
+    image: ghcr.io/gameservermanagers/gameserver:mohaa
+    container_name: mohaaserver
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/etlserver:/data
