@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-bd-bind:
-    image: ghcr.io/gameservermanagers/gameserver:bd
+    image: gameservermanagers/gameserver:bd
+    # image: ghcr.io/gameservermanagers/gameserver:bd
     container_name: bdserver
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-bd-volume:
-    image: ghcr.io/gameservermanagers/gameserver:bd
+    image: gameservermanagers/gameserver:bd
+    # image: ghcr.io/gameservermanagers/gameserver:bd
     container_name: bdserver
     restart: unless-stopped
     volumes:

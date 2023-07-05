@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-dys-bind:
-    image: ghcr.io/gameservermanagers/gameserver:dys
+    image: gameservermanagers/gameserver:dys
+    # image: ghcr.io/gameservermanagers/gameserver:dys
     container_name: dysserver
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-dys-volume:
-    image: ghcr.io/gameservermanagers/gameserver:dys
+    image: gameservermanagers/gameserver:dys
+    # image: ghcr.io/gameservermanagers/gameserver:dys
     container_name: dysserver
     restart: unless-stopped
     volumes:

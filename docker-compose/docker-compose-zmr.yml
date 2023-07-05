@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-zmr-bind:
-    image: ghcr.io/gameservermanagers/gameserver:zmr
+    image: gameservermanagers/gameserver:zmr
+    # image: ghcr.io/gameservermanagers/gameserver:zmr
     container_name: zmrserver
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-zmr-volume:
-    image: ghcr.io/gameservermanagers/gameserver:zmr
+    image: gameservermanagers/gameserver:zmr
+    # image: ghcr.io/gameservermanagers/gameserver:zmr
     container_name: zmrserver
     restart: unless-stopped
     volumes:

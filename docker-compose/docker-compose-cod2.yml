@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-cod2-bind:
-    image: ghcr.io/gameservermanagers/gameserver:cod2
+    image: gameservermanagers/gameserver:cod2
+    # image: ghcr.io/gameservermanagers/gameserver:cod2
     container_name: cod2server
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-cod2-volume:
-    image: ghcr.io/gameservermanagers/gameserver:cod2
+    image: gameservermanagers/gameserver:cod2
+    # image: ghcr.io/gameservermanagers/gameserver:cod2
     container_name: cod2server
     restart: unless-stopped
     volumes:

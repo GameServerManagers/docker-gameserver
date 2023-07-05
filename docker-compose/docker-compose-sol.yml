@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-sol-bind:
-    image: ghcr.io/gameservermanagers/gameserver:sol
+    image: gameservermanagers/gameserver:sol
+    # image: ghcr.io/gameservermanagers/gameserver:sol
     container_name: solserver
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-sol-volume:
-    image: ghcr.io/gameservermanagers/gameserver:sol
+    image: gameservermanagers/gameserver:sol
+    # image: ghcr.io/gameservermanagers/gameserver:sol
     container_name: solserver
     restart: unless-stopped
     volumes:

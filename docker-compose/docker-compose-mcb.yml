@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-mcb-bind:
-    image: ghcr.io/gameservermanagers/gameserver:mcb
+    image: gameservermanagers/gameserver:mcb
+    # image: ghcr.io/gameservermanagers/gameserver:mcb
     container_name: mcbserver
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-mcb-volume:
-    image: ghcr.io/gameservermanagers/gameserver:mcb
+    image: gameservermanagers/gameserver:mcb
+    # image: ghcr.io/gameservermanagers/gameserver:mcb
     container_name: mcbserver
     restart: unless-stopped
     volumes:

@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-sdtd-bind:
-    image: ghcr.io/gameservermanagers/gameserver:sdtd
+    image: gameservermanagers/gameserver:sdtd
+    # image: ghcr.io/gameservermanagers/gameserver:sdtd
     container_name: sdtdserver
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-sdtd-volume:
-    image: ghcr.io/gameservermanagers/gameserver:sdtd
+    image: gameservermanagers/gameserver:sdtd
+    # image: ghcr.io/gameservermanagers/gameserver:sdtd
     container_name: sdtdserver
     restart: unless-stopped
     volumes:

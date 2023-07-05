@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-vpmc-bind:
-    image: ghcr.io/gameservermanagers/gameserver:vpmc
+    image: gameservermanagers/gameserver:vpmc
+    # image: ghcr.io/gameservermanagers/gameserver:vpmc
     container_name: vpmcserver
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-vpmc-volume:
-    image: ghcr.io/gameservermanagers/gameserver:vpmc
+    image: gameservermanagers/gameserver:vpmc
+    # image: ghcr.io/gameservermanagers/gameserver:vpmc
     container_name: vpmcserver
     restart: unless-stopped
     volumes:

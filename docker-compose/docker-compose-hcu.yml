@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-hcu-bind:
-    image: ghcr.io/gameservermanagers/gameserver:hcu
+    image: gameservermanagers/gameserver:hcu
+    # image: ghcr.io/gameservermanagers/gameserver:hcu
     container_name: hcuserver
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-hcu-volume:
-    image: ghcr.io/gameservermanagers/gameserver:hcu
+    image: gameservermanagers/gameserver:hcu
+    # image: ghcr.io/gameservermanagers/gameserver:hcu
     container_name: hcuserver
     restart: unless-stopped
     volumes:

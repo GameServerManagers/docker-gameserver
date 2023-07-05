@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-pz-bind:
-    image: ghcr.io/gameservermanagers/gameserver:pz
+    image: gameservermanagers/gameserver:pz
+    # image: ghcr.io/gameservermanagers/gameserver:pz
     container_name: pzserver
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-pz-volume:
-    image: ghcr.io/gameservermanagers/gameserver:pz
+    image: gameservermanagers/gameserver:pz
+    # image: ghcr.io/gameservermanagers/gameserver:pz
     container_name: pzserver
     restart: unless-stopped
     volumes:

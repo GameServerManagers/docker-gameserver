@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-sf-bind:
-    image: ghcr.io/gameservermanagers/gameserver:sf
+    image: gameservermanagers/gameserver:sf
+    # image: ghcr.io/gameservermanagers/gameserver:sf
     container_name: sfserver
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-sf-volume:
-    image: ghcr.io/gameservermanagers/gameserver:sf
+    image: gameservermanagers/gameserver:sf
+    # image: ghcr.io/gameservermanagers/gameserver:sf
     container_name: sfserver
     restart: unless-stopped
     volumes:

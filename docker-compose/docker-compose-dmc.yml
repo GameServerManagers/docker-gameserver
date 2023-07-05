@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-dmc-bind:
-    image: ghcr.io/gameservermanagers/gameserver:dmc
+    image: gameservermanagers/gameserver:dmc
+    # image: ghcr.io/gameservermanagers/gameserver:dmc
     container_name: dmcserver
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-dmc-volume:
-    image: ghcr.io/gameservermanagers/gameserver:dmc
+    image: gameservermanagers/gameserver:dmc
+    # image: ghcr.io/gameservermanagers/gameserver:dmc
     container_name: dmcserver
     restart: unless-stopped
     volumes:

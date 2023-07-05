@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-squad-bind:
-    image: ghcr.io/gameservermanagers/gameserver:squad
+    image: gameservermanagers/gameserver:squad
+    # image: ghcr.io/gameservermanagers/gameserver:squad
     container_name: squadserver
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-squad-volume:
-    image: ghcr.io/gameservermanagers/gameserver:squad
+    image: gameservermanagers/gameserver:squad
+    # image: ghcr.io/gameservermanagers/gameserver:squad
     container_name: squadserver
     restart: unless-stopped
     volumes:

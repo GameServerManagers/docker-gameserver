@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-wet-bind:
-    image: ghcr.io/gameservermanagers/gameserver:wet
+    image: gameservermanagers/gameserver:wet
+    # image: ghcr.io/gameservermanagers/gameserver:wet
     container_name: wetserver
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-wet-volume:
-    image: ghcr.io/gameservermanagers/gameserver:wet
+    image: gameservermanagers/gameserver:wet
+    # image: ghcr.io/gameservermanagers/gameserver:wet
     container_name: wetserver
     restart: unless-stopped
     volumes:

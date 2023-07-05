@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-ck-bind:
-    image: ghcr.io/gameservermanagers/gameserver:ck
+    image: gameservermanagers/gameserver:ck
+    # image: ghcr.io/gameservermanagers/gameserver:ck
     container_name: ckserver
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-ck-volume:
-    image: ghcr.io/gameservermanagers/gameserver:ck
+    image: gameservermanagers/gameserver:ck
+    # image: ghcr.io/gameservermanagers/gameserver:ck
     container_name: ckserver
     restart: unless-stopped
     volumes:

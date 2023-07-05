@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-ts3-bind:
-    image: ghcr.io/gameservermanagers/gameserver:ts3
+    image: gameservermanagers/gameserver:ts3
+    # image: ghcr.io/gameservermanagers/gameserver:ts3
     container_name: ts3server
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-ts3-volume:
-    image: ghcr.io/gameservermanagers/gameserver:ts3
+    image: gameservermanagers/gameserver:ts3
+    # image: ghcr.io/gameservermanagers/gameserver:ts3
     container_name: ts3server
     restart: unless-stopped
     volumes:

@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-cd-bind:
-    image: ghcr.io/gameservermanagers/gameserver:cd
+    image: gameservermanagers/gameserver:cd
+    # image: ghcr.io/gameservermanagers/gameserver:cd
     container_name: cdserver
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-cd-volume:
-    image: ghcr.io/gameservermanagers/gameserver:cd
+    image: gameservermanagers/gameserver:cd
+    # image: ghcr.io/gameservermanagers/gameserver:cd
     container_name: cdserver
     restart: unless-stopped
     volumes:

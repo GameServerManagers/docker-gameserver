@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-stn-bind:
-    image: ghcr.io/gameservermanagers/gameserver:stn
+    image: gameservermanagers/gameserver:stn
+    # image: ghcr.io/gameservermanagers/gameserver:stn
     container_name: stnserver
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-stn-volume:
-    image: ghcr.io/gameservermanagers/gameserver:stn
+    image: gameservermanagers/gameserver:stn
+    # image: ghcr.io/gameservermanagers/gameserver:stn
     container_name: stnserver
     restart: unless-stopped
     volumes:

@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-pvr-bind:
-    image: ghcr.io/gameservermanagers/gameserver:pvr
+    image: gameservermanagers/gameserver:pvr
+    # image: ghcr.io/gameservermanagers/gameserver:pvr
     container_name: pvrserver
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-pvr-volume:
-    image: ghcr.io/gameservermanagers/gameserver:pvr
+    image: gameservermanagers/gameserver:pvr
+    # image: ghcr.io/gameservermanagers/gameserver:pvr
     container_name: pvrserver
     restart: unless-stopped
     volumes:

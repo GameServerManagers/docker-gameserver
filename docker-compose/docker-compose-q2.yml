@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-q2-bind:
-    image: ghcr.io/gameservermanagers/gameserver:q2
+    image: gameservermanagers/gameserver:q2
+    # image: ghcr.io/gameservermanagers/gameserver:q2
     container_name: q2server
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-q2-volume:
-    image: ghcr.io/gameservermanagers/gameserver:q2
+    image: gameservermanagers/gameserver:q2
+    # image: ghcr.io/gameservermanagers/gameserver:q2
     container_name: q2server
     restart: unless-stopped
     volumes:

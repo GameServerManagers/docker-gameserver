@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-ql-bind:
-    image: ghcr.io/gameservermanagers/gameserver:ql
+    image: gameservermanagers/gameserver:ql
+    # image: ghcr.io/gameservermanagers/gameserver:ql
     container_name: qlserver
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-ql-volume:
-    image: ghcr.io/gameservermanagers/gameserver:ql
+    image: gameservermanagers/gameserver:ql
+    # image: ghcr.io/gameservermanagers/gameserver:ql
     container_name: qlserver
     restart: unless-stopped
     volumes:

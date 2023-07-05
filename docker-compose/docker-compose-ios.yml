@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-ios-bind:
-    image: ghcr.io/gameservermanagers/gameserver:ios
+    image: gameservermanagers/gameserver:ios
+    # image: ghcr.io/gameservermanagers/gameserver:ios
     container_name: iosserver
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-ios-volume:
-    image: ghcr.io/gameservermanagers/gameserver:ios
+    image: gameservermanagers/gameserver:ios
+    # image: ghcr.io/gameservermanagers/gameserver:ios
     container_name: iosserver
     restart: unless-stopped
     volumes:

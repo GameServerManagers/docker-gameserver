@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-tf2-bind:
-    image: ghcr.io/gameservermanagers/gameserver:tf2
+    image: gameservermanagers/gameserver:tf2
+    # image: ghcr.io/gameservermanagers/gameserver:tf2
     container_name: tf2server
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-tf2-volume:
-    image: ghcr.io/gameservermanagers/gameserver:tf2
+    image: gameservermanagers/gameserver:tf2
+    # image: ghcr.io/gameservermanagers/gameserver:tf2
     container_name: tf2server
     restart: unless-stopped
     volumes:

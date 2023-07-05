@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-btl-bind:
-    image: ghcr.io/gameservermanagers/gameserver:btl
+    image: gameservermanagers/gameserver:btl
+    # image: ghcr.io/gameservermanagers/gameserver:btl
     container_name: btlserver
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-btl-volume:
-    image: ghcr.io/gameservermanagers/gameserver:btl
+    image: gameservermanagers/gameserver:btl
+    # image: ghcr.io/gameservermanagers/gameserver:btl
     container_name: btlserver
     restart: unless-stopped
     volumes:

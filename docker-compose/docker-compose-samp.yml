@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-samp-bind:
-    image: ghcr.io/gameservermanagers/gameserver:samp
+    image: gameservermanagers/gameserver:samp
+    # image: ghcr.io/gameservermanagers/gameserver:samp
     container_name: sampserver
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-samp-volume:
-    image: ghcr.io/gameservermanagers/gameserver:samp
+    image: gameservermanagers/gameserver:samp
+    # image: ghcr.io/gameservermanagers/gameserver:samp
     container_name: sampserver
     restart: unless-stopped
     volumes:

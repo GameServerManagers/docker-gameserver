@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-onset-bind:
-    image: ghcr.io/gameservermanagers/gameserver:onset
+    image: gameservermanagers/gameserver:onset
+    # image: ghcr.io/gameservermanagers/gameserver:onset
     container_name: onsetserver
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-onset-volume:
-    image: ghcr.io/gameservermanagers/gameserver:onset
+    image: gameservermanagers/gameserver:onset
+    # image: ghcr.io/gameservermanagers/gameserver:onset
     container_name: onsetserver
     restart: unless-stopped
     volumes:

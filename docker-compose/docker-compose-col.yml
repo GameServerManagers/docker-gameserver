@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-col-bind:
-    image: ghcr.io/gameservermanagers/gameserver:col
+    image: gameservermanagers/gameserver:col
+    # image: ghcr.io/gameservermanagers/gameserver:col
     container_name: colserver
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-col-volume:
-    image: ghcr.io/gameservermanagers/gameserver:col
+    image: gameservermanagers/gameserver:col
+    # image: ghcr.io/gameservermanagers/gameserver:col
     container_name: colserver
     restart: unless-stopped
     volumes:

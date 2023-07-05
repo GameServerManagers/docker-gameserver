@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-av-bind:
-    image: ghcr.io/gameservermanagers/gameserver:av
+    image: gameservermanagers/gameserver:av
+    # image: ghcr.io/gameservermanagers/gameserver:av
     container_name: avserver
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-av-volume:
-    image: ghcr.io/gameservermanagers/gameserver:av
+    image: gameservermanagers/gameserver:av
+    # image: ghcr.io/gameservermanagers/gameserver:av
     container_name: avserver
     restart: unless-stopped
     volumes:

@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-fof-bind:
-    image: ghcr.io/gameservermanagers/gameserver:fof
+    image: gameservermanagers/gameserver:fof
+    # image: ghcr.io/gameservermanagers/gameserver:fof
     container_name: fofserver
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-fof-volume:
-    image: ghcr.io/gameservermanagers/gameserver:fof
+    image: gameservermanagers/gameserver:fof
+    # image: ghcr.io/gameservermanagers/gameserver:fof
     container_name: fofserver
     restart: unless-stopped
     volumes:

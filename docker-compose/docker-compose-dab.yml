@@ -2,7 +2,8 @@ version: "3.8"
 services:
   # bind mount example
   linuxgsm-dab-bind:
-    image: ghcr.io/gameservermanagers/gameserver:dab
+    image: gameservermanagers/gameserver:dab
+    # image: ghcr.io/gameservermanagers/gameserver:dab
     container_name: dabserver
     restart: unless-stopped
     volumes:
@@ -11,7 +12,8 @@ services:
 
   # volume example
   linuxgsm-dab-volume:
-    image: ghcr.io/gameservermanagers/gameserver:dab
+    image: gameservermanagers/gameserver:dab
+    # image: ghcr.io/gameservermanagers/gameserver:dab
     container_name: dabserver
     restart: unless-stopped
     volumes:
