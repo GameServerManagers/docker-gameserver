@@ -9,6 +9,8 @@ LABEL maintainer="LinuxGSM <me@danielgibbs.co.uk>"
 ARG SHORTNAME=wet
 ENV GAMESERVER=wetserver
 
+WORKDIR /app
+
 ## Auto install game server requirements
 RUN depshortname=$(curl --connect-timeout 10 -s https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/ubuntu-22.04.csv |awk -v shortname="wet" -F, '$1==shortname {$1=""; print $0}') \
   && if [ -n "${depshortname}" ]; then \
@@ -19,6 +21,8 @@ RUN depshortname=$(curl --connect-timeout 10 -s https://raw.githubusercontent.co
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*; \
   fi
+
+RUN ./linuxgsm.sh wetserver
 
 HEALTHCHECK --interval=1m --timeout=1m --start-period=2m --retries=1 CMD /app/entrypoint-healthcheck.sh || exit 1
 
