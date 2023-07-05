@@ -42,28 +42,27 @@ services:
 docker run -d \
   --name csgoserver \
   -v /path/to/csgoserver:/data \
-  -p 27015:27015/tcp \
-  -p 27015:27015/udp \
+  -p 27015:27015 \
   -p 27020:27020/udp \
   -p 27005:27005/udp \
   --restart unless-stopped \
   ghcr.io/gameservermanagers/gameserver:csgo
 ```
 ### First Run
-Edit the docker-compose.yml file changing image tag and container_name to your game server of choice. On first run linuxgsm will install your selected server and will start running. Once completed the game server details will be output.
+Edit the docker-compose.yml file changing the image tag and container_name to your game server of choice. On the first run, LinuxGSM will install your selected server and will start running. Once completed the game server details will be output.
 
 ### Game Server Ports
-Each game server has its own port requirements. Becuase of this you will need to configure the correct ports in your docker-compose after first run. The required ports are output once installation is completed and everytime the docker container is started.
+Each game server has its own port requirements. Because of this, you will need to configure the correct ports in your docker-compose after the first run. The required ports are output once the installation is completed and every time the docker container is started.
 
 > There are plans to automate this process in the future.
 
 ### Volumes
-volumes are required to save persistant data for your game server. The example above covers a basic csgoserver however some game servers save files in other places. Please check all the correct locations are mounted to remove the risk of loosing save data.
+volumes are required to save persistent data for your game server. The example above covers a basic csgoserver however some game servers save files in other places. Please check all the correct locations are mounted to remove the risk of losing save data.
 
-There are two types of persistant storage with docker, volumes and bind mounts and both will work with this container. For more information on the differences between the two please see the [docker documentation](https://docs.docker.com/storage/).
+There are two types of persistent storage with docker, volumes, and bind mounts and both will work with this container. For more information on the differences between the two please see the [docker documentation](https://docs.docker.com/storage/).
 
 ### Run LinuxGSM commands
 Commands can be run just like standard LinuxGSM using the docker exec command.
 ```
-docker exec -it --user linuxgsm linuxgsm-csgo ./csgoserver details
+docker exec -it --user linuxgsm csgoserver ./csgoserver details
 ```
