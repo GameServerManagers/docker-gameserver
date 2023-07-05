@@ -59,9 +59,13 @@ Each game server has its own port requirements. Because of this, you will need t
 > There are plans to automate this process in the future.
 
 ### Volumes
-volumes are required to save persistent data for your game server. The example above covers a basic csgoserver however some game servers save files in other places. Please check all the correct locations are mounted to remove the risk of losing save data.
-
 There are two types of persistent storage with docker, volumes, and bind mounts and both will work with this container. For more information on the differences between the two please see the [docker documentation](https://docs.docker.com/storage/).
+
+Some game servers save files in the game server, outside of the serverfiles directory and in other parts of the home directory. The `data` directory is the home directory for the LinuxGSM user and is where all game server files are stored. This directory should be mounted to a persistent storage location.
+
+### LinuxGSM User
+This container uses gosu to run gameservers as the `linuxgsm` user instead of root. If you are using a bind mount for the `data` directory you will need to ensure the permissions match.
+```
 
 ### Run LinuxGSM commands
 Commands can be run just like standard LinuxGSM using the docker exec command.
