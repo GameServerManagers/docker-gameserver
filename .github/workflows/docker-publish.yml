@@ -4,10 +4,11 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - "generate-dockerfiles.yml"
       - "generate-dockerfiles.sh"
+      - "generate-docker-compose.yml"
       - "requirements.txt"
       - "Dockerfile.j2"
+      - "docker-compose.yml.j2"
   schedule:
     - cron: "0 3 * * 6"
 
