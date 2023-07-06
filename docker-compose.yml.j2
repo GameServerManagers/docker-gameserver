@@ -7,7 +7,7 @@ services:
     container_name: {{ shortname }}server
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/{{ shortname }}server:/data
     ports:
 
   # volume example
