@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        
+
       - name: Generate python
         uses: actions/setup-python@v4
         with:
@@ -29,6 +29,14 @@ jobs:
 
       - name: Generate Dockerfile with generate-dockerfiles.sh
         run: ./generate-dockerfiles.sh
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          # Artifact name
+          name: Dockerfiles
+          # A file, directory or wildcard pattern that describes what to upload
+          path: dockerfiles
 
       - name: Push commit
         uses: EndBug/add-and-commit@v9
@@ -48,7 +56,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        
+
       - name: Setup python
         uses: actions/setup-python@v4
         with:
@@ -76,22 +84,33 @@ jobs:
         uses: m3y/random-wait-action@v1
         with:
           max-wait-time: 30
-          
+
       - name: Checkout
         uses: actions/checkout@v3
-        
+
+      - name: Remove old Dockerfiles
+        run: rm -rf dockerfiles
+
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v2.1.1
+        with:
+          # Artifact name
+          name: Dockerfiles
+          # Destination path
+          path: dockerfiles
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
-        
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2.8.0
-        
+
       - name: Login to DockerHub
         uses: docker/login-action@v2.2.0
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-          
+
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v2.2.0
         with:
