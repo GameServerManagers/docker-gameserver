@@ -7,7 +7,7 @@ services:
     container_name: jc3server
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/jc3server:/data
     ports:
 
   # volume example

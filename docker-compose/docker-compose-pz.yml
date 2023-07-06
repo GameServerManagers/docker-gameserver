@@ -7,7 +7,7 @@ services:
     container_name: pzserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/pzserver:/data
     ports:
 
   # volume example

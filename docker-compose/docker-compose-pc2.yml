@@ -7,7 +7,7 @@ services:
     container_name: pc2server
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/pc2server:/data
     ports:
 
   # volume example

@@ -7,7 +7,7 @@ services:
     container_name: ahlserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/ahlserver:/data
     ports:
 
   # volume example

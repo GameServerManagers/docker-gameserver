@@ -7,7 +7,7 @@ services:
     container_name: sampserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/sampserver:/data
     ports:
 
   # volume example

@@ -7,7 +7,7 @@ services:
     container_name: wurmserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/wurmserver:/data
     ports:
 
   # volume example

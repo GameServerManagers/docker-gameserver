@@ -7,7 +7,7 @@ services:
     container_name: l4d2server
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/l4d2server:/data
     ports:
 
   # volume example

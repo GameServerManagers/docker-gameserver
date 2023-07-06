@@ -7,7 +7,7 @@ services:
     container_name: iosserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/iosserver:/data
     ports:
 
   # volume example

@@ -7,7 +7,7 @@ services:
     container_name: dstserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/dstserver:/data
     ports:
 
   # volume example

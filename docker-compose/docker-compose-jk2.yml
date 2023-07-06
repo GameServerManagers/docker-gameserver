@@ -7,7 +7,7 @@ services:
     container_name: jk2server
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/jk2server:/data
     ports:
 
   # volume example

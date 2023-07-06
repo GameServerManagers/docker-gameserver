@@ -7,7 +7,7 @@ services:
     container_name: vsserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/vsserver:/data
     ports:
 
   # volume example

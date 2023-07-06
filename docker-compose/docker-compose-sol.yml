@@ -7,7 +7,7 @@ services:
     container_name: solserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/solserver:/data
     ports:
 
   # volume example

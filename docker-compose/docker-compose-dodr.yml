@@ -7,7 +7,7 @@ services:
     container_name: dodrserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/dodrserver:/data
     ports:
 
   # volume example

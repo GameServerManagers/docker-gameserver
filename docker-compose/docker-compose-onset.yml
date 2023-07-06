@@ -7,7 +7,7 @@ services:
     container_name: onsetserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/onsetserver:/data
     ports:
 
   # volume example

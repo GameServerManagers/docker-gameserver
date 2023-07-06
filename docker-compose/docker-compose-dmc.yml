@@ -7,7 +7,7 @@ services:
     container_name: dmcserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/dmcserver:/data
     ports:
 
   # volume example

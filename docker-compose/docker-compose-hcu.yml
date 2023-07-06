@@ -7,7 +7,7 @@ services:
     container_name: hcuserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/hcuserver:/data
     ports:
 
   # volume example

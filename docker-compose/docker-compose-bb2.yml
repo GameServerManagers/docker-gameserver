@@ -7,7 +7,7 @@ services:
     container_name: bb2server
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/bb2server:/data
     ports:
 
   # volume example

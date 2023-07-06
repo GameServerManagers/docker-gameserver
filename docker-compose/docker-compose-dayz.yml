@@ -7,7 +7,7 @@ services:
     container_name: dayzserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/dayzserver:/data
     ports:
 
   # volume example

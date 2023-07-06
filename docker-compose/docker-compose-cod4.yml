@@ -7,7 +7,7 @@ services:
     container_name: cod4server
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/cod4server:/data
     ports:
 
   # volume example

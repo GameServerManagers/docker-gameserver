@@ -7,7 +7,7 @@ services:
     container_name: hwserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/hwserver:/data
     ports:
 
   # volume example

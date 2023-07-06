@@ -7,7 +7,7 @@ services:
     container_name: sfcserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/sfcserver:/data
     ports:
 
   # volume example

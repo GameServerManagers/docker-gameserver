@@ -7,7 +7,7 @@ services:
     container_name: emserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/emserver:/data
     ports:
 
   # volume example

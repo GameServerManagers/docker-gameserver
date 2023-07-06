@@ -7,7 +7,7 @@ services:
     container_name: csczserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/csczserver:/data
     ports:
 
   # volume example

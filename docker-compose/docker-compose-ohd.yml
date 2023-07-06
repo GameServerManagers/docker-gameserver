@@ -7,7 +7,7 @@ services:
     container_name: ohdserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/ohdserver:/data
     ports:
 
   # volume example

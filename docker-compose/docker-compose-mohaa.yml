@@ -7,7 +7,7 @@ services:
     container_name: mohaaserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/mohaaserver:/data
     ports:
 
   # volume example

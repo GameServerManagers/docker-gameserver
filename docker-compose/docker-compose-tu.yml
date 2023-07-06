@@ -7,7 +7,7 @@ services:
     container_name: tuserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/tuserver:/data
     ports:
 
   # volume example

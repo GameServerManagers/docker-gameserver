@@ -7,7 +7,7 @@ services:
     container_name: armarserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/armarserver:/data
     ports:
 
   # volume example

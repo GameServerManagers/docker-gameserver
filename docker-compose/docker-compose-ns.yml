@@ -7,7 +7,7 @@ services:
     container_name: nsserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/nsserver:/data
     ports:
 
   # volume example

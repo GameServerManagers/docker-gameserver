@@ -7,7 +7,7 @@ services:
     container_name: boserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/boserver:/data
     ports:
 
   # volume example

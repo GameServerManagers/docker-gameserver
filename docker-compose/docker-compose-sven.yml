@@ -7,7 +7,7 @@ services:
     container_name: svenserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/svenserver:/data
     ports:
 
   # volume example

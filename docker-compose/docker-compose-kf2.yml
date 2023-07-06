@@ -7,7 +7,7 @@ services:
     container_name: kf2server
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/kf2server:/data
     ports:
 
   # volume example

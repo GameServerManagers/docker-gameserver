@@ -7,7 +7,7 @@ services:
     container_name: q2server
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/q2server:/data
     ports:
 
   # volume example

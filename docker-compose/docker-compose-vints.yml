@@ -7,7 +7,7 @@ services:
     container_name: vintsserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/vintsserver:/data
     ports:
 
   # volume example

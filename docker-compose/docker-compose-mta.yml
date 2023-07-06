@@ -7,7 +7,7 @@ services:
     container_name: mtaserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/mtaserver:/data
     ports:
 
   # volume example

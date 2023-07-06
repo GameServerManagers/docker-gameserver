@@ -7,7 +7,7 @@ services:
     container_name: ut3server
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/ut3server:/data
     ports:
 
   # volume example

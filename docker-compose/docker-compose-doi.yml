@@ -7,7 +7,7 @@ services:
     container_name: doiserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/doiserver:/data
     ports:
 
   # volume example

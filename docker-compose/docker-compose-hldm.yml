@@ -7,7 +7,7 @@ services:
     container_name: hldmserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/hldmserver:/data
     ports:
 
   # volume example

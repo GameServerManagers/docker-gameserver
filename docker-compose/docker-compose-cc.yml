@@ -7,7 +7,7 @@ services:
     container_name: ccserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/ccserver:/data
     ports:
 
   # volume example

@@ -7,7 +7,7 @@ services:
     container_name: codwawserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/codwawserver:/data
     ports:
 
   # volume example

@@ -7,7 +7,7 @@ services:
     container_name: mcbserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/mcbserver:/data
     ports:
 
   # volume example

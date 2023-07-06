@@ -7,7 +7,7 @@ services:
     container_name: pstbsserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/pstbsserver:/data
     ports:
 
   # volume example

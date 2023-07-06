@@ -7,7 +7,7 @@ services:
     container_name: tfcserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/tfcserver:/data
     ports:
 
   # volume example

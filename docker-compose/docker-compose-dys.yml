@@ -7,7 +7,7 @@ services:
     container_name: dysserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/dysserver:/data
     ports:
 
   # volume example

@@ -7,7 +7,7 @@ services:
     container_name: loserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/loserver:/data
     ports:
 
   # volume example

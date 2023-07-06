@@ -7,7 +7,7 @@ services:
     container_name: scpslserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/scpslserver:/data
     ports:
 
   # volume example

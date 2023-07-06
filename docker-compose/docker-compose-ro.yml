@@ -7,7 +7,7 @@ services:
     container_name: roserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/roserver:/data
     ports:
 
   # volume example

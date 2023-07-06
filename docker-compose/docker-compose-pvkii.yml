@@ -7,7 +7,7 @@ services:
     container_name: pvkiiserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/pvkiiserver:/data
     ports:
 
   # volume example

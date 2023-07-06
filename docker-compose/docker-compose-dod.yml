@@ -7,7 +7,7 @@ services:
     container_name: dodserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/dodserver:/data
     ports:
 
   # volume example

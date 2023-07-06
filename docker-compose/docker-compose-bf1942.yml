@@ -7,7 +7,7 @@ services:
     container_name: bf1942server
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/bf1942server:/data
     ports:
 
   # volume example

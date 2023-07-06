@@ -7,7 +7,7 @@ services:
     container_name: sof2server
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/sof2server:/data
     ports:
 
   # volume example

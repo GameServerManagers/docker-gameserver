@@ -7,7 +7,7 @@ services:
     container_name: rtcwserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/rtcwserver:/data
     ports:
 
   # volume example

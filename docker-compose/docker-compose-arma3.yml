@@ -7,7 +7,7 @@ services:
     container_name: arma3server
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/arma3server:/data
     ports:
 
   # volume example

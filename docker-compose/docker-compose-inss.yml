@@ -7,7 +7,7 @@ services:
     container_name: inssserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/inssserver:/data
     ports:
 
   # volume example

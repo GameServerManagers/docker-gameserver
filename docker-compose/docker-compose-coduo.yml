@@ -7,7 +7,7 @@ services:
     container_name: coduoserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/coduoserver:/data
     ports:
 
   # volume example

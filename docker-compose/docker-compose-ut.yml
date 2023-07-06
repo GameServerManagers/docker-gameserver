@@ -7,7 +7,7 @@ services:
     container_name: utserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/utserver:/data
     ports:
 
   # volume example

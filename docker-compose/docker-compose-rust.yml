@@ -7,7 +7,7 @@ services:
     container_name: rustserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/rustserver:/data
     ports:
 
   # volume example

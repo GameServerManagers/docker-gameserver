@@ -7,7 +7,7 @@ services:
     container_name: terrariaserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/terrariaserver:/data
     ports:
 
   # volume example

@@ -7,7 +7,7 @@ services:
     container_name: bsserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/bsserver:/data
     ports:
 
   # volume example

@@ -7,7 +7,7 @@ services:
     container_name: ndserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/ndserver:/data
     ports:
 
   # volume example

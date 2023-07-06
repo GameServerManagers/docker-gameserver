@@ -7,7 +7,7 @@ services:
     container_name: dabserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/dabserver:/data
     ports:
 
   # volume example

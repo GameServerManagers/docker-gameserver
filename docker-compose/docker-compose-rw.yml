@@ -7,7 +7,7 @@ services:
     container_name: rwserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/rwserver:/data
     ports:
 
   # volume example

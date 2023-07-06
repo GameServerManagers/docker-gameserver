@@ -7,7 +7,7 @@ services:
     container_name: arkserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/arkserver:/data
     ports:
 
   # volume example

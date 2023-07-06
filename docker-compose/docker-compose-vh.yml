@@ -7,7 +7,7 @@ services:
     container_name: vhserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/vhserver:/data
     ports:
 
   # volume example

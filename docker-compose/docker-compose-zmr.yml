@@ -7,7 +7,7 @@ services:
     container_name: zmrserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/zmrserver:/data
     ports:
 
   # volume example

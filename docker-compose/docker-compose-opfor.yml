@@ -7,7 +7,7 @@ services:
     container_name: opforserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/opforserver:/data
     ports:
 
   # volume example

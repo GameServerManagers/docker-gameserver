@@ -7,7 +7,7 @@ services:
     container_name: wmcserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/wmcserver:/data
     ports:
 
   # volume example

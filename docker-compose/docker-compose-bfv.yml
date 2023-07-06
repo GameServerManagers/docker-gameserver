@@ -7,7 +7,7 @@ services:
     container_name: bfvserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/bfvserver:/data
     ports:
 
   # volume example

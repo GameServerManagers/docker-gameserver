@@ -7,7 +7,7 @@ services:
     container_name: zpsserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/zpsserver:/data
     ports:
 
   # volume example

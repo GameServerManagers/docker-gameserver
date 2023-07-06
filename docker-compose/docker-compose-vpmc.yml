@@ -7,7 +7,7 @@ services:
     container_name: vpmcserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/vpmcserver:/data
     ports:
 
   # volume example

@@ -7,7 +7,7 @@ services:
     container_name: gmodserver
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/etlserver:/data
+      - /path/to/linuxgsm/gmodserver:/data
     ports:
 
   # volume example
