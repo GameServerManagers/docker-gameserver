@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  # bind mount example
+  linuxgsm-shortname-bind:
+    image: gameservermanagers/gameserver:shortname
+    # image: ghcr.io/gameservermanagers/gameserver:shortname
+    container_name: shortnameserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/shortnameserver:/data
+    ports:
+
+  # volume example
+  linuxgsm-shortname-volume:
+    image: gameservermanagers/gameserver:shortname
+    # image: ghcr.io/gameservermanagers/gameserver:shortname
+    container_name: shortnameserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-shortname:/data
+    ports:
+
+volumes:
+  linuxgsm-shortname:
