@@ -1,4 +1,4 @@
-name: Docker Publish
+name: Package Cleanup
 on:
   workflow_dispatch:
   schedule:
