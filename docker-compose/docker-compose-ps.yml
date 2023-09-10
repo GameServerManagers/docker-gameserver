@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  # bind mount example
+  linuxgsm-ps-bind:
+    image: gameservermanagers/gameserver:ps
+    # image: ghcr.io/gameservermanagers/gameserver:ps
+    container_name: psserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/psserver:/data
+    ports:
+
+  # volume example
+  linuxgsm-ps-volume:
+    image: gameservermanagers/gameserver:ps
+    # image: ghcr.io/gameservermanagers/gameserver:ps
+    container_name: psserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-ps:/data
+    ports:
+
+volumes:
+  linuxgsm-ps:
