@@ -8,7 +8,7 @@ services:
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/sbotsserver:/data
-    ports:
+    network_mode: host
 
   # volume example
   linuxgsm-sbots-volume:
@@ -18,7 +18,7 @@ services:
     restart: unless-stopped
     volumes:
       - linuxgsm-sbots:/data
-    ports:
+    network_mode: host
 
 volumes:
   linuxgsm-sbots:

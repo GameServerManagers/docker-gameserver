@@ -8,7 +8,7 @@ services:
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/tf2server:/data
-    ports:
+    network_mode: host
 
   # volume example
   linuxgsm-tf2-volume:
@@ -18,7 +18,7 @@ services:
     restart: unless-stopped
     volumes:
       - linuxgsm-tf2:/data
-    ports:
+    network_mode: host
 
 volumes:
   linuxgsm-tf2:

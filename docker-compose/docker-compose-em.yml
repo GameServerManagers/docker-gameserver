@@ -8,7 +8,7 @@ services:
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/emserver:/data
-    ports:
+    network_mode: host
 
   # volume example
   linuxgsm-em-volume:
@@ -18,7 +18,7 @@ services:
     restart: unless-stopped
     volumes:
       - linuxgsm-em:/data
-    ports:
+    network_mode: host
 
 volumes:
   linuxgsm-em:

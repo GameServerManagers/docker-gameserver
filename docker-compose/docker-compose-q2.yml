@@ -8,7 +8,7 @@ services:
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/q2server:/data
-    ports:
+    network_mode: host
 
   # volume example
   linuxgsm-q2-volume:
@@ -18,7 +18,7 @@ services:
     restart: unless-stopped
     volumes:
       - linuxgsm-q2:/data
-    ports:
+    network_mode: host
 
 volumes:
   linuxgsm-q2:

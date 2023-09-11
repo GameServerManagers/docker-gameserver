@@ -8,7 +8,7 @@ services:
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/wfserver:/data
-    ports:
+    network_mode: host
 
   # volume example
   linuxgsm-wf-volume:
@@ -18,7 +18,7 @@ services:
     restart: unless-stopped
     volumes:
       - linuxgsm-wf:/data
-    ports:
+    network_mode: host
 
 volumes:
   linuxgsm-wf:

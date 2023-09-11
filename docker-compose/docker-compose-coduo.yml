@@ -8,7 +8,7 @@ services:
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/coduoserver:/data
-    ports:
+    network_mode: host
 
   # volume example
   linuxgsm-coduo-volume:
@@ -18,7 +18,7 @@ services:
     restart: unless-stopped
     volumes:
       - linuxgsm-coduo:/data
-    ports:
+    network_mode: host
 
 volumes:
   linuxgsm-coduo:

@@ -8,7 +8,7 @@ services:
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/bbserver:/data
-    ports:
+    network_mode: host
 
   # volume example
   linuxgsm-bb-volume:
@@ -18,7 +18,7 @@ services:
     restart: unless-stopped
     volumes:
       - linuxgsm-bb:/data
-    ports:
+    network_mode: host
 
 volumes:
   linuxgsm-bb:

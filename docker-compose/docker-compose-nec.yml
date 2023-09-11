@@ -8,7 +8,7 @@ services:
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/necserver:/data
-    ports:
+    network_mode: host
 
   # volume example
   linuxgsm-nec-volume:
@@ -18,7 +18,7 @@ services:
     restart: unless-stopped
     volumes:
       - linuxgsm-nec:/data
-    ports:
+    network_mode: host
 
 volumes:
   linuxgsm-nec:

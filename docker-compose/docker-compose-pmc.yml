@@ -8,7 +8,7 @@ services:
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/pmcserver:/data
-    ports:
+    network_mode: host
 
   # volume example
   linuxgsm-pmc-volume:
@@ -18,7 +18,7 @@ services:
     restart: unless-stopped
     volumes:
       - linuxgsm-pmc:/data
-    ports:
+    network_mode: host
 
 volumes:
   linuxgsm-pmc:

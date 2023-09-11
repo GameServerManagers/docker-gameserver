@@ -8,7 +8,7 @@ services:
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/rwserver:/data
-    ports:
+    network_mode: host
 
   # volume example
   linuxgsm-rw-volume:
@@ -18,7 +18,7 @@ services:
     restart: unless-stopped
     volumes:
       - linuxgsm-rw:/data
-    ports:
+    network_mode: host
 
 volumes:
   linuxgsm-rw:

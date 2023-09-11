@@ -8,7 +8,7 @@ services:
     restart: unless-stopped
     volumes:
       - /path/to/linuxgsm/mtaserver:/data
-    ports:
+    network_mode: host
 
   # volume example
   linuxgsm-mta-volume:
@@ -18,7 +18,7 @@ services:
     restart: unless-stopped
     volumes:
       - linuxgsm-mta:/data
-    ports:
+    network_mode: host
 
 volumes:
   linuxgsm-mta:
