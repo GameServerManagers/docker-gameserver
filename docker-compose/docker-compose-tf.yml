@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  # bind mount example
+  linuxgsm-tf-bind:
+    image: gameservermanagers/gameserver:tf
+    # image: ghcr.io/gameservermanagers/gameserver:tf
+    container_name: tfserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/tfserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-tf-volume:
+    image: gameservermanagers/gameserver:tf
+    # image: ghcr.io/gameservermanagers/gameserver:tf
+    container_name: tfserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-tf:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-tf:
