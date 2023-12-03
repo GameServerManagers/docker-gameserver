@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  # bind mount example
+  linuxgsm-q4-bind:
+    image: gameservermanagers/gameserver:q4
+    # image: ghcr.io/gameservermanagers/gameserver:q4
+    container_name: q4server
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/q4server:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-q4-volume:
+    image: gameservermanagers/gameserver:q4
+    # image: ghcr.io/gameservermanagers/gameserver:q4
+    container_name: q4server
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-q4:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-q4:
