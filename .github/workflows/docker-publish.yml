@@ -92,7 +92,7 @@ jobs:
         run: rm -rf dockerfiles
 
       - name: Download a Build Artifact
-        uses: actions/download-artifact@v3.0.2
+        uses: actions/download-artifact@v4.1.0
         with:
           # Artifact name
           name: Dockerfiles
