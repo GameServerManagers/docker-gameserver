@@ -6,7 +6,7 @@ curl -o ./data/serverlist.csv "https://raw.githubusercontent.com/GameServerManag
 echo '{"include": {}}' > ./data/shortnamearray.json
 
 # convert csv to json
-while read line; do
+while read -r line; do
   export shortname=$(echo "$line" | awk -F, '{ print $1 }')
   export servername=$(echo "$line" | awk -F, '{ print $2 }')
   export gamename=$(echo "$line" | awk -F, '{ print $3 }')
@@ -17,7 +17,7 @@ done < <(tail -n +2 ./data/serverlist.csv)
 
 echo "Found $(yq '.include | keys | length' ./data/shortnamearray.json) items"
 
-while read sname; do
+while read -r sname; do
   export gamename=$(yq ".include[strenv(shortname)].gamename" data/shortnamearray.json)
   export shortname=$sname
   echo "Generating Dockerfile.${shortname} (${gamename})"
