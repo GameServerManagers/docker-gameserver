@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  # bind mount example
+  linuxgsm-xnt-bind:
+    image: gameservermanagers/gameserver:xnt
+    # image: ghcr.io/gameservermanagers/gameserver:xnt
+    container_name: xntserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/xntserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-xnt-volume:
+    image: gameservermanagers/gameserver:xnt
+    # image: ghcr.io/gameservermanagers/gameserver:xnt
+    container_name: xntserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-xnt:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-xnt:
