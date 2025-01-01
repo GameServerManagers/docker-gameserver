@@ -1,24 +1,24 @@
 version: "3.8"
 services:
   # bind mount example
-  linuxgsm-{{ shortname }}-bind:
-    image: gameservermanagers/gameserver:{{ shortname }}
-    # image: ghcr.io/gameservermanagers/gameserver:{{ shortname }}
-    container_name: {{ shortname }}server
+  linuxgsm-{{ game.shortname }}-bind:
+    image: gameservermanagers/gameserver:{{ game.shortname }}
+    # image: ghcr.io/gameservermanagers/gameserver:{{ game.shortname }}
+    container_name: {{ game.shortname }}server
     restart: unless-stopped
     volumes:
-      - /path/to/linuxgsm/{{ shortname }}server:/data
+      - /path/to/linuxgsm/{{ game.shortname }}server:/data
     network_mode: host
 
   # volume example
-  linuxgsm-{{ shortname }}-volume:
-    image: gameservermanagers/gameserver:{{ shortname }}
-    # image: ghcr.io/gameservermanagers/gameserver:{{ shortname }}
-    container_name: {{ shortname }}server
+  linuxgsm-{{ game.shortname }}-volume:
+    image: gameservermanagers/gameserver:{{ game.shortname }}
+    # image: ghcr.io/gameservermanagers/gameserver:{{ game.shortname }}
+    container_name: {{ game.shortname }}server
     restart: unless-stopped
     volumes:
-      - linuxgsm-{{ shortname }}:/data
+      - linuxgsm-{{ game.shortname }}:/data
     network_mode: host
 
 volumes:
-  linuxgsm-{{ shortname }}:
+  linuxgsm-{{ game.shortname }}:
