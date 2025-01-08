@@ -1,18 +1,18 @@
 #
-# LinuxGSM {{ gamename }} Dockerfile
+# LinuxGSM {{ game.gamename }} Dockerfile
 #
 # https://github.com/GameServerManagers/docker-gameserver
 #
 
-FROM gameservermanagers/linuxgsm:{{ distro }}
+FROM gameservermanagers/linuxgsm:{{ game.distro }}
 LABEL maintainer="LinuxGSM <me@danielgibbs.co.uk>"
-ARG SHORTNAME={{ shortname }}
-ENV GAMESERVER={{ shortname }}server
+ARG SHORTNAME={{ game.shortname }}
+ENV GAMESERVER={{ game.shortname }}server
 
 WORKDIR /app
 
 ## Auto install game server requirements
-RUN depshortname=$(curl --connect-timeout 10 -s https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/{{ distro }}.csv |awk -v shortname="{{ shortname }}" -F, '$1==shortname {$1=""; print $0}') \
+RUN depshortname=$(curl --connect-timeout 10 -s https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/{{ game.distro }}.csv |awk -v shortname="{{ game.shortname }}" -F, '$1==shortname {$1=""; print $0}') \
   && if [ -n "${depshortname}" ]; then \
   echo "**** Install ${depshortname} ****" \
   && apt-get update \

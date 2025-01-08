@@ -1,0 +1,820 @@
+{
+  "include": {
+    "ac": {
+      "shortname": "ac",
+      "servername": "acserver",
+      "gamename": "Assetto Corsa",
+      "distro": "ubuntu-22.04"
+    },
+    "ahl": {
+      "shortname": "ahl",
+      "servername": "ahlserver",
+      "gamename": "Action Half-Life",
+      "distro": "ubuntu-22.04"
+    },
+    "ahl2": {
+      "shortname": "ahl2",
+      "servername": "ahl2server",
+      "gamename": "Action: Source",
+      "distro": "ubuntu-20.04"
+    },
+    "ark": {
+      "shortname": "ark",
+      "servername": "arkserver",
+      "gamename": "ARK: Survival Evolved",
+      "distro": "ubuntu-22.04"
+    },
+    "arma3": {
+      "shortname": "arma3",
+      "servername": "arma3server",
+      "gamename": "ARMA 3",
+      "distro": "ubuntu-22.04"
+    },
+    "armar": {
+      "shortname": "armar",
+      "servername": "armarserver",
+      "gamename": "Arma Reforger",
+      "distro": "ubuntu-20.04"
+    },
+    "ats": {
+      "shortname": "ats",
+      "servername": "atsserver",
+      "gamename": "American Truck Simulator",
+      "distro": "ubuntu-22.04"
+    },
+    "av": {
+      "shortname": "av",
+      "servername": "avserver",
+      "gamename": "Avorion",
+      "distro": "ubuntu-22.04"
+    },
+    "bb": {
+      "shortname": "bb",
+      "servername": "bbserver",
+      "gamename": "BrainBread",
+      "distro": "ubuntu-22.04"
+    },
+    "bb2": {
+      "shortname": "bb2",
+      "servername": "bb2server",
+      "gamename": "BrainBread 2",
+      "distro": "ubuntu-22.04"
+    },
+    "bd": {
+      "shortname": "bd",
+      "servername": "bdserver",
+      "gamename": "Base Defense",
+      "distro": "ubuntu-22.04"
+    },
+    "bf1942": {
+      "shortname": "bf1942",
+      "servername": "bf1942server",
+      "gamename": "Battlefield 1942",
+      "distro": "ubuntu-22.04"
+    },
+    "bfv": {
+      "shortname": "bfv",
+      "servername": "bfvserver",
+      "gamename": "Battlefield: Vietnam",
+      "distro": "ubuntu-22.04"
+    },
+    "bmdm": {
+      "shortname": "bmdm",
+      "servername": "bmdmserver",
+      "gamename": "Black Mesa: Deathmatch",
+      "distro": "ubuntu-22.04"
+    },
+    "bo": {
+      "shortname": "bo",
+      "servername": "boserver",
+      "gamename": "Ballistic Overkill",
+      "distro": "ubuntu-22.04"
+    },
+    "bs": {
+      "shortname": "bs",
+      "servername": "bsserver",
+      "gamename": "Blade Symphony",
+      "distro": "ubuntu-22.04"
+    },
+    "bt": {
+      "shortname": "bt",
+      "servername": "btserver",
+      "gamename": "Barotrauma",
+      "distro": "ubuntu-22.04"
+    },
+    "btl": {
+      "shortname": "btl",
+      "servername": "btlserver",
+      "gamename": "BATTALION: Legacy",
+      "distro": "ubuntu-20.04"
+    },
+    "cc": {
+      "shortname": "cc",
+      "servername": "ccserver",
+      "gamename": "Codename CURE",
+      "distro": "ubuntu-22.04"
+    },
+    "ck": {
+      "shortname": "ck",
+      "servername": "ckserver",
+      "gamename": "Core Keeper",
+      "distro": "ubuntu-22.04"
+    },
+    "cmw": {
+      "shortname": "cmw",
+      "servername": "cmwserver",
+      "gamename": "Chivalry: Medieval Warfare",
+      "distro": "ubuntu-22.04"
+    },
+    "cod": {
+      "shortname": "cod",
+      "servername": "codserver",
+      "gamename": "Call of Duty",
+      "distro": "ubuntu-22.04"
+    },
+    "cod2": {
+      "shortname": "cod2",
+      "servername": "cod2server",
+      "gamename": "Call of Duty 2",
+      "distro": "ubuntu-22.04"
+    },
+    "cod4": {
+      "shortname": "cod4",
+      "servername": "cod4server",
+      "gamename": "Call of Duty 4",
+      "distro": "ubuntu-22.04"
+    },
+    "coduo": {
+      "shortname": "coduo",
+      "servername": "coduoserver",
+      "gamename": "Call of Duty: United Offensive",
+      "distro": "ubuntu-22.04"
+    },
+    "codwaw": {
+      "shortname": "codwaw",
+      "servername": "codwawserver",
+      "gamename": "Call of Duty: World at War",
+      "distro": "ubuntu-22.04"
+    },
+    "col": {
+      "shortname": "col",
+      "servername": "colserver",
+      "gamename": "Colony Survival",
+      "distro": "ubuntu-22.04"
+    },
+    "cs": {
+      "shortname": "cs",
+      "servername": "csserver",
+      "gamename": "Counter-Strike 1.6",
+      "distro": "ubuntu-22.04"
+    },
+    "cs2": {
+      "shortname": "cs2",
+      "servername": "cs2server",
+      "gamename": "Counter-Strike 2",
+      "distro": "ubuntu-22.04"
+    },
+    "cscz": {
+      "shortname": "cscz",
+      "servername": "csczserver",
+      "gamename": "Counter-Strike: Condition Zero",
+      "distro": "ubuntu-22.04"
+    },
+    "csgo": {
+      "shortname": "csgo",
+      "servername": "csgoserver",
+      "gamename": "Counter-Strike: Global Offensive",
+      "distro": "ubuntu-22.04"
+    },
+    "css": {
+      "shortname": "css",
+      "servername": "cssserver",
+      "gamename": "Counter-Strike: Source",
+      "distro": "ubuntu-22.04"
+    },
+    "ct": {
+      "shortname": "ct",
+      "servername": "ctserver",
+      "gamename": "Craftopia",
+      "distro": "ubuntu-22.04"
+    },
+    "dab": {
+      "shortname": "dab",
+      "servername": "dabserver",
+      "gamename": "Double Action: Boogaloo",
+      "distro": "ubuntu-22.04"
+    },
+    "dayz": {
+      "shortname": "dayz",
+      "servername": "dayzserver",
+      "gamename": "DayZ",
+      "distro": "ubuntu-22.04"
+    },
+    "dmc": {
+      "shortname": "dmc",
+      "servername": "dmcserver",
+      "gamename": "Deathmatch Classic",
+      "distro": "ubuntu-22.04"
+    },
+    "dod": {
+      "shortname": "dod",
+      "servername": "dodserver",
+      "gamename": "Day of Defeat",
+      "distro": "ubuntu-22.04"
+    },
+    "dodr": {
+      "shortname": "dodr",
+      "servername": "dodrserver",
+      "gamename": "Day of Dragons",
+      "distro": "ubuntu-22.04"
+    },
+    "dods": {
+      "shortname": "dods",
+      "servername": "dodsserver",
+      "gamename": "Day of Defeat: Source",
+      "distro": "ubuntu-22.04"
+    },
+    "doi": {
+      "shortname": "doi",
+      "servername": "doiserver",
+      "gamename": "Day of Infamy",
+      "distro": "ubuntu-22.04"
+    },
+    "dst": {
+      "shortname": "dst",
+      "servername": "dstserver",
+      "gamename": "Don't Starve Together",
+      "distro": "ubuntu-22.04"
+    },
+    "dys": {
+      "shortname": "dys",
+      "servername": "dysserver",
+      "gamename": "Dystopia",
+      "distro": "ubuntu-22.04"
+    },
+    "eco": {
+      "shortname": "eco",
+      "servername": "ecoserver",
+      "gamename": "Eco",
+      "distro": "ubuntu-22.04"
+    },
+    "em": {
+      "shortname": "em",
+      "servername": "emserver",
+      "gamename": "Empires Mod",
+      "distro": "ubuntu-22.04"
+    },
+    "etl": {
+      "shortname": "etl",
+      "servername": "etlserver",
+      "gamename": "ET: Legacy",
+      "distro": "ubuntu-22.04"
+    },
+    "ets2": {
+      "shortname": "ets2",
+      "servername": "ets2server",
+      "gamename": "Euro Truck Simulator 2",
+      "distro": "ubuntu-22.04"
+    },
+    "fctr": {
+      "shortname": "fctr",
+      "servername": "fctrserver",
+      "gamename": "Factorio",
+      "distro": "ubuntu-22.04"
+    },
+    "fof": {
+      "shortname": "fof",
+      "servername": "fofserver",
+      "gamename": "Fistful of Frags",
+      "distro": "ubuntu-22.04"
+    },
+    "gmod": {
+      "shortname": "gmod",
+      "servername": "gmodserver",
+      "gamename": "Garrys Mod",
+      "distro": "ubuntu-22.04"
+    },
+    "hcu": {
+      "shortname": "hcu",
+      "servername": "hcuserver",
+      "gamename": "HYPERCHARGE: Unboxed",
+      "distro": "ubuntu-22.04"
+    },
+    "hl2dm": {
+      "shortname": "hl2dm",
+      "servername": "hl2dmserver",
+      "gamename": "Half-Life 2: Deathmatch",
+      "distro": "ubuntu-22.04"
+    },
+    "hldm": {
+      "shortname": "hldm",
+      "servername": "hldmserver",
+      "gamename": "Half-Life: Deathmatch",
+      "distro": "ubuntu-22.04"
+    },
+    "hldms": {
+      "shortname": "hldms",
+      "servername": "hldmsserver",
+      "gamename": "Half-Life Deathmatch: Source",
+      "distro": "ubuntu-22.04"
+    },
+    "hw": {
+      "shortname": "hw",
+      "servername": "hwserver",
+      "gamename": "Hurtworld",
+      "distro": "ubuntu-22.04"
+    },
+    "hz": {
+      "shortname": "hz",
+      "servername": "hzserver",
+      "gamename": "Humanitz",
+      "distro": "ubuntu-22.04"
+    },
+    "ins": {
+      "shortname": "ins",
+      "servername": "insserver",
+      "gamename": "Insurgency",
+      "distro": "ubuntu-22.04"
+    },
+    "inss": {
+      "shortname": "inss",
+      "servername": "inssserver",
+      "gamename": "Insurgency: Sandstorm",
+      "distro": "ubuntu-22.04"
+    },
+    "ios": {
+      "shortname": "ios",
+      "servername": "iosserver",
+      "gamename": "IOSoccer",
+      "distro": "ubuntu-22.04"
+    },
+    "jc2": {
+      "shortname": "jc2",
+      "servername": "jc2server",
+      "gamename": "Just Cause 2",
+      "distro": "ubuntu-22.04"
+    },
+    "jc3": {
+      "shortname": "jc3",
+      "servername": "jc3server",
+      "gamename": "Just Cause 3",
+      "distro": "ubuntu-22.04"
+    },
+    "jk2": {
+      "shortname": "jk2",
+      "servername": "jk2server",
+      "gamename": "Jedi Knight II: Jedi Outcast",
+      "distro": "ubuntu-22.04"
+    },
+    "kf": {
+      "shortname": "kf",
+      "servername": "kfserver",
+      "gamename": "Killing Floor",
+      "distro": "ubuntu-22.04"
+    },
+    "kf2": {
+      "shortname": "kf2",
+      "servername": "kf2server",
+      "gamename": "Killing Floor 2",
+      "distro": "ubuntu-22.04"
+    },
+    "l4d": {
+      "shortname": "l4d",
+      "servername": "l4dserver",
+      "gamename": "Left 4 Dead",
+      "distro": "ubuntu-22.04"
+    },
+    "l4d2": {
+      "shortname": "l4d2",
+      "servername": "l4d2server",
+      "gamename": "Left 4 Dead 2",
+      "distro": "ubuntu-22.04"
+    },
+    "mc": {
+      "shortname": "mc",
+      "servername": "mcserver",
+      "gamename": "Minecraft",
+      "distro": "ubuntu-22.04"
+    },
+    "mcb": {
+      "shortname": "mcb",
+      "servername": "mcbserver",
+      "gamename": "Minecraft Bedrock",
+      "distro": "ubuntu-22.04"
+    },
+    "mh": {
+      "shortname": "mh",
+      "servername": "mhserver",
+      "gamename": "MORDHAU",
+      "distro": "ubuntu-22.04"
+    },
+    "mohaa": {
+      "shortname": "mohaa",
+      "servername": "mohaaserver",
+      "gamename": "Medal of Honor: Allied Assault",
+      "distro": "ubuntu-22.04"
+    },
+    "mom": {
+      "shortname": "mom",
+      "servername": "momserver",
+      "gamename": "Memories of Mars",
+      "distro": "ubuntu-22.04"
+    },
+    "mta": {
+      "shortname": "mta",
+      "servername": "mtaserver",
+      "gamename": "Multi Theft Auto",
+      "distro": "ubuntu-22.04"
+    },
+    "nd": {
+      "shortname": "nd",
+      "servername": "ndserver",
+      "gamename": "Nuclear Dawn",
+      "distro": "ubuntu-22.04"
+    },
+    "nec": {
+      "shortname": "nec",
+      "servername": "necserver",
+      "gamename": "Necesse",
+      "distro": "ubuntu-22.04"
+    },
+    "nmrih": {
+      "shortname": "nmrih",
+      "servername": "nmrihserver",
+      "gamename": "No More Room in Hell",
+      "distro": "ubuntu-22.04"
+    },
+    "ns": {
+      "shortname": "ns",
+      "servername": "nsserver",
+      "gamename": "Natural Selection",
+      "distro": "ubuntu-22.04"
+    },
+    "ns2": {
+      "shortname": "ns2",
+      "servername": "ns2server",
+      "gamename": "Natural Selection 2",
+      "distro": "ubuntu-22.04"
+    },
+    "ns2c": {
+      "shortname": "ns2c",
+      "servername": "ns2cserver",
+      "gamename": "NS2: Combat",
+      "distro": "ubuntu-22.04"
+    },
+    "ohd": {
+      "shortname": "ohd",
+      "servername": "ohdserver",
+      "gamename": "Operation: Harsh Doorstop",
+      "distro": "ubuntu-22.04"
+    },
+    "onset": {
+      "shortname": "onset",
+      "servername": "onsetserver",
+      "gamename": "Onset",
+      "distro": "ubuntu-20.04"
+    },
+    "opfor": {
+      "shortname": "opfor",
+      "servername": "opforserver",
+      "gamename": "Opposing Force",
+      "distro": "ubuntu-22.04"
+    },
+    "pc": {
+      "shortname": "pc",
+      "servername": "pcserver",
+      "gamename": "Project Cars",
+      "distro": "ubuntu-22.04"
+    },
+    "pc2": {
+      "shortname": "pc2",
+      "servername": "pc2server",
+      "gamename": "Project Cars 2",
+      "distro": "ubuntu-22.04"
+    },
+    "pmc": {
+      "shortname": "pmc",
+      "servername": "pmcserver",
+      "gamename": "PaperMC",
+      "distro": "ubuntu-22.04"
+    },
+    "ps": {
+      "shortname": "ps",
+      "servername": "psserver",
+      "gamename": "Post Scriptum",
+      "distro": "ubuntu-22.04"
+    },
+    "pvkii": {
+      "shortname": "pvkii",
+      "servername": "pvkiiserver",
+      "gamename": "Pirates Vikings & Knights II",
+      "distro": "ubuntu-22.04"
+    },
+    "pvr": {
+      "shortname": "pvr",
+      "servername": "pvrserver",
+      "gamename": "Pavlov VR",
+      "distro": "ubuntu-22.04"
+    },
+    "pw": {
+      "shortname": "pw",
+      "servername": "pwserver",
+      "gamename": "Palworld",
+      "distro": "ubuntu-22.04"
+    },
+    "pz": {
+      "shortname": "pz",
+      "servername": "pzserver",
+      "gamename": "Project Zomboid",
+      "distro": "ubuntu-22.04"
+    },
+    "q2": {
+      "shortname": "q2",
+      "servername": "q2server",
+      "gamename": "Quake 2",
+      "distro": "ubuntu-22.04"
+    },
+    "q3": {
+      "shortname": "q3",
+      "servername": "q3server",
+      "gamename": "Quake 3: Arena",
+      "distro": "ubuntu-22.04"
+    },
+    "q4": {
+      "shortname": "q4",
+      "servername": "q4server",
+      "gamename": "Quake 4",
+      "distro": "ubuntu-22.04"
+    },
+    "ql": {
+      "shortname": "ql",
+      "servername": "qlserver",
+      "gamename": "Quake Live",
+      "distro": "ubuntu-22.04"
+    },
+    "qw": {
+      "shortname": "qw",
+      "servername": "qwserver",
+      "gamename": "Quake World",
+      "distro": "ubuntu-22.04"
+    },
+    "ricochet": {
+      "shortname": "ricochet",
+      "servername": "ricochetserver",
+      "gamename": "Ricochet",
+      "distro": "ubuntu-22.04"
+    },
+    "ro": {
+      "shortname": "ro",
+      "servername": "roserver",
+      "gamename": "Red Orchestra: Ostfront 41-45",
+      "distro": "ubuntu-22.04"
+    },
+    "rtcw": {
+      "shortname": "rtcw",
+      "servername": "rtcwserver",
+      "gamename": "Return to Castle Wolfenstein",
+      "distro": "ubuntu-22.04"
+    },
+    "rust": {
+      "shortname": "rust",
+      "servername": "rustserver",
+      "gamename": "Rust",
+      "distro": "ubuntu-22.04"
+    },
+    "rw": {
+      "shortname": "rw",
+      "servername": "rwserver",
+      "gamename": "Rising World",
+      "distro": "ubuntu-22.04"
+    },
+    "samp": {
+      "shortname": "samp",
+      "servername": "sampserver",
+      "gamename": "San Andreas Multiplayer",
+      "distro": "ubuntu-22.04"
+    },
+    "sb": {
+      "shortname": "sb",
+      "servername": "sbserver",
+      "gamename": "Starbound",
+      "distro": "ubuntu-22.04"
+    },
+    "sbots": {
+      "shortname": "sbots",
+      "servername": "sbotsserver",
+      "gamename": "StickyBots",
+      "distro": "ubuntu-22.04"
+    },
+    "scpsl": {
+      "shortname": "scpsl",
+      "servername": "scpslserver",
+      "gamename": "SCP: Secret Laboratory",
+      "distro": "ubuntu-22.04"
+    },
+    "scpslsm": {
+      "shortname": "scpslsm",
+      "servername": "scpslsmserver",
+      "gamename": "SCP: Secret Laboratory ServerMod",
+      "distro": "ubuntu-22.04"
+    },
+    "sdtd": {
+      "shortname": "sdtd",
+      "servername": "sdtdserver",
+      "gamename": "7 Days to Die",
+      "distro": "ubuntu-22.04"
+    },
+    "sf": {
+      "shortname": "sf",
+      "servername": "sfserver",
+      "gamename": "Satisfactory",
+      "distro": "ubuntu-22.04"
+    },
+    "sfc": {
+      "shortname": "sfc",
+      "servername": "sfcserver",
+      "gamename": "SourceForts Classic",
+      "distro": "ubuntu-22.04"
+    },
+    "sof2": {
+      "shortname": "sof2",
+      "servername": "sof2server",
+      "gamename": "Soldier Of Fortune 2: Gold Edition",
+      "distro": "ubuntu-22.04"
+    },
+    "sol": {
+      "shortname": "sol",
+      "servername": "solserver",
+      "gamename": "Soldat",
+      "distro": "ubuntu-22.04"
+    },
+    "squad": {
+      "shortname": "squad",
+      "servername": "squadserver",
+      "gamename": "Squad",
+      "distro": "ubuntu-22.04"
+    },
+    "st": {
+      "shortname": "st",
+      "servername": "stserver",
+      "gamename": "Stationeers",
+      "distro": "ubuntu-22.04"
+    },
+    "stn": {
+      "shortname": "stn",
+      "servername": "stnserver",
+      "gamename": "Survive the Nights",
+      "distro": "ubuntu-22.04"
+    },
+    "sven": {
+      "shortname": "sven",
+      "servername": "svenserver",
+      "gamename": "Sven Co-op",
+      "distro": "ubuntu-20.04"
+    },
+    "terraria": {
+      "shortname": "terraria",
+      "servername": "terrariaserver",
+      "gamename": "Terraria",
+      "distro": "ubuntu-22.04"
+    },
+    "tf": {
+      "shortname": "tf",
+      "servername": "tfserver",
+      "gamename": "The Front",
+      "distro": "ubuntu-22.04"
+    },
+    "tf2": {
+      "shortname": "tf2",
+      "servername": "tf2server",
+      "gamename": "Team Fortress 2",
+      "distro": "ubuntu-22.04"
+    },
+    "tfc": {
+      "shortname": "tfc",
+      "servername": "tfcserver",
+      "gamename": "Team Fortress Classic",
+      "distro": "ubuntu-22.04"
+    },
+    "ti": {
+      "shortname": "ti",
+      "servername": "tiserver",
+      "gamename": "The Isle",
+      "distro": "ubuntu-22.04"
+    },
+    "ts": {
+      "shortname": "ts",
+      "servername": "tsserver",
+      "gamename": "The Specialists",
+      "distro": "ubuntu-22.04"
+    },
+    "ts3": {
+      "shortname": "ts3",
+      "servername": "ts3server",
+      "gamename": "Teamspeak 3",
+      "distro": "ubuntu-22.04"
+    },
+    "tu": {
+      "shortname": "tu",
+      "servername": "tuserver",
+      "gamename": "Tower Unite",
+      "distro": "ubuntu-22.04"
+    },
+    "tw": {
+      "shortname": "tw",
+      "servername": "twserver",
+      "gamename": "Teeworlds",
+      "distro": "ubuntu-22.04"
+    },
+    "unt": {
+      "shortname": "unt",
+      "servername": "untserver",
+      "gamename": "Unturned",
+      "distro": "ubuntu-22.04"
+    },
+    "ut": {
+      "shortname": "ut",
+      "servername": "utserver",
+      "gamename": "Unreal Tournament",
+      "distro": "ubuntu-22.04"
+    },
+    "ut2k4": {
+      "shortname": "ut2k4",
+      "servername": "ut2k4server",
+      "gamename": "Unreal Tournament 2004",
+      "distro": "ubuntu-22.04"
+    },
+    "ut3": {
+      "shortname": "ut3",
+      "servername": "ut3server",
+      "gamename": "Unreal Tournament 3",
+      "distro": "ubuntu-22.04"
+    },
+    "ut99": {
+      "shortname": "ut99",
+      "servername": "ut99server",
+      "gamename": "Unreal Tournament 99",
+      "distro": "ubuntu-22.04"
+    },
+    "vh": {
+      "shortname": "vh",
+      "servername": "vhserver",
+      "gamename": "Valheim",
+      "distro": "ubuntu-22.04"
+    },
+    "vints": {
+      "shortname": "vints",
+      "servername": "vintsserver",
+      "gamename": "Vintage Story",
+      "distro": "ubuntu-22.04"
+    },
+    "vpmc": {
+      "shortname": "vpmc",
+      "servername": "vpmcserver",
+      "gamename": "Velocity Proxy MC",
+      "distro": "ubuntu-22.04"
+    },
+    "vs": {
+      "shortname": "vs",
+      "servername": "vsserver",
+      "gamename": "Vampire Slayer",
+      "distro": "ubuntu-22.04"
+    },
+    "wet": {
+      "shortname": "wet",
+      "servername": "wetserver",
+      "gamename": "Wolfenstein: Enemy Territory",
+      "distro": "ubuntu-22.04"
+    },
+    "wf": {
+      "shortname": "wf",
+      "servername": "wfserver",
+      "gamename": "Warfork",
+      "distro": "ubuntu-22.04"
+    },
+    "wmc": {
+      "shortname": "wmc",
+      "servername": "wmcserver",
+      "gamename": "WaterfallMC",
+      "distro": "ubuntu-22.04"
+    },
+    "wurm": {
+      "shortname": "wurm",
+      "servername": "wurmserver",
+      "gamename": "Wurm Unlimited",
+      "distro": "ubuntu-22.04"
+    },
+    "zmr": {
+      "shortname": "zmr",
+      "servername": "zmrserver",
+      "gamename": "Zombie Master: Reborn",
+      "distro": "ubuntu-22.04"
+    },
+    "zps": {
+      "shortname": "zps",
+      "servername": "zpsserver",
+      "gamename": "Zombie Panic! Source",
+      "distro": "ubuntu-22.04"
+    }
+  }
+}
