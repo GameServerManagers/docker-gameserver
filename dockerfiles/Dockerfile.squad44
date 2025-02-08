@@ -1,18 +1,18 @@
 #
-# LinuxGSM ARK: Survival Evolved Dockerfile
+# LinuxGSM Squad 44 Dockerfile
 #
 # https://github.com/GameServerManagers/docker-gameserver
 #
 
 FROM gameservermanagers/linuxgsm:ubuntu-24.04
 LABEL maintainer="LinuxGSM <me@danielgibbs.co.uk>"
-ARG SHORTNAME=ark
-ENV GAMESERVER=arkserver
+ARG SHORTNAME=squad44
+ENV GAMESERVER=squad44server
 
 WORKDIR /app
 
 ## Auto install game server requirements
-RUN depshortname=$(curl --connect-timeout 10 -s https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/ubuntu-24.04.csv |awk -v shortname="ark" -F, '$1==shortname {$1=""; print $0}') \
+RUN depshortname=$(curl --connect-timeout 10 -s https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/ubuntu-24.04.csv |awk -v shortname="squad44" -F, '$1==shortname {$1=""; print $0}') \
   && if [ -n "${depshortname}" ]; then \
   echo "**** Install ${depshortname} ****" \
   && apt-get update \

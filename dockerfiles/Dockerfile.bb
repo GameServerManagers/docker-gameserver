@@ -4,7 +4,7 @@
 # https://github.com/GameServerManagers/docker-gameserver
 #
 
-FROM gameservermanagers/linuxgsm:ubuntu-22.04
+FROM gameservermanagers/linuxgsm:ubuntu-24.04
 LABEL maintainer="LinuxGSM <me@danielgibbs.co.uk>"
 ARG SHORTNAME=bb
 ENV GAMESERVER=bbserver
@@ -12,7 +12,7 @@ ENV GAMESERVER=bbserver
 WORKDIR /app
 
 ## Auto install game server requirements
-RUN depshortname=$(curl --connect-timeout 10 -s https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/ubuntu-22.04.csv |awk -v shortname="bb" -F, '$1==shortname {$1=""; print $0}') \
+RUN depshortname=$(curl --connect-timeout 10 -s https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/ubuntu-24.04.csv |awk -v shortname="bb" -F, '$1==shortname {$1=""; print $0}') \
   && if [ -n "${depshortname}" ]; then \
   echo "**** Install ${depshortname} ****" \
   && apt-get update \
