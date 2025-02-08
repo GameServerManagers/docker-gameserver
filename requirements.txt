@@ -1,1 +1,1 @@
-j2cli
+jinjanator
