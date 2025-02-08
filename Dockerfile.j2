@@ -4,7 +4,7 @@
 # https://github.com/GameServerManagers/docker-gameserver
 #
 
-FROM gameservermanagers/linuxgsm:{{ distro }}
+FROM ghcr.io/gameservermanagers/linuxgsm:{{ distro }}
 LABEL maintainer="LinuxGSM <me@danielgibbs.co.uk>"
 ARG SHORTNAME={{ shortname }}
 ENV GAMESERVER={{ shortname }}server
