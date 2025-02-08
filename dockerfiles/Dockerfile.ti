@@ -4,7 +4,7 @@
 # https://github.com/GameServerManagers/docker-gameserver
 #
 
-FROM gameservermanagers/linuxgsm:ubuntu-24.04
+FROM ghcr.io/gameservermanagers/linuxgsm:ubuntu-24.04
 LABEL maintainer="LinuxGSM <me@danielgibbs.co.uk>"
 ARG SHORTNAME=ti
 ENV GAMESERVER=tiserver
