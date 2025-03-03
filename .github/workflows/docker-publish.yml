@@ -131,7 +131,7 @@ jobs:
             ${{ matrix.shortname }}
 
       - name: Build and push
-        uses: docker/build-push-action@v6.13.0
+        uses: docker/build-push-action@v6.15.0
         with:
           context: .
           file: dockerfiles/Dockerfile.${{ matrix.shortname }}
