@@ -21,5 +21,5 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-          repository: ${{ vars.DOCKER_HUB_REPO }}
+          repository: ${{ secrets.DOCKER_HUB_REPO }}
           short-description: ${{ github.event.repository.description }}
