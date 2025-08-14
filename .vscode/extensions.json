@@ -1,6 +1,7 @@
 {
-    "recommendations": [
-        "editorconfig.editorconfig",
-        "esbenp.prettier-vscode"
-    ]
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "github.vscode-github-actions"
+  ]
 }
