@@ -19,7 +19,7 @@ jobs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Generate python
         uses: actions/setup-python@v5
@@ -55,7 +55,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup python
         uses: actions/setup-python@v5
@@ -91,7 +91,7 @@ jobs:
           max-wait-time: 30
 
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Remove old Dockerfiles
         run: rm -rf dockerfiles
