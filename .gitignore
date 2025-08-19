@@ -7,3 +7,6 @@
 !.vscode/*.code-snippets
 .history/
 *.vsix
+
+# Node.js
+node_modules
