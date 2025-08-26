@@ -31,6 +31,7 @@ jobs:
           # super-linter needs the full git history to get the
           # list of files that changed across commits
           fetch-depth: 0
+          persist-credentials: false
 
       - name: Install Prettier plugins (for summary formatting)
         run: |
@@ -42,8 +43,9 @@ jobs:
           # To report GitHub Actions status checks
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_JSCPD: false
-          VALIDATE_SHELL_SHFMT: false
-          VALIDATE_YAML_PRETTIER: false
           VALIDATE_JSON_PRETTIER: false
           VALIDATE_MARKDOWN_PRETTIER: false
           VALIDATE_NATURAL_LANGUAGE: false
+          VALIDATE_SHELL_SHFMT: false
+          VALIDATE_TERRAFORM_TERRASCAN: false
+          VALIDATE_YAML_PRETTIER: false
