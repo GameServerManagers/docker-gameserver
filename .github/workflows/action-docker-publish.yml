@@ -97,7 +97,7 @@ jobs:
         run: rm -rf dockerfiles
 
       - name: Download a Build Artifact
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           # Artifact name
           name: Dockerfiles
