@@ -2,7 +2,9 @@
   "name": "Docker Dev Container",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
-    "ghcr.io/devcontainers-community/npm-features/prettier:1": {},
+    "ghcr.io/devcontainers-community/npm-features/prettier:1": {
+      "plugins": "prettier-plugin-sh prettier-plugin-jinja-template"
+    },
     "ghcr.io/devcontainers-extra/features/actionlint:1": {},
     "ghcr.io/devcontainers-extra/features/checkov:1": {},
     "ghcr.io/devcontainers-extra/features/markdownlint-cli:1": {},

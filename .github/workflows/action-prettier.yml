@@ -1,4 +1,5 @@
 name: Prettier
+
 on:
   workflow_dispatch:
   push:
