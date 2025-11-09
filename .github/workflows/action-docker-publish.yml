@@ -48,7 +48,7 @@ jobs:
         run: |
           shortnamearray=$(cat "shortnamearray.json")
           echo "${shortnamearray}"
-          echo -n "matrix=${shortnamearray}" >> ${GITHUB_OUTPUT}
+          echo -n "matrix=${shortnamearray}" >> "${GITHUB_OUTPUT}"
 
   generate-docker-compose:
     name: Generate docker-compose.yml files
