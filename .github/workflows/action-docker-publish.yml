@@ -134,7 +134,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: dockerfiles/Dockerfile.${{ matrix.shortname }}
+          file: dockerfiles/Dockerfile-${{ matrix.shortname }}
           platforms: linux/amd64
           push: true
           build-args: |
