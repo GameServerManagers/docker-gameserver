@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-jk2-bind:
-    image: gameservermanagers/gameserver:jk2
-    # image: ghcr.io/gameservermanagers/gameserver:jk2
-    container_name: jk2server
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/jk2server:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-jk2-volume:
-    image: gameservermanagers/gameserver:jk2
-    # image: ghcr.io/gameservermanagers/gameserver:jk2
-    container_name: jk2server
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-jk2:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-jk2:
+services: # bind mount example linuxgsm-jk2-bind: image:
+gameservermanagers/gameserver:jk2 # image:
+ghcr.io/gameservermanagers/gameserver:jk2 container_name:
+jk2server restart: unless-stopped volumes: -
+/path/to/linuxgsm/jk2server:/data network_mode: host # volume
+example linuxgsm-jk2-volume: image:
+gameservermanagers/gameserver:jk2 # image:
+ghcr.io/gameservermanagers/gameserver:jk2 container_name:
+jk2server restart: unless-stopped volumes: -
+linuxgsm-jk2:/data network_mode: host volumes:
+linuxgsm-jk2:

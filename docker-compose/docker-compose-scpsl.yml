@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-scpsl-bind:
-    image: gameservermanagers/gameserver:scpsl
-    # image: ghcr.io/gameservermanagers/gameserver:scpsl
-    container_name: scpslserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/scpslserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-scpsl-volume:
-    image: gameservermanagers/gameserver:scpsl
-    # image: ghcr.io/gameservermanagers/gameserver:scpsl
-    container_name: scpslserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-scpsl:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-scpsl:
+services: # bind mount example linuxgsm-scpsl-bind: image:
+gameservermanagers/gameserver:scpsl # image:
+ghcr.io/gameservermanagers/gameserver:scpsl container_name:
+scpslserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/scpslserver:/data network_mode: host # volume
+example linuxgsm-scpsl-volume: image:
+gameservermanagers/gameserver:scpsl # image:
+ghcr.io/gameservermanagers/gameserver:scpsl container_name:
+scpslserver restart: unless-stopped volumes: -
+linuxgsm-scpsl:/data network_mode: host volumes:
+linuxgsm-scpsl:

@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-cod4-bind:
-    image: gameservermanagers/gameserver:cod4
-    # image: ghcr.io/gameservermanagers/gameserver:cod4
-    container_name: cod4server
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/cod4server:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-cod4-volume:
-    image: gameservermanagers/gameserver:cod4
-    # image: ghcr.io/gameservermanagers/gameserver:cod4
-    container_name: cod4server
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-cod4:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-cod4:
+services: # bind mount example linuxgsm-cod4-bind: image:
+gameservermanagers/gameserver:cod4 # image:
+ghcr.io/gameservermanagers/gameserver:cod4 container_name:
+cod4server restart: unless-stopped volumes: -
+/path/to/linuxgsm/cod4server:/data network_mode: host # volume
+example linuxgsm-cod4-volume: image:
+gameservermanagers/gameserver:cod4 # image:
+ghcr.io/gameservermanagers/gameserver:cod4 container_name:
+cod4server restart: unless-stopped volumes: -
+linuxgsm-cod4:/data network_mode: host volumes:
+linuxgsm-cod4:

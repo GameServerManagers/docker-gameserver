@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-wf-bind:
-    image: gameservermanagers/gameserver:wf
-    # image: ghcr.io/gameservermanagers/gameserver:wf
-    container_name: wfserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/wfserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-wf-volume:
-    image: gameservermanagers/gameserver:wf
-    # image: ghcr.io/gameservermanagers/gameserver:wf
-    container_name: wfserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-wf:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-wf:
+services: # bind mount example linuxgsm-wf-bind: image:
+gameservermanagers/gameserver:wf # image:
+ghcr.io/gameservermanagers/gameserver:wf container_name:
+wfserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/wfserver:/data network_mode: host # volume
+example linuxgsm-wf-volume: image:
+gameservermanagers/gameserver:wf # image:
+ghcr.io/gameservermanagers/gameserver:wf container_name:
+wfserver restart: unless-stopped volumes: -
+linuxgsm-wf:/data network_mode: host volumes:
+linuxgsm-wf:

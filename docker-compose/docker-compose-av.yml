@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-av-bind:
-    image: gameservermanagers/gameserver:av
-    # image: ghcr.io/gameservermanagers/gameserver:av
-    container_name: avserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/avserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-av-volume:
-    image: gameservermanagers/gameserver:av
-    # image: ghcr.io/gameservermanagers/gameserver:av
-    container_name: avserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-av:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-av:
+services: # bind mount example linuxgsm-av-bind: image:
+gameservermanagers/gameserver:av # image:
+ghcr.io/gameservermanagers/gameserver:av container_name:
+avserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/avserver:/data network_mode: host # volume
+example linuxgsm-av-volume: image:
+gameservermanagers/gameserver:av # image:
+ghcr.io/gameservermanagers/gameserver:av container_name:
+avserver restart: unless-stopped volumes: -
+linuxgsm-av:/data network_mode: host volumes:
+linuxgsm-av:

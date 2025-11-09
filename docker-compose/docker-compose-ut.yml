@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-ut-bind:
-    image: gameservermanagers/gameserver:ut
-    # image: ghcr.io/gameservermanagers/gameserver:ut
-    container_name: utserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/utserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-ut-volume:
-    image: gameservermanagers/gameserver:ut
-    # image: ghcr.io/gameservermanagers/gameserver:ut
-    container_name: utserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-ut:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-ut:
+services: # bind mount example linuxgsm-ut-bind: image:
+gameservermanagers/gameserver:ut # image:
+ghcr.io/gameservermanagers/gameserver:ut container_name:
+utserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/utserver:/data network_mode: host # volume
+example linuxgsm-ut-volume: image:
+gameservermanagers/gameserver:ut # image:
+ghcr.io/gameservermanagers/gameserver:ut container_name:
+utserver restart: unless-stopped volumes: -
+linuxgsm-ut:/data network_mode: host volumes:
+linuxgsm-ut:

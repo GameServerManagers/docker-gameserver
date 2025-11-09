@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-inss-bind:
-    image: gameservermanagers/gameserver:inss
-    # image: ghcr.io/gameservermanagers/gameserver:inss
-    container_name: inssserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/inssserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-inss-volume:
-    image: gameservermanagers/gameserver:inss
-    # image: ghcr.io/gameservermanagers/gameserver:inss
-    container_name: inssserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-inss:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-inss:
+services: # bind mount example linuxgsm-inss-bind: image:
+gameservermanagers/gameserver:inss # image:
+ghcr.io/gameservermanagers/gameserver:inss container_name:
+inssserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/inssserver:/data network_mode: host # volume
+example linuxgsm-inss-volume: image:
+gameservermanagers/gameserver:inss # image:
+ghcr.io/gameservermanagers/gameserver:inss container_name:
+inssserver restart: unless-stopped volumes: -
+linuxgsm-inss:/data network_mode: host volumes:
+linuxgsm-inss:

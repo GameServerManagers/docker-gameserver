@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-ql-bind:
-    image: gameservermanagers/gameserver:ql
-    # image: ghcr.io/gameservermanagers/gameserver:ql
-    container_name: qlserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/qlserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-ql-volume:
-    image: gameservermanagers/gameserver:ql
-    # image: ghcr.io/gameservermanagers/gameserver:ql
-    container_name: qlserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-ql:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-ql:
+services: # bind mount example linuxgsm-ql-bind: image:
+gameservermanagers/gameserver:ql # image:
+ghcr.io/gameservermanagers/gameserver:ql container_name:
+qlserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/qlserver:/data network_mode: host # volume
+example linuxgsm-ql-volume: image:
+gameservermanagers/gameserver:ql # image:
+ghcr.io/gameservermanagers/gameserver:ql container_name:
+qlserver restart: unless-stopped volumes: -
+linuxgsm-ql:/data network_mode: host volumes:
+linuxgsm-ql:

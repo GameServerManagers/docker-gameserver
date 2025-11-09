@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-ts3-bind:
-    image: gameservermanagers/gameserver:ts3
-    # image: ghcr.io/gameservermanagers/gameserver:ts3
-    container_name: ts3server
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/ts3server:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-ts3-volume:
-    image: gameservermanagers/gameserver:ts3
-    # image: ghcr.io/gameservermanagers/gameserver:ts3
-    container_name: ts3server
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-ts3:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-ts3:
+services: # bind mount example linuxgsm-ts3-bind: image:
+gameservermanagers/gameserver:ts3 # image:
+ghcr.io/gameservermanagers/gameserver:ts3 container_name:
+ts3server restart: unless-stopped volumes: -
+/path/to/linuxgsm/ts3server:/data network_mode: host # volume
+example linuxgsm-ts3-volume: image:
+gameservermanagers/gameserver:ts3 # image:
+ghcr.io/gameservermanagers/gameserver:ts3 container_name:
+ts3server restart: unless-stopped volumes: -
+linuxgsm-ts3:/data network_mode: host volumes:
+linuxgsm-ts3:

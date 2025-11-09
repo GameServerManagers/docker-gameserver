@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-col-bind:
-    image: gameservermanagers/gameserver:col
-    # image: ghcr.io/gameservermanagers/gameserver:col
-    container_name: colserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/colserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-col-volume:
-    image: gameservermanagers/gameserver:col
-    # image: ghcr.io/gameservermanagers/gameserver:col
-    container_name: colserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-col:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-col:
+services: # bind mount example linuxgsm-col-bind: image:
+gameservermanagers/gameserver:col # image:
+ghcr.io/gameservermanagers/gameserver:col container_name:
+colserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/colserver:/data network_mode: host # volume
+example linuxgsm-col-volume: image:
+gameservermanagers/gameserver:col # image:
+ghcr.io/gameservermanagers/gameserver:col container_name:
+colserver restart: unless-stopped volumes: -
+linuxgsm-col:/data network_mode: host volumes:
+linuxgsm-col:

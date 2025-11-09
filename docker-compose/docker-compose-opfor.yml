@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-opfor-bind:
-    image: gameservermanagers/gameserver:opfor
-    # image: ghcr.io/gameservermanagers/gameserver:opfor
-    container_name: opforserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/opforserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-opfor-volume:
-    image: gameservermanagers/gameserver:opfor
-    # image: ghcr.io/gameservermanagers/gameserver:opfor
-    container_name: opforserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-opfor:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-opfor:
+services: # bind mount example linuxgsm-opfor-bind: image:
+gameservermanagers/gameserver:opfor # image:
+ghcr.io/gameservermanagers/gameserver:opfor container_name:
+opforserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/opforserver:/data network_mode: host # volume
+example linuxgsm-opfor-volume: image:
+gameservermanagers/gameserver:opfor # image:
+ghcr.io/gameservermanagers/gameserver:opfor container_name:
+opforserver restart: unless-stopped volumes: -
+linuxgsm-opfor:/data network_mode: host volumes:
+linuxgsm-opfor:

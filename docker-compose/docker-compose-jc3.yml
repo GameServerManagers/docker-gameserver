@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-jc3-bind:
-    image: gameservermanagers/gameserver:jc3
-    # image: ghcr.io/gameservermanagers/gameserver:jc3
-    container_name: jc3server
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/jc3server:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-jc3-volume:
-    image: gameservermanagers/gameserver:jc3
-    # image: ghcr.io/gameservermanagers/gameserver:jc3
-    container_name: jc3server
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-jc3:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-jc3:
+services: # bind mount example linuxgsm-jc3-bind: image:
+gameservermanagers/gameserver:jc3 # image:
+ghcr.io/gameservermanagers/gameserver:jc3 container_name:
+jc3server restart: unless-stopped volumes: -
+/path/to/linuxgsm/jc3server:/data network_mode: host # volume
+example linuxgsm-jc3-volume: image:
+gameservermanagers/gameserver:jc3 # image:
+ghcr.io/gameservermanagers/gameserver:jc3 container_name:
+jc3server restart: unless-stopped volumes: -
+linuxgsm-jc3:/data network_mode: host volumes:
+linuxgsm-jc3:

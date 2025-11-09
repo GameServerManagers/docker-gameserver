@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-mcb-bind:
-    image: gameservermanagers/gameserver:mcb
-    # image: ghcr.io/gameservermanagers/gameserver:mcb
-    container_name: mcbserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/mcbserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-mcb-volume:
-    image: gameservermanagers/gameserver:mcb
-    # image: ghcr.io/gameservermanagers/gameserver:mcb
-    container_name: mcbserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-mcb:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-mcb:
+services: # bind mount example linuxgsm-mcb-bind: image:
+gameservermanagers/gameserver:mcb # image:
+ghcr.io/gameservermanagers/gameserver:mcb container_name:
+mcbserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/mcbserver:/data network_mode: host # volume
+example linuxgsm-mcb-volume: image:
+gameservermanagers/gameserver:mcb # image:
+ghcr.io/gameservermanagers/gameserver:mcb container_name:
+mcbserver restart: unless-stopped volumes: -
+linuxgsm-mcb:/data network_mode: host volumes:
+linuxgsm-mcb:

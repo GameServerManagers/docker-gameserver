@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-nmrih-bind:
-    image: gameservermanagers/gameserver:nmrih
-    # image: ghcr.io/gameservermanagers/gameserver:nmrih
-    container_name: nmrihserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/nmrihserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-nmrih-volume:
-    image: gameservermanagers/gameserver:nmrih
-    # image: ghcr.io/gameservermanagers/gameserver:nmrih
-    container_name: nmrihserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-nmrih:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-nmrih:
+services: # bind mount example linuxgsm-nmrih-bind: image:
+gameservermanagers/gameserver:nmrih # image:
+ghcr.io/gameservermanagers/gameserver:nmrih container_name:
+nmrihserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/nmrihserver:/data network_mode: host # volume
+example linuxgsm-nmrih-volume: image:
+gameservermanagers/gameserver:nmrih # image:
+ghcr.io/gameservermanagers/gameserver:nmrih container_name:
+nmrihserver restart: unless-stopped volumes: -
+linuxgsm-nmrih:/data network_mode: host volumes:
+linuxgsm-nmrih:

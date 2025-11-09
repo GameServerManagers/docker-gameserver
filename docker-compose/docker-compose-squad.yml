@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-squad-bind:
-    image: gameservermanagers/gameserver:squad
-    # image: ghcr.io/gameservermanagers/gameserver:squad
-    container_name: squadserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/squadserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-squad-volume:
-    image: gameservermanagers/gameserver:squad
-    # image: ghcr.io/gameservermanagers/gameserver:squad
-    container_name: squadserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-squad:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-squad:
+services: # bind mount example linuxgsm-squad-bind: image:
+gameservermanagers/gameserver:squad # image:
+ghcr.io/gameservermanagers/gameserver:squad container_name:
+squadserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/squadserver:/data network_mode: host # volume
+example linuxgsm-squad-volume: image:
+gameservermanagers/gameserver:squad # image:
+ghcr.io/gameservermanagers/gameserver:squad container_name:
+squadserver restart: unless-stopped volumes: -
+linuxgsm-squad:/data network_mode: host volumes:
+linuxgsm-squad:

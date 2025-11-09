@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-ns2c-bind:
-    image: gameservermanagers/gameserver:ns2c
-    # image: ghcr.io/gameservermanagers/gameserver:ns2c
-    container_name: ns2cserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/ns2cserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-ns2c-volume:
-    image: gameservermanagers/gameserver:ns2c
-    # image: ghcr.io/gameservermanagers/gameserver:ns2c
-    container_name: ns2cserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-ns2c:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-ns2c:
+services: # bind mount example linuxgsm-ns2c-bind: image:
+gameservermanagers/gameserver:ns2c # image:
+ghcr.io/gameservermanagers/gameserver:ns2c container_name:
+ns2cserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/ns2cserver:/data network_mode: host # volume
+example linuxgsm-ns2c-volume: image:
+gameservermanagers/gameserver:ns2c # image:
+ghcr.io/gameservermanagers/gameserver:ns2c container_name:
+ns2cserver restart: unless-stopped volumes: -
+linuxgsm-ns2c:/data network_mode: host volumes:
+linuxgsm-ns2c:

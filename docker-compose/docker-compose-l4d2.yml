@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-l4d2-bind:
-    image: gameservermanagers/gameserver:l4d2
-    # image: ghcr.io/gameservermanagers/gameserver:l4d2
-    container_name: l4d2server
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/l4d2server:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-l4d2-volume:
-    image: gameservermanagers/gameserver:l4d2
-    # image: ghcr.io/gameservermanagers/gameserver:l4d2
-    container_name: l4d2server
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-l4d2:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-l4d2:
+services: # bind mount example linuxgsm-l4d2-bind: image:
+gameservermanagers/gameserver:l4d2 # image:
+ghcr.io/gameservermanagers/gameserver:l4d2 container_name:
+l4d2server restart: unless-stopped volumes: -
+/path/to/linuxgsm/l4d2server:/data network_mode: host # volume
+example linuxgsm-l4d2-volume: image:
+gameservermanagers/gameserver:l4d2 # image:
+ghcr.io/gameservermanagers/gameserver:l4d2 container_name:
+l4d2server restart: unless-stopped volumes: -
+linuxgsm-l4d2:/data network_mode: host volumes:
+linuxgsm-l4d2:

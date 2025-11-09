@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-dmc-bind:
-    image: gameservermanagers/gameserver:dmc
-    # image: ghcr.io/gameservermanagers/gameserver:dmc
-    container_name: dmcserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/dmcserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-dmc-volume:
-    image: gameservermanagers/gameserver:dmc
-    # image: ghcr.io/gameservermanagers/gameserver:dmc
-    container_name: dmcserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-dmc:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-dmc:
+services: # bind mount example linuxgsm-dmc-bind: image:
+gameservermanagers/gameserver:dmc # image:
+ghcr.io/gameservermanagers/gameserver:dmc container_name:
+dmcserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/dmcserver:/data network_mode: host # volume
+example linuxgsm-dmc-volume: image:
+gameservermanagers/gameserver:dmc # image:
+ghcr.io/gameservermanagers/gameserver:dmc container_name:
+dmcserver restart: unless-stopped volumes: -
+linuxgsm-dmc:/data network_mode: host volumes:
+linuxgsm-dmc:

@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-fof-bind:
-    image: gameservermanagers/gameserver:fof
-    # image: ghcr.io/gameservermanagers/gameserver:fof
-    container_name: fofserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/fofserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-fof-volume:
-    image: gameservermanagers/gameserver:fof
-    # image: ghcr.io/gameservermanagers/gameserver:fof
-    container_name: fofserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-fof:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-fof:
+services: # bind mount example linuxgsm-fof-bind: image:
+gameservermanagers/gameserver:fof # image:
+ghcr.io/gameservermanagers/gameserver:fof container_name:
+fofserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/fofserver:/data network_mode: host # volume
+example linuxgsm-fof-volume: image:
+gameservermanagers/gameserver:fof # image:
+ghcr.io/gameservermanagers/gameserver:fof container_name:
+fofserver restart: unless-stopped volumes: -
+linuxgsm-fof:/data network_mode: host volumes:
+linuxgsm-fof:

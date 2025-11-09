@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-ats-bind:
-    image: gameservermanagers/gameserver:ats
-    # image: ghcr.io/gameservermanagers/gameserver:ats
-    container_name: atsserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/atsserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-ats-volume:
-    image: gameservermanagers/gameserver:ats
-    # image: ghcr.io/gameservermanagers/gameserver:ats
-    container_name: atsserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-ats:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-ats:
+services: # bind mount example linuxgsm-ats-bind: image:
+gameservermanagers/gameserver:ats # image:
+ghcr.io/gameservermanagers/gameserver:ats container_name:
+atsserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/atsserver:/data network_mode: host # volume
+example linuxgsm-ats-volume: image:
+gameservermanagers/gameserver:ats # image:
+ghcr.io/gameservermanagers/gameserver:ats container_name:
+atsserver restart: unless-stopped volumes: -
+linuxgsm-ats:/data network_mode: host volumes:
+linuxgsm-ats:

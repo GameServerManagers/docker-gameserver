@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-qw-bind:
-    image: gameservermanagers/gameserver:qw
-    # image: ghcr.io/gameservermanagers/gameserver:qw
-    container_name: qwserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/qwserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-qw-volume:
-    image: gameservermanagers/gameserver:qw
-    # image: ghcr.io/gameservermanagers/gameserver:qw
-    container_name: qwserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-qw:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-qw:
+services: # bind mount example linuxgsm-qw-bind: image:
+gameservermanagers/gameserver:qw # image:
+ghcr.io/gameservermanagers/gameserver:qw container_name:
+qwserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/qwserver:/data network_mode: host # volume
+example linuxgsm-qw-volume: image:
+gameservermanagers/gameserver:qw # image:
+ghcr.io/gameservermanagers/gameserver:qw container_name:
+qwserver restart: unless-stopped volumes: -
+linuxgsm-qw:/data network_mode: host volumes:
+linuxgsm-qw:

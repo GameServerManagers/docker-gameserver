@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-hl2dm-bind:
-    image: gameservermanagers/gameserver:hl2dm
-    # image: ghcr.io/gameservermanagers/gameserver:hl2dm
-    container_name: hl2dmserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/hl2dmserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-hl2dm-volume:
-    image: gameservermanagers/gameserver:hl2dm
-    # image: ghcr.io/gameservermanagers/gameserver:hl2dm
-    container_name: hl2dmserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-hl2dm:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-hl2dm:
+services: # bind mount example linuxgsm-hl2dm-bind: image:
+gameservermanagers/gameserver:hl2dm # image:
+ghcr.io/gameservermanagers/gameserver:hl2dm container_name:
+hl2dmserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/hl2dmserver:/data network_mode: host # volume
+example linuxgsm-hl2dm-volume: image:
+gameservermanagers/gameserver:hl2dm # image:
+ghcr.io/gameservermanagers/gameserver:hl2dm container_name:
+hl2dmserver restart: unless-stopped volumes: -
+linuxgsm-hl2dm:/data network_mode: host volumes:
+linuxgsm-hl2dm:
