@@ -21,21 +21,17 @@ For a list of available game servers visit [linuxgsm.com](https://linuxgsm.com) 
 
 ### docker-compose
 
-Here is an example docker-compose configuration for the "csgoserver" using the image `gameservermanagers/gameserver:csgo`. Please note that the ports may vary depending on the specific game server. More docker-compose examples are available [docker-compose examples](https://github.com/GameServerManagers/docker-gameserver/tree/main/docker-compose).
+Here is an example docker-compose configuration for the "cs2server" using the image `gameservermanagers/gameserver:cs2`. Please note that the ports may vary depending on the specific game server. More docker-compose examples are available [docker-compose examples](https://github.com/GameServerManagers/docker-gameserver/tree/main/docker-compose).
 
 ```yaml
----
 services:
-  linuxgsm:
-    build:
-      context: .
-      dockerfile: dockerfiles/Dockerfile-cs2
+  linuxgsm-cs2:
+    image: ghcr.io/gameservermanagers/gameserver:cs2
+    # image: gameservermanagers/gameserver:cs2
     container_name: cs2server
-    ports:
-      - "27015:27015/tcp"
-      - "27015:27015/udp"
-      - "27020:27020/udp"
-      - "27005:27005/udp"
+    volumes:
+      - /path/to/cs2server:/data
+    network_mode: host
     restart: unless-stopped
 ```
 
@@ -45,13 +41,13 @@ Alternatively, you can use the Docker CLI to run the container:
 
 ```bash
 docker run -d \
-  --name csgoserver \
-  -v /path/to/csgoserver:/data \
+  --name cs2server \
+  -v /path/to/cs2server:/data \
   -p 27015:27015 \
   -p 27020:27020/udp \
   -p 27005:27005/udp \
   --restart unless-stopped \
-  gameservermanagers/gameserver:csgo
+  gameservermanagers/gameserver:cs2
 ```
 
 ### First Run
@@ -76,8 +72,8 @@ This container uses gosu to run gameservers as the `linuxgsm` user instead of ro
 
 ### Run LinuxGSM commands
 
-You can execute LinuxGSM commands within the container using the docker exec command. Here's an example to run the `./csgoserver details` command as the `linuxgsm` user:
+You can execute LinuxGSM commands within the container using the docker exec command. Here's an example to run the `./cs2server details` command as the `linuxgsm` user:
 
 ```bash
-docker exec -it --user linuxgsm csgoserver ./csgoserver details
+docker exec -it --user linuxgsm cs2server ./cs2server details
 ```
