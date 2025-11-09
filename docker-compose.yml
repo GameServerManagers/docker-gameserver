@@ -1,10 +1,10 @@
-version: "3.8"
+---
 services:
   linuxgsm:
     build:
       context: .
-      dockerfile: dockerfiles/Dockerfile.csgo
-    container_name: csgoserver
+      dockerfile: dockerfiles/Dockerfile-cs2
+    container_name: cs2server
     restart: unless-stopped
     ports:
       - "27015:27015/tcp"
