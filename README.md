@@ -23,8 +23,8 @@ For a list of available game servers visit [linuxgsm.com](https://linuxgsm.com) 
 
 Here is an example docker-compose configuration for the "csgoserver" using the image `gameservermanagers/gameserver:csgo`. Please note that the ports may vary depending on the specific game server. More docker-compose examples are available [here](https://github.com/GameServerManagers/docker-gameserver/tree/main/docker-compose).
 
-``` yaml
-version: '3.4'
+```yaml
+version: "3.4"
 services:
   linuxgsm-csgo:
     image: gameservermanagers/gameserver:csgo
@@ -44,7 +44,7 @@ services:
 
 Alternatively, you can use the Docker CLI to run the container:
 
-``` bash
+```bash
 docker run -d \
   --name csgoserver \
   -v /path/to/csgoserver:/data \
@@ -79,6 +79,6 @@ This container uses gosu to run gameservers as the `linuxgsm` user instead of ro
 
 You can execute LinuxGSM commands within the container using the docker exec command. Here's an example to run the `./csgoserver details` command as the `linuxgsm` user:
 
-``` bash
+```bash
 docker exec -it --user linuxgsm csgoserver ./csgoserver details
 ```
