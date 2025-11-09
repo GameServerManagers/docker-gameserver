@@ -20,9 +20,10 @@ For a list of available game servers visit [linuxgsm.com](https://linuxgsm.com) 
 ## Usage
 
 ### docker-compose
+
 Here is an example docker-compose configuration for the "csgoserver" using the image `gameservermanagers/gameserver:csgo`. Please note that the ports may vary depending on the specific game server. More docker-compose examples are available [here](https://github.com/GameServerManagers/docker-gameserver/tree/main/docker-compose).
 
-```
+``` yaml
 version: '3.4'
 services:
   linuxgsm-csgo:
@@ -40,8 +41,10 @@ services:
 ```
 
 ### Docker CLI
+
 Alternatively, you can use the Docker CLI to run the container:
-```
+
+``` bash
 docker run -d \
   --name csgoserver \
   -v /path/to/csgoserver:/data \
@@ -51,24 +54,31 @@ docker run -d \
   --restart unless-stopped \
   gameservermanagers/gameserver:csgo
 ```
+
 ### First Run
+
 Before the first run, make sure to edit the docker-compose.yml file by changing the image tag and container_name to match your chosen game server. Upon the initial run, LinuxGSM will install the selected server and start running. The game server details will be displayed once the installation is complete.
 
 ### Game Server Ports
+
 Each game server has specific port requirements. Therefore, after the initial run, you need to configure the appropriate ports in your docker-compose file. The required ports will be outputted after the installation process and every time the Docker container is started. Automation for this process is planned for the future.
 
 > There are future plans to auto generate ports in the examples for you.
 
 ### Volumes
+
 There are two types of persistent storage with Docker: volumes and bind mounts, both of which are compatible with this container. For more information on the differences between the two, please refer to the [Docker documentation](https://docs.docker.com/storage/).
 
 Some game servers store files outside of the serverfiles directory, within other parts of the home directory. The `data` directory serves as the home directory for the LinuxGSM user and stores all game server files. Make sure to mount this directory to a persistent storage location.
 
 ### LinuxGSM User
+
 This container uses gosu to run gameservers as the `linuxgsm` user instead of root. If you are using a bind mount for the data directory, ensure that the permissions are appropriately set.
 
 ### Run LinuxGSM commands
+
 You can execute LinuxGSM commands within the container using the docker exec command. Here's an example to run the `./csgoserver details` command as the `linuxgsm` user:
-```
+
+``` bash
 docker exec -it --user linuxgsm csgoserver ./csgoserver details
 ```
