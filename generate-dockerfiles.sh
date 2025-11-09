@@ -16,7 +16,7 @@ while read -r line; do
   export distro
   touch "dockerfiles/Dockerfile-${shortname}"
   echo "Generating Dockerfile-${shortname} (${gamename})"
-  jinjanate Dockerfile-j2 >"dockerfiles/Dockerfile-${shortname}"
+  jinjanate Dockerfile.j2 >"dockerfiles/Dockerfile-${shortname}"
   { printf '{"shortname":"%s"},' "$shortname"; } >>"shortnamearray.json"
 done < <(tail -n +2 serverlist.csv)
 sed -i '$ s/.$//' "shortnamearray.json"
