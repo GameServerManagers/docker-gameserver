@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-ro-bind:
-    image: gameservermanagers/gameserver:ro
-    # image: ghcr.io/gameservermanagers/gameserver:ro
-    container_name: roserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/roserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-ro-volume:
-    image: gameservermanagers/gameserver:ro
-    # image: ghcr.io/gameservermanagers/gameserver:ro
-    container_name: roserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-ro:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-ro:
+services: # bind mount example linuxgsm-ro-bind: image:
+gameservermanagers/gameserver:ro # image:
+ghcr.io/gameservermanagers/gameserver:ro container_name:
+roserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/roserver:/data network_mode: host # volume
+example linuxgsm-ro-volume: image:
+gameservermanagers/gameserver:ro # image:
+ghcr.io/gameservermanagers/gameserver:ro container_name:
+roserver restart: unless-stopped volumes: -
+linuxgsm-ro:/data network_mode: host volumes:
+linuxgsm-ro:

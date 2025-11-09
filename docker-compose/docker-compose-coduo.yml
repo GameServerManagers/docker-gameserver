@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-coduo-bind:
-    image: gameservermanagers/gameserver:coduo
-    # image: ghcr.io/gameservermanagers/gameserver:coduo
-    container_name: coduoserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/coduoserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-coduo-volume:
-    image: gameservermanagers/gameserver:coduo
-    # image: ghcr.io/gameservermanagers/gameserver:coduo
-    container_name: coduoserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-coduo:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-coduo:
+services: # bind mount example linuxgsm-coduo-bind: image:
+gameservermanagers/gameserver:coduo # image:
+ghcr.io/gameservermanagers/gameserver:coduo container_name:
+coduoserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/coduoserver:/data network_mode: host # volume
+example linuxgsm-coduo-volume: image:
+gameservermanagers/gameserver:coduo # image:
+ghcr.io/gameservermanagers/gameserver:coduo container_name:
+coduoserver restart: unless-stopped volumes: -
+linuxgsm-coduo:/data network_mode: host volumes:
+linuxgsm-coduo:

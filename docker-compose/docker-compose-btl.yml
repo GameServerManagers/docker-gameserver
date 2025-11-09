@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-btl-bind:
-    image: gameservermanagers/gameserver:btl
-    # image: ghcr.io/gameservermanagers/gameserver:btl
-    container_name: btlserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/btlserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-btl-volume:
-    image: gameservermanagers/gameserver:btl
-    # image: ghcr.io/gameservermanagers/gameserver:btl
-    container_name: btlserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-btl:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-btl:
+services: # bind mount example linuxgsm-btl-bind: image:
+gameservermanagers/gameserver:btl # image:
+ghcr.io/gameservermanagers/gameserver:btl container_name:
+btlserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/btlserver:/data network_mode: host # volume
+example linuxgsm-btl-volume: image:
+gameservermanagers/gameserver:btl # image:
+ghcr.io/gameservermanagers/gameserver:btl container_name:
+btlserver restart: unless-stopped volumes: -
+linuxgsm-btl:/data network_mode: host volumes:
+linuxgsm-btl:

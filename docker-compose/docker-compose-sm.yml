@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-sm-bind:
-    image: gameservermanagers/gameserver:sm
-    # image: ghcr.io/gameservermanagers/gameserver:sm
-    container_name: smserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/smserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-sm-volume:
-    image: gameservermanagers/gameserver:sm
-    # image: ghcr.io/gameservermanagers/gameserver:sm
-    container_name: smserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-sm:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-sm:
+services: # bind mount example linuxgsm-sm-bind: image:
+gameservermanagers/gameserver:sm # image:
+ghcr.io/gameservermanagers/gameserver:sm container_name:
+smserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/smserver:/data network_mode: host # volume
+example linuxgsm-sm-volume: image:
+gameservermanagers/gameserver:sm # image:
+ghcr.io/gameservermanagers/gameserver:sm container_name:
+smserver restart: unless-stopped volumes: -
+linuxgsm-sm:/data network_mode: host volumes:
+linuxgsm-sm:

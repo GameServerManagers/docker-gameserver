@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-rtcw-bind:
-    image: gameservermanagers/gameserver:rtcw
-    # image: ghcr.io/gameservermanagers/gameserver:rtcw
-    container_name: rtcwserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/rtcwserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-rtcw-volume:
-    image: gameservermanagers/gameserver:rtcw
-    # image: ghcr.io/gameservermanagers/gameserver:rtcw
-    container_name: rtcwserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-rtcw:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-rtcw:
+services: # bind mount example linuxgsm-rtcw-bind: image:
+gameservermanagers/gameserver:rtcw # image:
+ghcr.io/gameservermanagers/gameserver:rtcw container_name:
+rtcwserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/rtcwserver:/data network_mode: host # volume
+example linuxgsm-rtcw-volume: image:
+gameservermanagers/gameserver:rtcw # image:
+ghcr.io/gameservermanagers/gameserver:rtcw container_name:
+rtcwserver restart: unless-stopped volumes: -
+linuxgsm-rtcw:/data network_mode: host volumes:
+linuxgsm-rtcw:

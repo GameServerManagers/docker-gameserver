@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-onset-bind:
-    image: gameservermanagers/gameserver:onset
-    # image: ghcr.io/gameservermanagers/gameserver:onset
-    container_name: onsetserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/onsetserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-onset-volume:
-    image: gameservermanagers/gameserver:onset
-    # image: ghcr.io/gameservermanagers/gameserver:onset
-    container_name: onsetserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-onset:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-onset:
+services: # bind mount example linuxgsm-onset-bind: image:
+gameservermanagers/gameserver:onset # image:
+ghcr.io/gameservermanagers/gameserver:onset container_name:
+onsetserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/onsetserver:/data network_mode: host # volume
+example linuxgsm-onset-volume: image:
+gameservermanagers/gameserver:onset # image:
+ghcr.io/gameservermanagers/gameserver:onset container_name:
+onsetserver restart: unless-stopped volumes: -
+linuxgsm-onset:/data network_mode: host volumes:
+linuxgsm-onset:

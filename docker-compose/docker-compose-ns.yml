@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-ns-bind:
-    image: gameservermanagers/gameserver:ns
-    # image: ghcr.io/gameservermanagers/gameserver:ns
-    container_name: nsserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/nsserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-ns-volume:
-    image: gameservermanagers/gameserver:ns
-    # image: ghcr.io/gameservermanagers/gameserver:ns
-    container_name: nsserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-ns:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-ns:
+services: # bind mount example linuxgsm-ns-bind: image:
+gameservermanagers/gameserver:ns # image:
+ghcr.io/gameservermanagers/gameserver:ns container_name:
+nsserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/nsserver:/data network_mode: host # volume
+example linuxgsm-ns-volume: image:
+gameservermanagers/gameserver:ns # image:
+ghcr.io/gameservermanagers/gameserver:ns container_name:
+nsserver restart: unless-stopped volumes: -
+linuxgsm-ns:/data network_mode: host volumes:
+linuxgsm-ns:

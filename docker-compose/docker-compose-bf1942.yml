@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-bf1942-bind:
-    image: gameservermanagers/gameserver:bf1942
-    # image: ghcr.io/gameservermanagers/gameserver:bf1942
-    container_name: bf1942server
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/bf1942server:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-bf1942-volume:
-    image: gameservermanagers/gameserver:bf1942
-    # image: ghcr.io/gameservermanagers/gameserver:bf1942
-    container_name: bf1942server
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-bf1942:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-bf1942:
+services: # bind mount example linuxgsm-bf1942-bind: image:
+gameservermanagers/gameserver:bf1942 # image:
+ghcr.io/gameservermanagers/gameserver:bf1942 container_name:
+bf1942server restart: unless-stopped volumes: -
+/path/to/linuxgsm/bf1942server:/data network_mode: host # volume
+example linuxgsm-bf1942-volume: image:
+gameservermanagers/gameserver:bf1942 # image:
+ghcr.io/gameservermanagers/gameserver:bf1942 container_name:
+bf1942server restart: unless-stopped volumes: -
+linuxgsm-bf1942:/data network_mode: host volumes:
+linuxgsm-bf1942:

@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-nec-bind:
-    image: gameservermanagers/gameserver:nec
-    # image: ghcr.io/gameservermanagers/gameserver:nec
-    container_name: necserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/necserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-nec-volume:
-    image: gameservermanagers/gameserver:nec
-    # image: ghcr.io/gameservermanagers/gameserver:nec
-    container_name: necserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-nec:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-nec:
+services: # bind mount example linuxgsm-nec-bind: image:
+gameservermanagers/gameserver:nec # image:
+ghcr.io/gameservermanagers/gameserver:nec container_name:
+necserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/necserver:/data network_mode: host # volume
+example linuxgsm-nec-volume: image:
+gameservermanagers/gameserver:nec # image:
+ghcr.io/gameservermanagers/gameserver:nec container_name:
+necserver restart: unless-stopped volumes: -
+linuxgsm-nec:/data network_mode: host volumes:
+linuxgsm-nec:

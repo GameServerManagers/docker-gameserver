@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-kf2-bind:
-    image: gameservermanagers/gameserver:kf2
-    # image: ghcr.io/gameservermanagers/gameserver:kf2
-    container_name: kf2server
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/kf2server:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-kf2-volume:
-    image: gameservermanagers/gameserver:kf2
-    # image: ghcr.io/gameservermanagers/gameserver:kf2
-    container_name: kf2server
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-kf2:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-kf2:
+services: # bind mount example linuxgsm-kf2-bind: image:
+gameservermanagers/gameserver:kf2 # image:
+ghcr.io/gameservermanagers/gameserver:kf2 container_name:
+kf2server restart: unless-stopped volumes: -
+/path/to/linuxgsm/kf2server:/data network_mode: host # volume
+example linuxgsm-kf2-volume: image:
+gameservermanagers/gameserver:kf2 # image:
+ghcr.io/gameservermanagers/gameserver:kf2 container_name:
+kf2server restart: unless-stopped volumes: -
+linuxgsm-kf2:/data network_mode: host volumes:
+linuxgsm-kf2:

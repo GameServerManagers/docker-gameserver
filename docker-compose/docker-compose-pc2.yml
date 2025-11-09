@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-pc2-bind:
-    image: gameservermanagers/gameserver:pc2
-    # image: ghcr.io/gameservermanagers/gameserver:pc2
-    container_name: pc2server
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/pc2server:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-pc2-volume:
-    image: gameservermanagers/gameserver:pc2
-    # image: ghcr.io/gameservermanagers/gameserver:pc2
-    container_name: pc2server
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-pc2:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-pc2:
+services: # bind mount example linuxgsm-pc2-bind: image:
+gameservermanagers/gameserver:pc2 # image:
+ghcr.io/gameservermanagers/gameserver:pc2 container_name:
+pc2server restart: unless-stopped volumes: -
+/path/to/linuxgsm/pc2server:/data network_mode: host # volume
+example linuxgsm-pc2-volume: image:
+gameservermanagers/gameserver:pc2 # image:
+ghcr.io/gameservermanagers/gameserver:pc2 container_name:
+pc2server restart: unless-stopped volumes: -
+linuxgsm-pc2:/data network_mode: host volumes:
+linuxgsm-pc2:

@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-tw-bind:
-    image: gameservermanagers/gameserver:tw
-    # image: ghcr.io/gameservermanagers/gameserver:tw
-    container_name: twserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/twserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-tw-volume:
-    image: gameservermanagers/gameserver:tw
-    # image: ghcr.io/gameservermanagers/gameserver:tw
-    container_name: twserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-tw:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-tw:
+services: # bind mount example linuxgsm-tw-bind: image:
+gameservermanagers/gameserver:tw # image:
+ghcr.io/gameservermanagers/gameserver:tw container_name:
+twserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/twserver:/data network_mode: host # volume
+example linuxgsm-tw-volume: image:
+gameservermanagers/gameserver:tw # image:
+ghcr.io/gameservermanagers/gameserver:tw container_name:
+twserver restart: unless-stopped volumes: -
+linuxgsm-tw:/data network_mode: host volumes:
+linuxgsm-tw:

@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-sfc-bind:
-    image: gameservermanagers/gameserver:sfc
-    # image: ghcr.io/gameservermanagers/gameserver:sfc
-    container_name: sfcserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/sfcserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-sfc-volume:
-    image: gameservermanagers/gameserver:sfc
-    # image: ghcr.io/gameservermanagers/gameserver:sfc
-    container_name: sfcserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-sfc:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-sfc:
+services: # bind mount example linuxgsm-sfc-bind: image:
+gameservermanagers/gameserver:sfc # image:
+ghcr.io/gameservermanagers/gameserver:sfc container_name:
+sfcserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/sfcserver:/data network_mode: host # volume
+example linuxgsm-sfc-volume: image:
+gameservermanagers/gameserver:sfc # image:
+ghcr.io/gameservermanagers/gameserver:sfc container_name:
+sfcserver restart: unless-stopped volumes: -
+linuxgsm-sfc:/data network_mode: host volumes:
+linuxgsm-sfc:

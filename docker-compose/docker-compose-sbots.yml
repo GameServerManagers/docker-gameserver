@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-sbots-bind:
-    image: gameservermanagers/gameserver:sbots
-    # image: ghcr.io/gameservermanagers/gameserver:sbots
-    container_name: sbotsserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/sbotsserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-sbots-volume:
-    image: gameservermanagers/gameserver:sbots
-    # image: ghcr.io/gameservermanagers/gameserver:sbots
-    container_name: sbotsserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-sbots:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-sbots:
+services: # bind mount example linuxgsm-sbots-bind: image:
+gameservermanagers/gameserver:sbots # image:
+ghcr.io/gameservermanagers/gameserver:sbots container_name:
+sbotsserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/sbotsserver:/data network_mode: host # volume
+example linuxgsm-sbots-volume: image:
+gameservermanagers/gameserver:sbots # image:
+ghcr.io/gameservermanagers/gameserver:sbots container_name:
+sbotsserver restart: unless-stopped volumes: -
+linuxgsm-sbots:/data network_mode: host volumes:
+linuxgsm-sbots:

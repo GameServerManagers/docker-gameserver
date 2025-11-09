@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-ti-bind:
-    image: gameservermanagers/gameserver:ti
-    # image: ghcr.io/gameservermanagers/gameserver:ti
-    container_name: tiserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/tiserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-ti-volume:
-    image: gameservermanagers/gameserver:ti
-    # image: ghcr.io/gameservermanagers/gameserver:ti
-    container_name: tiserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-ti:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-ti:
+services: # bind mount example linuxgsm-ti-bind: image:
+gameservermanagers/gameserver:ti # image:
+ghcr.io/gameservermanagers/gameserver:ti container_name:
+tiserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/tiserver:/data network_mode: host # volume
+example linuxgsm-ti-volume: image:
+gameservermanagers/gameserver:ti # image:
+ghcr.io/gameservermanagers/gameserver:ti container_name:
+tiserver restart: unless-stopped volumes: -
+linuxgsm-ti:/data network_mode: host volumes:
+linuxgsm-ti:

@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-shortname-bind:
-    image: gameservermanagers/gameserver:shortname
-    # image: ghcr.io/gameservermanagers/gameserver:shortname
-    container_name: shortnameserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/shortnameserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-shortname-volume:
-    image: gameservermanagers/gameserver:shortname
-    # image: ghcr.io/gameservermanagers/gameserver:shortname
-    container_name: shortnameserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-shortname:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-shortname:
+services: # bind mount example linuxgsm-shortname-bind: image:
+gameservermanagers/gameserver:shortname # image:
+ghcr.io/gameservermanagers/gameserver:shortname container_name:
+shortnameserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/shortnameserver:/data network_mode: host # volume
+example linuxgsm-shortname-volume: image:
+gameservermanagers/gameserver:shortname # image:
+ghcr.io/gameservermanagers/gameserver:shortname container_name:
+shortnameserver restart: unless-stopped volumes: -
+linuxgsm-shortname:/data network_mode: host volumes:
+linuxgsm-shortname:

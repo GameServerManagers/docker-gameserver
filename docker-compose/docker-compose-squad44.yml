@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-squad44-bind:
-    image: gameservermanagers/gameserver:squad44
-    # image: ghcr.io/gameservermanagers/gameserver:squad44
-    container_name: squad44server
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/squad44server:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-squad44-volume:
-    image: gameservermanagers/gameserver:squad44
-    # image: ghcr.io/gameservermanagers/gameserver:squad44
-    container_name: squad44server
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-squad44:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-squad44:
+services: # bind mount example linuxgsm-squad44-bind: image:
+gameservermanagers/gameserver:squad44 # image:
+ghcr.io/gameservermanagers/gameserver:squad44 container_name:
+squad44server restart: unless-stopped volumes: -
+/path/to/linuxgsm/squad44server:/data network_mode: host # volume
+example linuxgsm-squad44-volume: image:
+gameservermanagers/gameserver:squad44 # image:
+ghcr.io/gameservermanagers/gameserver:squad44 container_name:
+squad44server restart: unless-stopped volumes: -
+linuxgsm-squad44:/data network_mode: host volumes:
+linuxgsm-squad44:

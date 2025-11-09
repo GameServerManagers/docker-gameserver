@@ -1,24 +1,11 @@
-version: "3.8"
-services:
-  # bind mount example
-  linuxgsm-pmc-bind:
-    image: gameservermanagers/gameserver:pmc
-    # image: ghcr.io/gameservermanagers/gameserver:pmc
-    container_name: pmcserver
-    restart: unless-stopped
-    volumes:
-      - /path/to/linuxgsm/pmcserver:/data
-    network_mode: host
-
-  # volume example
-  linuxgsm-pmc-volume:
-    image: gameservermanagers/gameserver:pmc
-    # image: ghcr.io/gameservermanagers/gameserver:pmc
-    container_name: pmcserver
-    restart: unless-stopped
-    volumes:
-      - linuxgsm-pmc:/data
-    network_mode: host
-
-volumes:
-  linuxgsm-pmc:
+services: # bind mount example linuxgsm-pmc-bind: image:
+gameservermanagers/gameserver:pmc # image:
+ghcr.io/gameservermanagers/gameserver:pmc container_name:
+pmcserver restart: unless-stopped volumes: -
+/path/to/linuxgsm/pmcserver:/data network_mode: host # volume
+example linuxgsm-pmc-volume: image:
+gameservermanagers/gameserver:pmc # image:
+ghcr.io/gameservermanagers/gameserver:pmc container_name:
+pmcserver restart: unless-stopped volumes: -
+linuxgsm-pmc:/data network_mode: host volumes:
+linuxgsm-pmc:
