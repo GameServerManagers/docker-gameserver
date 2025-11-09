@@ -24,7 +24,6 @@ For a list of available game servers visit [linuxgsm.com](https://linuxgsm.com) 
 Here is an example docker-compose configuration for the "csgoserver" using the image `gameservermanagers/gameserver:csgo`. Please note that the ports may vary depending on the specific game server. More docker-compose examples are available [docker-compose examples](https://github.com/GameServerManagers/docker-gameserver/tree/main/docker-compose).
 
 ```yaml
-version: "3.4"
 services:
   linuxgsm-csgo:
     image: gameservermanagers/gameserver:csgo
