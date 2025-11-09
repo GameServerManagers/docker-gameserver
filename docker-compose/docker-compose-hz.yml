@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-hz-bind: image:
-gameservermanagers/gameserver:hz # image:
-ghcr.io/gameservermanagers/gameserver:hz container_name:
-hzserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/hzserver:/data network_mode: host # volume
-example linuxgsm-hz-volume: image:
-gameservermanagers/gameserver:hz # image:
-ghcr.io/gameservermanagers/gameserver:hz container_name:
-hzserver restart: unless-stopped volumes: -
-linuxgsm-hz:/data network_mode: host volumes:
-linuxgsm-hz:
+---
+services:
+  # bind mount example
+  linuxgsm-hz-bind:
+    image: gameservermanagers/gameserver:hz
+    # image: ghcr.io/gameservermanagers/gameserver:hz
+    container_name: hzserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/hzserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-hz-volume:
+    image: gameservermanagers/gameserver:hz
+    # image: ghcr.io/gameservermanagers/gameserver:hz
+    container_name: hzserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-hz:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-hz:

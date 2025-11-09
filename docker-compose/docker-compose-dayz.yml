@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-dayz-bind: image:
-gameservermanagers/gameserver:dayz # image:
-ghcr.io/gameservermanagers/gameserver:dayz container_name:
-dayzserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/dayzserver:/data network_mode: host # volume
-example linuxgsm-dayz-volume: image:
-gameservermanagers/gameserver:dayz # image:
-ghcr.io/gameservermanagers/gameserver:dayz container_name:
-dayzserver restart: unless-stopped volumes: -
-linuxgsm-dayz:/data network_mode: host volumes:
-linuxgsm-dayz:
+---
+services:
+  # bind mount example
+  linuxgsm-dayz-bind:
+    image: gameservermanagers/gameserver:dayz
+    # image: ghcr.io/gameservermanagers/gameserver:dayz
+    container_name: dayzserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/dayzserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-dayz-volume:
+    image: gameservermanagers/gameserver:dayz
+    # image: ghcr.io/gameservermanagers/gameserver:dayz
+    container_name: dayzserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-dayz:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-dayz:

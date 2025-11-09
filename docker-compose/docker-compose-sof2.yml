@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-sof2-bind: image:
-gameservermanagers/gameserver:sof2 # image:
-ghcr.io/gameservermanagers/gameserver:sof2 container_name:
-sof2server restart: unless-stopped volumes: -
-/path/to/linuxgsm/sof2server:/data network_mode: host # volume
-example linuxgsm-sof2-volume: image:
-gameservermanagers/gameserver:sof2 # image:
-ghcr.io/gameservermanagers/gameserver:sof2 container_name:
-sof2server restart: unless-stopped volumes: -
-linuxgsm-sof2:/data network_mode: host volumes:
-linuxgsm-sof2:
+---
+services:
+  # bind mount example
+  linuxgsm-sof2-bind:
+    image: gameservermanagers/gameserver:sof2
+    # image: ghcr.io/gameservermanagers/gameserver:sof2
+    container_name: sof2server
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/sof2server:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-sof2-volume:
+    image: gameservermanagers/gameserver:sof2
+    # image: ghcr.io/gameservermanagers/gameserver:sof2
+    container_name: sof2server
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-sof2:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-sof2:

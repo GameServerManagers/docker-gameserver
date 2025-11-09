@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-ac-bind: image:
-gameservermanagers/gameserver:ac # image:
-ghcr.io/gameservermanagers/gameserver:ac container_name:
-acserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/acserver:/data network_mode: host # volume
-example linuxgsm-ac-volume: image:
-gameservermanagers/gameserver:ac # image:
-ghcr.io/gameservermanagers/gameserver:ac container_name:
-acserver restart: unless-stopped volumes: -
-linuxgsm-ac:/data network_mode: host volumes:
-linuxgsm-ac:
+---
+services:
+  # bind mount example
+  linuxgsm-ac-bind:
+    image: gameservermanagers/gameserver:ac
+    # image: ghcr.io/gameservermanagers/gameserver:ac
+    container_name: acserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/acserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-ac-volume:
+    image: gameservermanagers/gameserver:ac
+    # image: ghcr.io/gameservermanagers/gameserver:ac
+    container_name: acserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-ac:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-ac:

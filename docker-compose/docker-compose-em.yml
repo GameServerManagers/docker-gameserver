@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-em-bind: image:
-gameservermanagers/gameserver:em # image:
-ghcr.io/gameservermanagers/gameserver:em container_name:
-emserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/emserver:/data network_mode: host # volume
-example linuxgsm-em-volume: image:
-gameservermanagers/gameserver:em # image:
-ghcr.io/gameservermanagers/gameserver:em container_name:
-emserver restart: unless-stopped volumes: -
-linuxgsm-em:/data network_mode: host volumes:
-linuxgsm-em:
+---
+services:
+  # bind mount example
+  linuxgsm-em-bind:
+    image: gameservermanagers/gameserver:em
+    # image: ghcr.io/gameservermanagers/gameserver:em
+    container_name: emserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/emserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-em-volume:
+    image: gameservermanagers/gameserver:em
+    # image: ghcr.io/gameservermanagers/gameserver:em
+    container_name: emserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-em:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-em:

@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-sb-bind: image:
-gameservermanagers/gameserver:sb # image:
-ghcr.io/gameservermanagers/gameserver:sb container_name:
-sbserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/sbserver:/data network_mode: host # volume
-example linuxgsm-sb-volume: image:
-gameservermanagers/gameserver:sb # image:
-ghcr.io/gameservermanagers/gameserver:sb container_name:
-sbserver restart: unless-stopped volumes: -
-linuxgsm-sb:/data network_mode: host volumes:
-linuxgsm-sb:
+---
+services:
+  # bind mount example
+  linuxgsm-sb-bind:
+    image: gameservermanagers/gameserver:sb
+    # image: ghcr.io/gameservermanagers/gameserver:sb
+    container_name: sbserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/sbserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-sb-volume:
+    image: gameservermanagers/gameserver:sb
+    # image: ghcr.io/gameservermanagers/gameserver:sb
+    container_name: sbserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-sb:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-sb:

@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-mta-bind: image:
-gameservermanagers/gameserver:mta # image:
-ghcr.io/gameservermanagers/gameserver:mta container_name:
-mtaserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/mtaserver:/data network_mode: host # volume
-example linuxgsm-mta-volume: image:
-gameservermanagers/gameserver:mta # image:
-ghcr.io/gameservermanagers/gameserver:mta container_name:
-mtaserver restart: unless-stopped volumes: -
-linuxgsm-mta:/data network_mode: host volumes:
-linuxgsm-mta:
+---
+services:
+  # bind mount example
+  linuxgsm-mta-bind:
+    image: gameservermanagers/gameserver:mta
+    # image: ghcr.io/gameservermanagers/gameserver:mta
+    container_name: mtaserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/mtaserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-mta-volume:
+    image: gameservermanagers/gameserver:mta
+    # image: ghcr.io/gameservermanagers/gameserver:mta
+    container_name: mtaserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-mta:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-mta:

@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-q2-bind: image:
-gameservermanagers/gameserver:q2 # image:
-ghcr.io/gameservermanagers/gameserver:q2 container_name:
-q2server restart: unless-stopped volumes: -
-/path/to/linuxgsm/q2server:/data network_mode: host # volume
-example linuxgsm-q2-volume: image:
-gameservermanagers/gameserver:q2 # image:
-ghcr.io/gameservermanagers/gameserver:q2 container_name:
-q2server restart: unless-stopped volumes: -
-linuxgsm-q2:/data network_mode: host volumes:
-linuxgsm-q2:
+---
+services:
+  # bind mount example
+  linuxgsm-q2-bind:
+    image: gameservermanagers/gameserver:q2
+    # image: ghcr.io/gameservermanagers/gameserver:q2
+    container_name: q2server
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/q2server:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-q2-volume:
+    image: gameservermanagers/gameserver:q2
+    # image: ghcr.io/gameservermanagers/gameserver:q2
+    container_name: q2server
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-q2:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-q2:

@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-zps-bind: image:
-gameservermanagers/gameserver:zps # image:
-ghcr.io/gameservermanagers/gameserver:zps container_name:
-zpsserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/zpsserver:/data network_mode: host # volume
-example linuxgsm-zps-volume: image:
-gameservermanagers/gameserver:zps # image:
-ghcr.io/gameservermanagers/gameserver:zps container_name:
-zpsserver restart: unless-stopped volumes: -
-linuxgsm-zps:/data network_mode: host volumes:
-linuxgsm-zps:
+---
+services:
+  # bind mount example
+  linuxgsm-zps-bind:
+    image: gameservermanagers/gameserver:zps
+    # image: ghcr.io/gameservermanagers/gameserver:zps
+    container_name: zpsserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/zpsserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-zps-volume:
+    image: gameservermanagers/gameserver:zps
+    # image: ghcr.io/gameservermanagers/gameserver:zps
+    container_name: zpsserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-zps:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-zps:

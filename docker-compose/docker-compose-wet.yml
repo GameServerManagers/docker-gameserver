@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-wet-bind: image:
-gameservermanagers/gameserver:wet # image:
-ghcr.io/gameservermanagers/gameserver:wet container_name:
-wetserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/wetserver:/data network_mode: host # volume
-example linuxgsm-wet-volume: image:
-gameservermanagers/gameserver:wet # image:
-ghcr.io/gameservermanagers/gameserver:wet container_name:
-wetserver restart: unless-stopped volumes: -
-linuxgsm-wet:/data network_mode: host volumes:
-linuxgsm-wet:
+---
+services:
+  # bind mount example
+  linuxgsm-wet-bind:
+    image: gameservermanagers/gameserver:wet
+    # image: ghcr.io/gameservermanagers/gameserver:wet
+    container_name: wetserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/wetserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-wet-volume:
+    image: gameservermanagers/gameserver:wet
+    # image: ghcr.io/gameservermanagers/gameserver:wet
+    container_name: wetserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-wet:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-wet:

@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-sol-bind: image:
-gameservermanagers/gameserver:sol # image:
-ghcr.io/gameservermanagers/gameserver:sol container_name:
-solserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/solserver:/data network_mode: host # volume
-example linuxgsm-sol-volume: image:
-gameservermanagers/gameserver:sol # image:
-ghcr.io/gameservermanagers/gameserver:sol container_name:
-solserver restart: unless-stopped volumes: -
-linuxgsm-sol:/data network_mode: host volumes:
-linuxgsm-sol:
+---
+services:
+  # bind mount example
+  linuxgsm-sol-bind:
+    image: gameservermanagers/gameserver:sol
+    # image: ghcr.io/gameservermanagers/gameserver:sol
+    container_name: solserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/solserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-sol-volume:
+    image: gameservermanagers/gameserver:sol
+    # image: ghcr.io/gameservermanagers/gameserver:sol
+    container_name: solserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-sol:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-sol:

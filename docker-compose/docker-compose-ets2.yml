@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-ets2-bind: image:
-gameservermanagers/gameserver:ets2 # image:
-ghcr.io/gameservermanagers/gameserver:ets2 container_name:
-ets2server restart: unless-stopped volumes: -
-/path/to/linuxgsm/ets2server:/data network_mode: host # volume
-example linuxgsm-ets2-volume: image:
-gameservermanagers/gameserver:ets2 # image:
-ghcr.io/gameservermanagers/gameserver:ets2 container_name:
-ets2server restart: unless-stopped volumes: -
-linuxgsm-ets2:/data network_mode: host volumes:
-linuxgsm-ets2:
+---
+services:
+  # bind mount example
+  linuxgsm-ets2-bind:
+    image: gameservermanagers/gameserver:ets2
+    # image: ghcr.io/gameservermanagers/gameserver:ets2
+    container_name: ets2server
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/ets2server:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-ets2-volume:
+    image: gameservermanagers/gameserver:ets2
+    # image: ghcr.io/gameservermanagers/gameserver:ets2
+    container_name: ets2server
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-ets2:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-ets2:

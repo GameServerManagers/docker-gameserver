@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-sdtd-bind: image:
-gameservermanagers/gameserver:sdtd # image:
-ghcr.io/gameservermanagers/gameserver:sdtd container_name:
-sdtdserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/sdtdserver:/data network_mode: host # volume
-example linuxgsm-sdtd-volume: image:
-gameservermanagers/gameserver:sdtd # image:
-ghcr.io/gameservermanagers/gameserver:sdtd container_name:
-sdtdserver restart: unless-stopped volumes: -
-linuxgsm-sdtd:/data network_mode: host volumes:
-linuxgsm-sdtd:
+---
+services:
+  # bind mount example
+  linuxgsm-sdtd-bind:
+    image: gameservermanagers/gameserver:sdtd
+    # image: ghcr.io/gameservermanagers/gameserver:sdtd
+    container_name: sdtdserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/sdtdserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-sdtd-volume:
+    image: gameservermanagers/gameserver:sdtd
+    # image: ghcr.io/gameservermanagers/gameserver:sdtd
+    container_name: sdtdserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-sdtd:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-sdtd:

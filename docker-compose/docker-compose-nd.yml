@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-nd-bind: image:
-gameservermanagers/gameserver:nd # image:
-ghcr.io/gameservermanagers/gameserver:nd container_name:
-ndserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/ndserver:/data network_mode: host # volume
-example linuxgsm-nd-volume: image:
-gameservermanagers/gameserver:nd # image:
-ghcr.io/gameservermanagers/gameserver:nd container_name:
-ndserver restart: unless-stopped volumes: -
-linuxgsm-nd:/data network_mode: host volumes:
-linuxgsm-nd:
+---
+services:
+  # bind mount example
+  linuxgsm-nd-bind:
+    image: gameservermanagers/gameserver:nd
+    # image: ghcr.io/gameservermanagers/gameserver:nd
+    container_name: ndserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/ndserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-nd-volume:
+    image: gameservermanagers/gameserver:nd
+    # image: ghcr.io/gameservermanagers/gameserver:nd
+    container_name: ndserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-nd:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-nd:

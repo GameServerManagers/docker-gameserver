@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-rust-bind: image:
-gameservermanagers/gameserver:rust # image:
-ghcr.io/gameservermanagers/gameserver:rust container_name:
-rustserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/rustserver:/data network_mode: host # volume
-example linuxgsm-rust-volume: image:
-gameservermanagers/gameserver:rust # image:
-ghcr.io/gameservermanagers/gameserver:rust container_name:
-rustserver restart: unless-stopped volumes: -
-linuxgsm-rust:/data network_mode: host volumes:
-linuxgsm-rust:
+---
+services:
+  # bind mount example
+  linuxgsm-rust-bind:
+    image: gameservermanagers/gameserver:rust
+    # image: ghcr.io/gameservermanagers/gameserver:rust
+    container_name: rustserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/rustserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-rust-volume:
+    image: gameservermanagers/gameserver:rust
+    # image: ghcr.io/gameservermanagers/gameserver:rust
+    container_name: rustserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-rust:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-rust:

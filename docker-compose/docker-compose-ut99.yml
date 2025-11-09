@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-ut99-bind: image:
-gameservermanagers/gameserver:ut99 # image:
-ghcr.io/gameservermanagers/gameserver:ut99 container_name:
-ut99server restart: unless-stopped volumes: -
-/path/to/linuxgsm/ut99server:/data network_mode: host # volume
-example linuxgsm-ut99-volume: image:
-gameservermanagers/gameserver:ut99 # image:
-ghcr.io/gameservermanagers/gameserver:ut99 container_name:
-ut99server restart: unless-stopped volumes: -
-linuxgsm-ut99:/data network_mode: host volumes:
-linuxgsm-ut99:
+---
+services:
+  # bind mount example
+  linuxgsm-ut99-bind:
+    image: gameservermanagers/gameserver:ut99
+    # image: ghcr.io/gameservermanagers/gameserver:ut99
+    container_name: ut99server
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/ut99server:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-ut99-volume:
+    image: gameservermanagers/gameserver:ut99
+    # image: ghcr.io/gameservermanagers/gameserver:ut99
+    container_name: ut99server
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-ut99:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-ut99:

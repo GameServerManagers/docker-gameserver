@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-pz-bind: image:
-gameservermanagers/gameserver:pz # image:
-ghcr.io/gameservermanagers/gameserver:pz container_name:
-pzserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/pzserver:/data network_mode: host # volume
-example linuxgsm-pz-volume: image:
-gameservermanagers/gameserver:pz # image:
-ghcr.io/gameservermanagers/gameserver:pz container_name:
-pzserver restart: unless-stopped volumes: -
-linuxgsm-pz:/data network_mode: host volumes:
-linuxgsm-pz:
+---
+services:
+  # bind mount example
+  linuxgsm-pz-bind:
+    image: gameservermanagers/gameserver:pz
+    # image: ghcr.io/gameservermanagers/gameserver:pz
+    container_name: pzserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/pzserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-pz-volume:
+    image: gameservermanagers/gameserver:pz
+    # image: ghcr.io/gameservermanagers/gameserver:pz
+    container_name: pzserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-pz:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-pz:

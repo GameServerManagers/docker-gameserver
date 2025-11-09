@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-zmr-bind: image:
-gameservermanagers/gameserver:zmr # image:
-ghcr.io/gameservermanagers/gameserver:zmr container_name:
-zmrserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/zmrserver:/data network_mode: host # volume
-example linuxgsm-zmr-volume: image:
-gameservermanagers/gameserver:zmr # image:
-ghcr.io/gameservermanagers/gameserver:zmr container_name:
-zmrserver restart: unless-stopped volumes: -
-linuxgsm-zmr:/data network_mode: host volumes:
-linuxgsm-zmr:
+---
+services:
+  # bind mount example
+  linuxgsm-zmr-bind:
+    image: gameservermanagers/gameserver:zmr
+    # image: ghcr.io/gameservermanagers/gameserver:zmr
+    container_name: zmrserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/zmrserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-zmr-volume:
+    image: gameservermanagers/gameserver:zmr
+    # image: ghcr.io/gameservermanagers/gameserver:zmr
+    container_name: zmrserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-zmr:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-zmr:

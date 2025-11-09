@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-cmw-bind: image:
-gameservermanagers/gameserver:cmw # image:
-ghcr.io/gameservermanagers/gameserver:cmw container_name:
-cmwserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/cmwserver:/data network_mode: host # volume
-example linuxgsm-cmw-volume: image:
-gameservermanagers/gameserver:cmw # image:
-ghcr.io/gameservermanagers/gameserver:cmw container_name:
-cmwserver restart: unless-stopped volumes: -
-linuxgsm-cmw:/data network_mode: host volumes:
-linuxgsm-cmw:
+---
+services:
+  # bind mount example
+  linuxgsm-cmw-bind:
+    image: gameservermanagers/gameserver:cmw
+    # image: ghcr.io/gameservermanagers/gameserver:cmw
+    container_name: cmwserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/cmwserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-cmw-volume:
+    image: gameservermanagers/gameserver:cmw
+    # image: ghcr.io/gameservermanagers/gameserver:cmw
+    container_name: cmwserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-cmw:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-cmw:

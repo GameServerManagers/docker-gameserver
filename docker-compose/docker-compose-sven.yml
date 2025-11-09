@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-sven-bind: image:
-gameservermanagers/gameserver:sven # image:
-ghcr.io/gameservermanagers/gameserver:sven container_name:
-svenserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/svenserver:/data network_mode: host # volume
-example linuxgsm-sven-volume: image:
-gameservermanagers/gameserver:sven # image:
-ghcr.io/gameservermanagers/gameserver:sven container_name:
-svenserver restart: unless-stopped volumes: -
-linuxgsm-sven:/data network_mode: host volumes:
-linuxgsm-sven:
+---
+services:
+  # bind mount example
+  linuxgsm-sven-bind:
+    image: gameservermanagers/gameserver:sven
+    # image: ghcr.io/gameservermanagers/gameserver:sven
+    container_name: svenserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/svenserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-sven-volume:
+    image: gameservermanagers/gameserver:sven
+    # image: ghcr.io/gameservermanagers/gameserver:sven
+    container_name: svenserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-sven:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-sven:

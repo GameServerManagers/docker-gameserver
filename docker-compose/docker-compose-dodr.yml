@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-dodr-bind: image:
-gameservermanagers/gameserver:dodr # image:
-ghcr.io/gameservermanagers/gameserver:dodr container_name:
-dodrserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/dodrserver:/data network_mode: host # volume
-example linuxgsm-dodr-volume: image:
-gameservermanagers/gameserver:dodr # image:
-ghcr.io/gameservermanagers/gameserver:dodr container_name:
-dodrserver restart: unless-stopped volumes: -
-linuxgsm-dodr:/data network_mode: host volumes:
-linuxgsm-dodr:
+---
+services:
+  # bind mount example
+  linuxgsm-dodr-bind:
+    image: gameservermanagers/gameserver:dodr
+    # image: ghcr.io/gameservermanagers/gameserver:dodr
+    container_name: dodrserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/dodrserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-dodr-volume:
+    image: gameservermanagers/gameserver:dodr
+    # image: ghcr.io/gameservermanagers/gameserver:dodr
+    container_name: dodrserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-dodr:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-dodr:

@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-bfv-bind: image:
-gameservermanagers/gameserver:bfv # image:
-ghcr.io/gameservermanagers/gameserver:bfv container_name:
-bfvserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/bfvserver:/data network_mode: host # volume
-example linuxgsm-bfv-volume: image:
-gameservermanagers/gameserver:bfv # image:
-ghcr.io/gameservermanagers/gameserver:bfv container_name:
-bfvserver restart: unless-stopped volumes: -
-linuxgsm-bfv:/data network_mode: host volumes:
-linuxgsm-bfv:
+---
+services:
+  # bind mount example
+  linuxgsm-bfv-bind:
+    image: gameservermanagers/gameserver:bfv
+    # image: ghcr.io/gameservermanagers/gameserver:bfv
+    container_name: bfvserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/bfvserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-bfv-volume:
+    image: gameservermanagers/gameserver:bfv
+    # image: ghcr.io/gameservermanagers/gameserver:bfv
+    container_name: bfvserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-bfv:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-bfv:

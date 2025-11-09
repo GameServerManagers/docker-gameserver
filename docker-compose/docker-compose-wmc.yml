@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-wmc-bind: image:
-gameservermanagers/gameserver:wmc # image:
-ghcr.io/gameservermanagers/gameserver:wmc container_name:
-wmcserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/wmcserver:/data network_mode: host # volume
-example linuxgsm-wmc-volume: image:
-gameservermanagers/gameserver:wmc # image:
-ghcr.io/gameservermanagers/gameserver:wmc container_name:
-wmcserver restart: unless-stopped volumes: -
-linuxgsm-wmc:/data network_mode: host volumes:
-linuxgsm-wmc:
+---
+services:
+  # bind mount example
+  linuxgsm-wmc-bind:
+    image: gameservermanagers/gameserver:wmc
+    # image: ghcr.io/gameservermanagers/gameserver:wmc
+    container_name: wmcserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/wmcserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-wmc-volume:
+    image: gameservermanagers/gameserver:wmc
+    # image: ghcr.io/gameservermanagers/gameserver:wmc
+    container_name: wmcserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-wmc:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-wmc:

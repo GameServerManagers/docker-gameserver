@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-cod-bind: image:
-gameservermanagers/gameserver:cod # image:
-ghcr.io/gameservermanagers/gameserver:cod container_name:
-codserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/codserver:/data network_mode: host # volume
-example linuxgsm-cod-volume: image:
-gameservermanagers/gameserver:cod # image:
-ghcr.io/gameservermanagers/gameserver:cod container_name:
-codserver restart: unless-stopped volumes: -
-linuxgsm-cod:/data network_mode: host volumes:
-linuxgsm-cod:
+---
+services:
+  # bind mount example
+  linuxgsm-cod-bind:
+    image: gameservermanagers/gameserver:cod
+    # image: ghcr.io/gameservermanagers/gameserver:cod
+    container_name: codserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/codserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-cod-volume:
+    image: gameservermanagers/gameserver:cod
+    # image: ghcr.io/gameservermanagers/gameserver:cod
+    container_name: codserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-cod:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-cod:

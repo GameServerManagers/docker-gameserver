@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-ck-bind: image:
-gameservermanagers/gameserver:ck # image:
-ghcr.io/gameservermanagers/gameserver:ck container_name:
-ckserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/ckserver:/data network_mode: host # volume
-example linuxgsm-ck-volume: image:
-gameservermanagers/gameserver:ck # image:
-ghcr.io/gameservermanagers/gameserver:ck container_name:
-ckserver restart: unless-stopped volumes: -
-linuxgsm-ck:/data network_mode: host volumes:
-linuxgsm-ck:
+---
+services:
+  # bind mount example
+  linuxgsm-ck-bind:
+    image: gameservermanagers/gameserver:ck
+    # image: ghcr.io/gameservermanagers/gameserver:ck
+    container_name: ckserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/ckserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-ck-volume:
+    image: gameservermanagers/gameserver:ck
+    # image: ghcr.io/gameservermanagers/gameserver:ck
+    container_name: ckserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-ck:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-ck:

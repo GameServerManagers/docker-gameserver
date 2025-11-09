@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-dys-bind: image:
-gameservermanagers/gameserver:dys # image:
-ghcr.io/gameservermanagers/gameserver:dys container_name:
-dysserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/dysserver:/data network_mode: host # volume
-example linuxgsm-dys-volume: image:
-gameservermanagers/gameserver:dys # image:
-ghcr.io/gameservermanagers/gameserver:dys container_name:
-dysserver restart: unless-stopped volumes: -
-linuxgsm-dys:/data network_mode: host volumes:
-linuxgsm-dys:
+---
+services:
+  # bind mount example
+  linuxgsm-dys-bind:
+    image: gameservermanagers/gameserver:dys
+    # image: ghcr.io/gameservermanagers/gameserver:dys
+    container_name: dysserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/dysserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-dys-volume:
+    image: gameservermanagers/gameserver:dys
+    # image: ghcr.io/gameservermanagers/gameserver:dys
+    container_name: dysserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-dys:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-dys:

@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-doi-bind: image:
-gameservermanagers/gameserver:doi # image:
-ghcr.io/gameservermanagers/gameserver:doi container_name:
-doiserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/doiserver:/data network_mode: host # volume
-example linuxgsm-doi-volume: image:
-gameservermanagers/gameserver:doi # image:
-ghcr.io/gameservermanagers/gameserver:doi container_name:
-doiserver restart: unless-stopped volumes: -
-linuxgsm-doi:/data network_mode: host volumes:
-linuxgsm-doi:
+---
+services:
+  # bind mount example
+  linuxgsm-doi-bind:
+    image: gameservermanagers/gameserver:doi
+    # image: ghcr.io/gameservermanagers/gameserver:doi
+    container_name: doiserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/doiserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-doi-volume:
+    image: gameservermanagers/gameserver:doi
+    # image: ghcr.io/gameservermanagers/gameserver:doi
+    container_name: doiserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-doi:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-doi:

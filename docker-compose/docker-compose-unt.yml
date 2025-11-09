@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-unt-bind: image:
-gameservermanagers/gameserver:unt # image:
-ghcr.io/gameservermanagers/gameserver:unt container_name:
-untserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/untserver:/data network_mode: host # volume
-example linuxgsm-unt-volume: image:
-gameservermanagers/gameserver:unt # image:
-ghcr.io/gameservermanagers/gameserver:unt container_name:
-untserver restart: unless-stopped volumes: -
-linuxgsm-unt:/data network_mode: host volumes:
-linuxgsm-unt:
+---
+services:
+  # bind mount example
+  linuxgsm-unt-bind:
+    image: gameservermanagers/gameserver:unt
+    # image: ghcr.io/gameservermanagers/gameserver:unt
+    container_name: untserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/untserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-unt-volume:
+    image: gameservermanagers/gameserver:unt
+    # image: ghcr.io/gameservermanagers/gameserver:unt
+    container_name: untserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-unt:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-unt:

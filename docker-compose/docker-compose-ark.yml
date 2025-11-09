@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-ark-bind: image:
-gameservermanagers/gameserver:ark # image:
-ghcr.io/gameservermanagers/gameserver:ark container_name:
-arkserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/arkserver:/data network_mode: host # volume
-example linuxgsm-ark-volume: image:
-gameservermanagers/gameserver:ark # image:
-ghcr.io/gameservermanagers/gameserver:ark container_name:
-arkserver restart: unless-stopped volumes: -
-linuxgsm-ark:/data network_mode: host volumes:
-linuxgsm-ark:
+---
+services:
+  # bind mount example
+  linuxgsm-ark-bind:
+    image: gameservermanagers/gameserver:ark
+    # image: ghcr.io/gameservermanagers/gameserver:ark
+    container_name: arkserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/arkserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-ark-volume:
+    image: gameservermanagers/gameserver:ark
+    # image: ghcr.io/gameservermanagers/gameserver:ark
+    container_name: arkserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-ark:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-ark:

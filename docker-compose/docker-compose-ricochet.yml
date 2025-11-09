@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-ricochet-bind: image:
-gameservermanagers/gameserver:ricochet # image:
-ghcr.io/gameservermanagers/gameserver:ricochet container_name:
-ricochetserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/ricochetserver:/data network_mode: host # volume
-example linuxgsm-ricochet-volume: image:
-gameservermanagers/gameserver:ricochet # image:
-ghcr.io/gameservermanagers/gameserver:ricochet container_name:
-ricochetserver restart: unless-stopped volumes: -
-linuxgsm-ricochet:/data network_mode: host volumes:
-linuxgsm-ricochet:
+---
+services:
+  # bind mount example
+  linuxgsm-ricochet-bind:
+    image: gameservermanagers/gameserver:ricochet
+    # image: ghcr.io/gameservermanagers/gameserver:ricochet
+    container_name: ricochetserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/ricochetserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-ricochet-volume:
+    image: gameservermanagers/gameserver:ricochet
+    # image: ghcr.io/gameservermanagers/gameserver:ricochet
+    container_name: ricochetserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-ricochet:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-ricochet:

@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-mohaa-bind: image:
-gameservermanagers/gameserver:mohaa # image:
-ghcr.io/gameservermanagers/gameserver:mohaa container_name:
-mohaaserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/mohaaserver:/data network_mode: host # volume
-example linuxgsm-mohaa-volume: image:
-gameservermanagers/gameserver:mohaa # image:
-ghcr.io/gameservermanagers/gameserver:mohaa container_name:
-mohaaserver restart: unless-stopped volumes: -
-linuxgsm-mohaa:/data network_mode: host volumes:
-linuxgsm-mohaa:
+---
+services:
+  # bind mount example
+  linuxgsm-mohaa-bind:
+    image: gameservermanagers/gameserver:mohaa
+    # image: ghcr.io/gameservermanagers/gameserver:mohaa
+    container_name: mohaaserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/mohaaserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-mohaa-volume:
+    image: gameservermanagers/gameserver:mohaa
+    # image: ghcr.io/gameservermanagers/gameserver:mohaa
+    container_name: mohaaserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-mohaa:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-mohaa:

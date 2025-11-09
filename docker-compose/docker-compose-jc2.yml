@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-jc2-bind: image:
-gameservermanagers/gameserver:jc2 # image:
-ghcr.io/gameservermanagers/gameserver:jc2 container_name:
-jc2server restart: unless-stopped volumes: -
-/path/to/linuxgsm/jc2server:/data network_mode: host # volume
-example linuxgsm-jc2-volume: image:
-gameservermanagers/gameserver:jc2 # image:
-ghcr.io/gameservermanagers/gameserver:jc2 container_name:
-jc2server restart: unless-stopped volumes: -
-linuxgsm-jc2:/data network_mode: host volumes:
-linuxgsm-jc2:
+---
+services:
+  # bind mount example
+  linuxgsm-jc2-bind:
+    image: gameservermanagers/gameserver:jc2
+    # image: ghcr.io/gameservermanagers/gameserver:jc2
+    container_name: jc2server
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/jc2server:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-jc2-volume:
+    image: gameservermanagers/gameserver:jc2
+    # image: ghcr.io/gameservermanagers/gameserver:jc2
+    container_name: jc2server
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-jc2:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-jc2:

@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-csgo-bind: image:
-gameservermanagers/gameserver:csgo # image:
-ghcr.io/gameservermanagers/gameserver:csgo container_name:
-csgoserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/csgoserver:/data network_mode: host # volume
-example linuxgsm-csgo-volume: image:
-gameservermanagers/gameserver:csgo # image:
-ghcr.io/gameservermanagers/gameserver:csgo container_name:
-csgoserver restart: unless-stopped volumes: -
-linuxgsm-csgo:/data network_mode: host volumes:
-linuxgsm-csgo:
+---
+services:
+  # bind mount example
+  linuxgsm-csgo-bind:
+    image: gameservermanagers/gameserver:csgo
+    # image: ghcr.io/gameservermanagers/gameserver:csgo
+    container_name: csgoserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/csgoserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-csgo-volume:
+    image: gameservermanagers/gameserver:csgo
+    # image: ghcr.io/gameservermanagers/gameserver:csgo
+    container_name: csgoserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-csgo:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-csgo:

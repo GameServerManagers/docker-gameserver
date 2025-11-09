@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-ct-bind: image:
-gameservermanagers/gameserver:ct # image:
-ghcr.io/gameservermanagers/gameserver:ct container_name:
-ctserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/ctserver:/data network_mode: host # volume
-example linuxgsm-ct-volume: image:
-gameservermanagers/gameserver:ct # image:
-ghcr.io/gameservermanagers/gameserver:ct container_name:
-ctserver restart: unless-stopped volumes: -
-linuxgsm-ct:/data network_mode: host volumes:
-linuxgsm-ct:
+---
+services:
+  # bind mount example
+  linuxgsm-ct-bind:
+    image: gameservermanagers/gameserver:ct
+    # image: ghcr.io/gameservermanagers/gameserver:ct
+    container_name: ctserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/ctserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-ct-volume:
+    image: gameservermanagers/gameserver:ct
+    # image: ghcr.io/gameservermanagers/gameserver:ct
+    container_name: ctserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-ct:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-ct:

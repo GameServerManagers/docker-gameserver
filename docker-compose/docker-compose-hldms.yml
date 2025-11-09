@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-hldms-bind: image:
-gameservermanagers/gameserver:hldms # image:
-ghcr.io/gameservermanagers/gameserver:hldms container_name:
-hldmsserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/hldmsserver:/data network_mode: host # volume
-example linuxgsm-hldms-volume: image:
-gameservermanagers/gameserver:hldms # image:
-ghcr.io/gameservermanagers/gameserver:hldms container_name:
-hldmsserver restart: unless-stopped volumes: -
-linuxgsm-hldms:/data network_mode: host volumes:
-linuxgsm-hldms:
+---
+services:
+  # bind mount example
+  linuxgsm-hldms-bind:
+    image: gameservermanagers/gameserver:hldms
+    # image: ghcr.io/gameservermanagers/gameserver:hldms
+    container_name: hldmsserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/hldmsserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-hldms-volume:
+    image: gameservermanagers/gameserver:hldms
+    # image: ghcr.io/gameservermanagers/gameserver:hldms
+    container_name: hldmsserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-hldms:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-hldms:

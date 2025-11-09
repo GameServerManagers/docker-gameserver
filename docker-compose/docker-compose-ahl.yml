@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-ahl-bind: image:
-gameservermanagers/gameserver:ahl # image:
-ghcr.io/gameservermanagers/gameserver:ahl container_name:
-ahlserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/ahlserver:/data network_mode: host # volume
-example linuxgsm-ahl-volume: image:
-gameservermanagers/gameserver:ahl # image:
-ghcr.io/gameservermanagers/gameserver:ahl container_name:
-ahlserver restart: unless-stopped volumes: -
-linuxgsm-ahl:/data network_mode: host volumes:
-linuxgsm-ahl:
+---
+services:
+  # bind mount example
+  linuxgsm-ahl-bind:
+    image: gameservermanagers/gameserver:ahl
+    # image: ghcr.io/gameservermanagers/gameserver:ahl
+    container_name: ahlserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/ahlserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-ahl-volume:
+    image: gameservermanagers/gameserver:ahl
+    # image: ghcr.io/gameservermanagers/gameserver:ahl
+    container_name: ahlserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-ahl:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-ahl:

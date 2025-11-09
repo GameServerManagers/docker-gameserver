@@ -1,11 +1,24 @@
-services: # bind mount example linuxgsm-gmod-bind: image:
-gameservermanagers/gameserver:gmod # image:
-ghcr.io/gameservermanagers/gameserver:gmod container_name:
-gmodserver restart: unless-stopped volumes: -
-/path/to/linuxgsm/gmodserver:/data network_mode: host # volume
-example linuxgsm-gmod-volume: image:
-gameservermanagers/gameserver:gmod # image:
-ghcr.io/gameservermanagers/gameserver:gmod container_name:
-gmodserver restart: unless-stopped volumes: -
-linuxgsm-gmod:/data network_mode: host volumes:
-linuxgsm-gmod:
+---
+services:
+  # bind mount example
+  linuxgsm-gmod-bind:
+    image: gameservermanagers/gameserver:gmod
+    # image: ghcr.io/gameservermanagers/gameserver:gmod
+    container_name: gmodserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/gmodserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-gmod-volume:
+    image: gameservermanagers/gameserver:gmod
+    # image: ghcr.io/gameservermanagers/gameserver:gmod
+    container_name: gmodserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-gmod:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-gmod:
