@@ -4,6 +4,10 @@ on:
   schedule:
     - cron: "5 4 * * 3"
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   package-cleanup:
     name: Cleanup Old GitHub Packages

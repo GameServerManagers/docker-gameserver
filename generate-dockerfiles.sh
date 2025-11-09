@@ -14,9 +14,9 @@ while read -r line; do
   export gamename
   distro=$(echo "$line" | awk -F, '{ print $4 }')
   export distro
-  touch "dockerfiles/Dockerfile.${shortname}"
-  echo "Generating Dockerfile.${shortname} (${gamename})"
-  jinjanate Dockerfile.j2 >"dockerfiles/Dockerfile.${shortname}"
+  touch "dockerfiles/Dockerfile-${shortname}"
+  echo "Generating Dockerfile-${shortname} (${gamename})"
+  jinjanate Dockerfile-j2 >"dockerfiles/Dockerfile-${shortname}"
   { printf '{"shortname":"%s"},' "$shortname"; } >>"shortnamearray.json"
 done < <(tail -n +2 serverlist.csv)
 sed -i '$ s/.$//' "shortnamearray.json"
