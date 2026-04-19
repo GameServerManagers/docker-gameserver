@@ -1,18 +1,18 @@
 #
-# LinuxGSM Sven Co-op Dockerfile
+# LinuxGSM Team Fortress 2 Classified Dockerfile
 #
 # https://github.com/GameServerManagers/docker-gameserver
 #
 
 FROM ghcr.io/gameservermanagers/linuxgsm:ubuntu-24.04
 LABEL maintainer="LinuxGSM <me@danielgibbs.co.uk>"
-ARG SHORTNAME=sven
-ENV GAMESERVER=svenserver
+ARG SHORTNAME=tf2c
+ENV GAMESERVER=tf2cserver
 
 WORKDIR /app
 
 ## Auto install game server requirements
-RUN depshortname=$(curl --connect-timeout 10 -s https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/ubuntu-24.04.csv |awk -v shortname="sven" -F, '$1==shortname {$1=""; print $0}') \
+RUN depshortname=$(curl --connect-timeout 10 -s https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/ubuntu-24.04.csv |awk -v shortname="tf2c" -F, '$1==shortname {$1=""; print $0}') \
   && if [ -n "${depshortname}" ]; then \
   echo "**** Install ${depshortname} ****" \
   && apt-get update \
