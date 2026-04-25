@@ -32,6 +32,8 @@ services:
     volumes:
       - /path/to/cs2server:/data
     network_mode: host
+    environment:
+      - UPDATE_CHECK=60
     restart: unless-stopped
 ```
 
@@ -46,13 +48,14 @@ docker run -d \
   -p 27015:27015 \
   -p 27020:27020/udp \
   -p 27005:27005/udp \
+  -e UPDATE_CHECK=60 \
   --restart unless-stopped \
   gameservermanagers/gameserver:cs2
 ```
 
 ### First Run
 
-Before the first run, make sure to edit the docker-compose.yml file by changing the image tag and container_name to match your chosen game server. Upon the initial run, LinuxGSM will install the selected server and start running. The game server details will be displayed once the installation is complete.
+Before the first run, make sure to edit the docker-compose.yml file by changing the image tag and container_name to match your chosen game server. Upon the initial run, LinuxGSM will install the selected server and start running. The game server details will be displayed once the installation is complete. Per default, updates to the game server will be checked every 60 minutes. You can change this by setting UPDATE_CHECK or disable automatic checks by setting it to 0.
 
 ### Game Server Ports
 
