@@ -29,5 +29,5 @@
       ]
     }
   },
-  "postCreateCommand": "npm init -y >/dev/null 2>&1 || true && npm install --no-save prettier prettier-plugin-sh prettier-plugin-jinja-template"
+  "postCreateCommand": "npm init -y >/dev/null 2>&1 || true && npm install --no-save prettier prettier-plugin-sh prettier-plugin-jinja-template && sudo apt-get update && sudo apt-get install -y ripgrep"
 }
