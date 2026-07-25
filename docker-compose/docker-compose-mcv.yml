@@ -1,0 +1,24 @@
+---
+services:
+  # bind mount example
+  linuxgsm-mcv-bind:
+    image: gameservermanagers/gameserver:mcv
+    # image: ghcr.io/gameservermanagers/gameserver:mcv
+    container_name: mcvserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/mcvserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-mcv-volume:
+    image: gameservermanagers/gameserver:mcv
+    # image: ghcr.io/gameservermanagers/gameserver:mcv
+    container_name: mcvserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-mcv:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-mcv:
