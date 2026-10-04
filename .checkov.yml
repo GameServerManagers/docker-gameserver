@@ -1,3 +1,5 @@
 skip-check:
   - CKV_DOCKER_2
   - CKV_DOCKER_3
+skip-path:
+  - node_modules/
