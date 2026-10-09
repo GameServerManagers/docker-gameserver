@@ -113,9 +113,7 @@ jobs:
       matrix: ${{ fromJSON(needs.generate-dockerfiles.outputs.matrix) }}
     steps:
       - name: Random Wait
-        uses: m3y/random-wait-action@v1
-        with:
-          max-wait-time: 30
+        run: sleep $((RANDOM % 31))
 
       - name: Checkout
         uses: actions/checkout@v7
