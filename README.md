@@ -46,6 +46,7 @@ docker run -d \
   --name cs2server \
   -v /path/to/cs2server:/data \
   -p 27015:27015 \
+  -p 27015:27015/udp \
   -p 27020:27020/udp \
   -p 27005:27005/udp \
   -e UPDATE_CHECK=60 \
