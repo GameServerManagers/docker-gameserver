@@ -55,7 +55,7 @@ docker run -d \
 
 ### First Run
 
-Before the first run, make sure to edit the docker-compose.yml file by changing the image tag and container_name to match your chosen game server. Upon the initial run, LinuxGSM will install the selected server and start running. The game server details will be displayed once the installation is complete. Per default, updates to the game server will be checked every 60 minutes. You can change this by setting UPDATE_CHECK or disable automatic checks by setting it to 0.
+Before the first run, make sure to edit the docker-compose.yml file by changing the image tag and container_name to match your chosen game server. Upon the initial run, LinuxGSM will install the selected server and start running. The game server details will be displayed once the installation is complete. By default, LinuxGSM checks for game server updates every 60 minutes and each time the container starts. Set `UPDATE_CHECK` to a value from 1 to 59 to change the interval in minutes, or to `0` to turn off scheduled checks. Set `UPDATE_ON_START=false` to skip the update when the container starts.
 
 ### Game Server Ports
 
