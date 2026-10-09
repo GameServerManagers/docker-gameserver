@@ -109,7 +109,6 @@ jobs:
       attestations: write
       id-token: write
     strategy:
-      # Keep building the other games when one fails
       fail-fast: false
       matrix: ${{ fromJSON(needs.generate-dockerfiles.outputs.matrix) }}
     steps:
