@@ -5,7 +5,7 @@ on:
   push:
     paths:
       - README.md
-      - .github/workflows/dockerhub-description.yml
+      - .github/workflows/action-dockerhub-description.yml
     branches:
       - main
 
