@@ -1,0 +1,24 @@
+---
+services:
+  # bind mount example
+  linuxgsm-hyt-bind:
+    image: gameservermanagers/gameserver:hyt
+    # image: ghcr.io/gameservermanagers/gameserver:hyt
+    container_name: hytserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/hytserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-hyt-volume:
+    image: gameservermanagers/gameserver:hyt
+    # image: ghcr.io/gameservermanagers/gameserver:hyt
+    container_name: hytserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-hyt:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-hyt:
