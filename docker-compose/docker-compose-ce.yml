@@ -1,0 +1,24 @@
+---
+services:
+  # bind mount example
+  linuxgsm-ce-bind:
+    image: gameservermanagers/gameserver:ce
+    # image: ghcr.io/gameservermanagers/gameserver:ce
+    container_name: ceserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/ceserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-ce-volume:
+    image: gameservermanagers/gameserver:ce
+    # image: ghcr.io/gameservermanagers/gameserver:ce
+    container_name: ceserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-ce:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-ce:

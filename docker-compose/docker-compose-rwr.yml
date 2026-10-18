@@ -1,0 +1,24 @@
+---
+services:
+  # bind mount example
+  linuxgsm-rwr-bind:
+    image: gameservermanagers/gameserver:rwr
+    # image: ghcr.io/gameservermanagers/gameserver:rwr
+    container_name: rwrserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/rwrserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-rwr-volume:
+    image: gameservermanagers/gameserver:rwr
+    # image: ghcr.io/gameservermanagers/gameserver:rwr
+    container_name: rwrserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-rwr:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-rwr:

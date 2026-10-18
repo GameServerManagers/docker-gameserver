@@ -1,0 +1,24 @@
+---
+services:
+  # bind mount example
+  linuxgsm-jk3-bind:
+    image: gameservermanagers/gameserver:jk3
+    # image: ghcr.io/gameservermanagers/gameserver:jk3
+    container_name: jk3server
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/jk3server:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-jk3-volume:
+    image: gameservermanagers/gameserver:jk3
+    # image: ghcr.io/gameservermanagers/gameserver:jk3
+    container_name: jk3server
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-jk3:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-jk3:
