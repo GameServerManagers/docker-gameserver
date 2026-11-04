@@ -1,0 +1,24 @@
+---
+services:
+  # bind mount example
+  linuxgsm-fivem-bind:
+    image: gameservermanagers/gameserver:fivem
+    # image: ghcr.io/gameservermanagers/gameserver:fivem
+    container_name: fivemserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/fivemserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-fivem-volume:
+    image: gameservermanagers/gameserver:fivem
+    # image: ghcr.io/gameservermanagers/gameserver:fivem
+    container_name: fivemserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-fivem:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-fivem:

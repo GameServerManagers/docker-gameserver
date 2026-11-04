@@ -1,0 +1,24 @@
+---
+services:
+  # bind mount example
+  linuxgsm-cswon-bind:
+    image: gameservermanagers/gameserver:cswon
+    # image: ghcr.io/gameservermanagers/gameserver:cswon
+    container_name: cswonserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/cswonserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-cswon-volume:
+    image: gameservermanagers/gameserver:cswon
+    # image: ghcr.io/gameservermanagers/gameserver:cswon
+    container_name: cswonserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-cswon:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-cswon:

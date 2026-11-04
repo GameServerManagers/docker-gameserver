@@ -1,0 +1,24 @@
+---
+services:
+  # bind mount example
+  linuxgsm-hlwon-bind:
+    image: gameservermanagers/gameserver:hlwon
+    # image: ghcr.io/gameservermanagers/gameserver:hlwon
+    container_name: hlwonserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/hlwonserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-hlwon-volume:
+    image: gameservermanagers/gameserver:hlwon
+    # image: ghcr.io/gameservermanagers/gameserver:hlwon
+    container_name: hlwonserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-hlwon:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-hlwon:

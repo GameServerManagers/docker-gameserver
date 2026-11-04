@@ -1,0 +1,24 @@
+---
+services:
+  # bind mount example
+  linuxgsm-luanti-bind:
+    image: gameservermanagers/gameserver:luanti
+    # image: ghcr.io/gameservermanagers/gameserver:luanti
+    container_name: luantiserver
+    restart: unless-stopped
+    volumes:
+      - /path/to/linuxgsm/luantiserver:/data
+    network_mode: host
+
+  # volume example
+  linuxgsm-luanti-volume:
+    image: gameservermanagers/gameserver:luanti
+    # image: ghcr.io/gameservermanagers/gameserver:luanti
+    container_name: luantiserver
+    restart: unless-stopped
+    volumes:
+      - linuxgsm-luanti:/data
+    network_mode: host
+
+volumes:
+  linuxgsm-luanti:
